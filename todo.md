@@ -3,18 +3,18 @@
 **Project:** NXTREV Technology Inc. Corporate Website  
 **Domain:** `nxtrev.org`  
 **Hosting Target:** GitHub Pages ($0 recurring cost, automatic free SSL)  
-**Status:** **Parked / Ready for Deployment**  
-**Last Updated:** September 13, 2026  
+**Status:** **Parked — Awaiting GoDaddy Access via ebaladj1@yahoo.com**  
+**Last Updated:** September 14, 2026  
 
 ---
 
 ## 1. Pending Deployment Steps (To Resume)
 
-- [ ] **Step 1: Set Up GitHub Account**
+- [x] **Step 1: Set Up GitHub Account** (`Valexander7`)
   - Create or log into John's / NXTREV's GitHub account at [github.com](https://github.com).
   - Note the GitHub username or organization name.
 
-- [ ] **Step 2: Initialize Git Repository & Push**
+- [x] **Step 2: Initialize Git Repository & Push** (pushed to `https://github.com/Valexander7/nxtrev-website.git` with `CNAME` for `nxtrev.org`)
   - Open terminal or run via agent:
     ```bash
     cd "/Users/johnelielbaladjay/Documents/1 Projects/NXTREV Website"
@@ -36,7 +36,7 @@
   - Under **Custom domain**, enter: `nxtrev.org` (this creates a `CNAME` file in the repo root).
   - Save settings.
 
-- [ ] **Step 4: Configure GoDaddy DNS Records**
+- [ ] **Step 4: Configure GoDaddy DNS Records** *(BLOCKED: Waiting for access to Elmer's email `ebaladj1@yahoo.com` for GoDaddy login / 2FA)*
   - Log in to [GoDaddy DNS Management](https://dcc.godaddy.com/manage/dns) for `nxtrev.org`.
   - Add or update the following **4 `A` Records** for host `@`:
     | Type | Name / Host | Value | TTL |
