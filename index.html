@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NXTREV Technology Inc. | Global technology. Local follow-through.</title>
+  <meta name="description" content="NXTREV Technology Inc. is a Philippine technology representative and solutions partner helping semiconductor manufacturers evaluate, acquire, and support specialized production technologies.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nxtrev: {
+              DEFAULT: '#3058a6',
+              dark: '#1e3a8a',
+              light: '#416cc1',
+              pale: '#f0f4fc',
+              navy: '#0b132b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- TOP ANNOUNCEMENT / CORPORATE BAR -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span>📍 Muntinlupa City, Metro Manila, Philippines</span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline text-blue-400 font-semibold tracking-wide">Brand Promise: Clear commitments. Follow-through to completion.</span>
+      </div>
+      <div class="flex items-center space-x-5 text-xs">
+        <a href="tel:+639088856022" class="hover:text-white transition">📞 (+63) 908-885-6022</a>
+        <a href="mailto:sales@nxtrev.org" class="hover:text-white transition">✉️ sales@nxtrev.org</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Brand Logo with Tagline -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <img src="assets/logos/nxtrev_icon_blue.svg" alt="NXTREV Icon" class="h-10 w-auto group-hover:scale-105 transition transform">
+          <div class="flex flex-col">
+            <img src="assets/logos/nxtrev_wordmark_blue.svg" alt="NXTREV" class="h-5 w-auto">
+            <span class="text-[9px] tracking-[0.22em] text-nxtrev uppercase font-bold pt-0.5">Technology Inc.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation with Products Dropdown -->
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+          <a href="index.html" class="text-nxtrev font-bold transition">Home</a>
+
+          <!-- Products Dropdown -->
+          <div class="relative group">
+            <a href="products.html" class="flex items-center space-x-1.5 text-slate-600 group-hover:text-nxtrev font-medium text-sm py-2 transition">
+              <span>Products & Solutions</span>
+              <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-nxtrev transition transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <!-- Dropdown Menu -->
+            <div class="absolute left-0 top-full pt-1 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-200 py-2 divide-y divide-slate-100 text-xs">
+                <div class="px-3 py-2 bg-slate-50">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-nxtrev">Official Exclusive Partner</span>
+                  <a href="products.html#ate-systems" class="block font-bold text-slate-900 hover:text-nxtrev pt-0.5">AccoTEST Semiconductor ATE →</a>
+                </div>
+                <div class="py-1">
+                  <a href="products.html#handling-automation" class="block px-3 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Handling & Packaging Automation</a>
+                  <a href="products.html#optical-inspection" class="block px-3 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Automated Optical Inspection (AOI)</a>
+                  <a href="products.html#reliability-hardware" class="block px-3 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Reliability & Burn-In Boards</a>
+                  <a href="products.html#board-support" class="block px-3 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Board-Level Support (ASL1000)</a>
+                  <a href="products.html#esd-consumables" class="block px-3 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">ESD Packaging & Consumables</a>
+                </div>
+                <div class="p-2 bg-slate-50 text-center">
+                  <a href="products.html" class="font-bold text-nxtrev hover:underline block text-[11px]">View All Equipment Categories →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html" class="text-slate-600 hover:text-nxtrev transition">About & Team</a>
+          <a href="contact.html" class="text-slate-600 hover:text-nxtrev transition">Contact</a>
+        </nav>
+
+        <!-- Header CTA -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="contact.html" class="bg-nxtrev hover:bg-nxtrev-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition duration-150">
+            Submit Technical RFQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-slate-950 text-white py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#3058a6_1px,transparent_1px)] [background-size:18px_18px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-full px-4 py-1.5 text-xs text-blue-300 font-medium">
+            <span class="inline-block w-2 h-2 rounded-full bg-nxtrev animate-pulse"></span>
+            <span>Technology Representative & Solutions Partner</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Global technology.<br><span class="text-blue-400">Local follow-through.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            We help Philippine semiconductor and electronics manufacturers evaluate, acquire, and support specialized production technologies—moving requirements from factory specification to verified adoption.
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="products.html" class="bg-nxtrev hover:bg-nxtrev-dark text-white font-bold px-6 py-3 rounded-lg shadow-md transition">
+              Explore Specialized Equipment
+            </a>
+            <a href="about.html" class="border border-slate-700 hover:border-slate-500 bg-slate-900/60 text-white font-medium px-6 py-3 rounded-lg transition">
+              How We Create Value
+            </a>
+          </div>
+        </div>
+
+        <!-- Partnership Card -->
+        <div class="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-7 shadow-2xl space-y-5">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div class="text-[10px] uppercase tracking-wider font-bold text-blue-400">Exclusive Representation</div>
+            <span class="text-xs text-slate-400">Philippines</span>
+          </div>
+          <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-inner">
+            <img src="assets/logos/accotest.png" alt="AccoTEST Logo" class="h-8 w-auto object-contain">
+          </div>
+          <h3 class="text-lg font-bold text-white">AccoTEST ATE Technology</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Exclusive Philippine partner for Beijing Huafeng Test & Control Technology Co., Ltd. (STAR: 688200), approaching 10,000 testers shipped globally across tier-1 semiconductor IDMs and OSATs.
+          </p>
+          <div class="border-t border-slate-800 pt-3 space-y-2 text-xs text-slate-300">
+            <div class="flex items-center space-x-2">
+              <span class="text-blue-400 font-bold">✓</span>
+              <span>Next-Gen System-on-Chip (SoC) Testing (STS8600)</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-blue-400 font-bold">✓</span>
+              <span>High-Density PMIC & Mixed-Signal (STS8300)</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-blue-400 font-bold">✓</span>
+              <span>Power Discrete, GaN & Modules (STS8200 CROSS)</span>
+            </div>
+          </div>
+          <a href="products.html" class="block text-center text-xs font-bold text-blue-400 hover:text-white pt-2 transition">
+            View Technical Specifications →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO-SIDED VALUE PROPOSITION -->
+  <section class="bg-white border-b border-slate-200 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-nxtrev">Strategic Value Proposition</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">Why Customers & Overseas Principals Choose NXTREV</p>
+        <p class="text-slate-600 text-sm">Being local and having relationships help, but defensible value is built on qualification, execution, and continuing support.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Value for Philippine Manufacturers -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-4 hover:border-nxtrev transition">
+          <div class="w-10 h-10 rounded-lg bg-nxtrev text-white font-bold flex items-center justify-center text-sm shadow">
+            🏭
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">For Philippine Manufacturers</h3>
+          <p class="text-xs text-nxtrev font-bold uppercase tracking-wider">Specialized Technology with Local Coordination</p>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            NXTREV translates factory requirements into clear supplier discussions, comparable technical proposals, workable delivery and site-readiness arrangements, and defined ongoing support responsibilities.
+          </p>
+          <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-200/60">
+            <li class="flex items-start space-x-2">
+              <span class="text-nxtrev font-bold">✓</span>
+              <span><strong>Fit Before Sale:</strong> We recommend what suits your line, clarify specifications, and reject poor fit.</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-nxtrev font-bold">✓</span>
+              <span><strong>Execution Reliability:</strong> Defined import logistics, site preparation, and single-owner order accountability.</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-nxtrev font-bold">✓</span>
+              <span><strong>Continuing Support:</strong> Factory-trained application support, test conversion, and board diagnostics.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Value for Foreign Technology Principals -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-4 hover:border-nxtrev transition">
+          <div class="w-10 h-10 rounded-lg bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow">
+            🌐
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">For Foreign Technology Principals</h3>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Qualified Opportunity Development & Execution</p>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            NXTREV contributes deep account understanding, direct access to engineering and purchasing decision-makers, local purchasing and tax context, evaluation coordination, and disciplined follow-through.
+          </p>
+          <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-200/60">
+            <li class="flex items-start space-x-2">
+              <span class="text-slate-800 font-bold">✓</span>
+              <span><strong>Active Account Embedding:</strong> Relationship coverage across engineering, operations, and purchasing before specs finalize.</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-slate-800 font-bold">✓</span>
+              <span><strong>Clear Commitments:</strong> We confirm scope, exclusions, acceptance criteria, and warranty boundaries upfront.</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-slate-800 font-bold">✓</span>
+              <span><strong>Installed Base Care:</strong> We protect brand reputation by staying actively involved through commissioning and after-sales.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEMICONDUCTOR TEST SOLUTIONS (WITH OFFICIAL ACCOTEST PRODUCT IMAGES) -->
+  <section class="py-16 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-nxtrev">Specialized ATE Portfolio</h2>
+        <p class="text-3xl font-extrabold text-slate-900">Semiconductor Test Solutions</p>
+        <p class="text-slate-600 text-sm">State-of-the-art Automatic Test Equipment engineered for extreme throughput, high parallelism, and minimal cost of test.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Card 1: STS8200 CROSS Series -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between group">
+          <div>
+            <div class="bg-slate-50 p-6 flex items-center justify-center border-b border-slate-100 h-64">
+              <img src="assets/products/STS8200EX.png" alt="AccoTEST STS8200 CROSS Series" class="max-h-52 w-auto object-contain group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-center text-xs">
+                <span class="px-2.5 py-1 rounded bg-nxtrev-pale text-nxtrev font-bold text-[10px] uppercase">Products</span>
+                <span class="text-slate-400 group-hover:text-nxtrev transition">→</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 group-hover:text-nxtrev transition">STS8200 CROSS Series</h3>
+              <p class="text-xs font-semibold text-nxtrev">Analog, Power Discrete, Power Module</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Production-ready tester for Wide Bandgap (WBG) on Known Good Die (KGD), GaN, and SiC devices handling high frequency, industry-leading low stray inductance, and test repeatability.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="products.html#sts8200" class="block text-center w-full bg-slate-900 hover:bg-nxtrev text-white font-bold py-2.5 rounded-lg text-xs transition">
+              View STS8200 Series Specs →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: STS8300 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between group">
+          <div>
+            <div class="bg-slate-50 p-6 flex items-center justify-center border-b border-slate-100 h-64">
+              <img src="assets/products/STS8300.png" alt="AccoTEST STS8300" class="max-h-52 w-auto object-contain group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-center text-xs">
+                <span class="px-2.5 py-1 rounded bg-indigo-50 text-indigo-800 font-bold text-[10px] uppercase">Products</span>
+                <span class="text-slate-400 group-hover:text-nxtrev transition">→</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 group-hover:text-nxtrev transition">STS8300</h3>
+              <p class="text-xs font-semibold text-nxtrev">Analog, Digital, Multi-Site, Multi-Parallelism</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Application circuitry ready for PMIC, SPS, IPD, and BMS ICs across a wide range of digital components — from consumer electronics to industrial systems and automotive power.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="products.html#sts8300" class="block text-center w-full bg-slate-900 hover:bg-nxtrev text-white font-bold py-2.5 rounded-lg text-xs transition">
+              View STS8300 PMIC Specs →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: STS8600 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between group">
+          <div>
+            <div class="bg-slate-50 p-6 flex items-center justify-center border-b border-slate-100 h-64">
+              <img src="assets/products/STS8600.png" alt="AccoTEST STS8600" class="max-h-52 w-auto object-contain group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-center text-xs">
+                <span class="px-2.5 py-1 rounded bg-blue-50 text-blue-800 font-bold text-[10px] uppercase">Products</span>
+                <span class="text-slate-400 group-hover:text-nxtrev transition">→</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 group-hover:text-nxtrev transition">STS8600</h3>
+              <p class="text-xs font-semibold text-nxtrev">System on Chip (SoC)</p>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Engineered for core applications in data centres, automotive and IoT, integrating advanced test stimuli and measurement circuitry for FPGA, MCU, and wireless connectivity — supported by liquid cooling.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="products.html#sts8600" class="block text-center w-full bg-slate-900 hover:bg-nxtrev text-white font-bold py-2.5 rounded-lg text-xs transition">
+              View STS8600 SoC Specs →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 CORE OPERATING VALUES SUMMARY -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+        <h2 class="text-xs uppercase font-bold tracking-widest text-nxtrev">Operating Discipline</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">How NXTREV Works</p>
+        <p class="text-slate-600 text-sm">Our standards are anchored in observable behavior, not vague slogans.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-xs">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+          <div class="font-bold text-nxtrev text-sm">1. Fit Before Sale</div>
+          <p class="text-slate-600 leading-relaxed">We recommend only what suits the application. We clarify acceptance criteria upfront and reject poor technical fit.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+          <div class="font-bold text-nxtrev text-sm">2. Commit with Clarity</div>
+          <p class="text-slate-600 leading-relaxed">Specific, supportable commitments only. We confirm exact scope, exclusions, dates, and support boundaries.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+          <div class="font-bold text-nxtrev text-sm">3. Own Follow-Through</div>
+          <p class="text-slate-600 leading-relaxed">Single accountable owner per order. We progress agreed work through verified completion, not just forwarded emails.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+          <div class="font-bold text-nxtrev text-sm">4. Tell Truth Early</div>
+          <p class="text-slate-600 leading-relaxed">Surface facts, limits, and uncertainties while action is still possible. We separate confirmed facts from forecasts.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
+          <div class="font-bold text-nxtrev text-sm">5. Build Beyond Sale</div>
+          <p class="text-slate-600 leading-relaxed">We invest in continuing support depth, document reusable learning, and protect the installed equipment base.</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-8">
+        <a href="about.html#values" class="inline-block text-xs font-bold text-nxtrev hover:underline">
+          Read our complete Strategic Positioning & Operating Standards →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPORATE HEADQUARTERS & FACILITY COMPLIANCE -->
+  <section class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="inline-block text-xs uppercase font-bold tracking-widest text-nxtrev">Corporate Facility & Regional Reach</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Supporting Philippine Manufacturing Facilities</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Headquartered in Posadas Village, Muntinlupa City, NXTREV delivers rapid on-site technical response, test conversion, and application support across the major industrial semiconductor corridors of Laguna, Cavite, Batangas, and Metro Manila.
+          </p>
+          <div class="space-y-4">
+            <div class="border-l-4 border-nxtrev pl-4 space-y-1">
+              <h4 class="font-bold text-slate-900 text-sm">Corporate Headquarters & Commercial Operations</h4>
+              <p class="text-xs text-slate-600">107 Mayor J. Posadas Avenue, Posadas Village, Sucat, Muntinlupa City 1770, Metro Manila, Philippines</p>
+              <p class="text-xs text-slate-500 pt-0.5">📍 Located in: <strong>Jesus Is Alive Community - Alabang</strong> • Mon–Fri: 9AM – 6PM</p>
+              <div class="pt-1.5">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-bold text-nxtrev hover:underline">
+                  <span>🗺️ Get Directions on Google Maps →</span>
+                </a>
+              </div>
+            </div>
+            <div class="border-l-4 border-slate-800 pl-4 space-y-1">
+              <h4 class="font-bold text-slate-900 text-sm">Regional On-Site Engineering Support</h4>
+              <p class="text-xs text-slate-600">Direct field dispatch for equipment commissioning, maintenance, and docking across PEZA industrial zones in CALABARZON and NCR.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-950 text-white rounded-2xl p-8 space-y-6 border border-slate-800">
+          <h3 class="text-xl font-bold text-white">Need an On-Site Demonstration or Technical Feasibility Review?</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Our engineering team is available for semiconductor test benchmarking, pin-count feasibility assessments, and system demonstration at your plant.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div class="bg-slate-900 p-3.5 rounded-lg border border-slate-800">
+              <span class="text-slate-400 block text-[11px]">General Inquiries:</span>
+              <span class="font-bold text-blue-400">sales@nxtrev.org</span>
+            </div>
+            <div class="bg-slate-900 p-3.5 rounded-lg border border-slate-800">
+              <span class="text-slate-400 block text-[11px]">Direct Technical Line:</span>
+              <span class="font-bold text-blue-400">(+63) 908-885-6022</span>
+            </div>
+          </div>
+          <a href="contact.html" class="block w-full text-center bg-nxtrev hover:bg-nxtrev-dark text-white font-bold py-3 rounded-lg transition text-sm shadow">
+            Submit Technical RFQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <img src="assets/logos/nxtrev_icon_white.svg" alt="NXTREV Icon" class="h-8 w-auto">
+            <img src="assets/logos/nxtrev_wordmark_white.svg" alt="NXTREV" class="h-4 w-auto">
+          </div>
+          <p class="text-blue-400 font-semibold text-xs tracking-wide">
+            Global technology. Local follow-through.
+          </p>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Connecting Philippine semiconductor and electronics manufacturers with specialized overseas production equipment, supported through evaluation, execution, and continuing lifecycle care.
+          </p>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3">Equipment Portfolio</h5>
+          <ul class="space-y-2">
+            <li><a href="products.html#sts8600" class="hover:text-white transition">SoC Test System (STS8600)</a></li>
+            <li><a href="products.html#sts8300" class="hover:text-white transition">PMIC Tester (STS8300)</a></li>
+            <li><a href="products.html#sts8200" class="hover:text-white transition">Analog & Power (STS8200 CROSS)</a></li>
+            <li><a href="products.html" class="hover:text-white transition">Power Discrete & GaN Solutions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3">Strategic Identity</h5>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-white transition">Purpose & Mission</a></li>
+            <li><a href="about.html#values" class="hover:text-white transition">Core Operating Values</a></li>
+            <li><a href="about.html#team" class="hover:text-white transition">Leadership & Engineers</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Request for Quotation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3">Corporate Headquarters</h5>
+          <p class="text-slate-300 mb-1">NXTREV Technology Inc.</p>
+          <p class="text-slate-400 mb-3 text-[11px] leading-relaxed">107 Mayor J. Posadas Avenue, Posadas Village, Sucat, Muntinlupa City 1770</p>
+          <a href="mailto:sales@nxtrev.org" class="text-blue-400 hover:underline">sales@nxtrev.org</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+        <div>© 2026 NXTREV Technology Inc. All rights reserved.</div>
+        <div class="flex space-x-6">
+          <span>Brand Promise: Clear commitments. Follow-through to completion.</span>
+          <span>•</span>
+          <span>Muntinlupa City, Philippines</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
