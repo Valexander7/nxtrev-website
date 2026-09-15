@@ -3,8 +3,8 @@
 **Project:** NXTREV Technology Inc. Corporate Website  
 **Domain:** `nxtrev.org`  
 **Hosting Target:** GitHub Pages ($0 recurring cost, automatic free SSL)  
-**Status:** **Parked — Awaiting GoDaddy Access via ebaladj1@yahoo.com**  
-**Last Updated:** September 14, 2026  
+**Status:** **In Progress — Applying GoDaddy DNS & GitHub Pages Cutover**  
+**Last Updated:** September 15, 2026  
 
 ---
 
@@ -36,7 +36,7 @@
   - Under **Custom domain**, enter: `nxtrev.org` (this creates a `CNAME` file in the repo root).
   - Save settings.
 
-- [ ] **Step 4: Configure GoDaddy DNS Records** *(BLOCKED: Waiting for access to Elmer's email `ebaladj1@yahoo.com` for GoDaddy login / 2FA)*
+- [ ] **Step 4: Configure GoDaddy DNS Records**
   - Log in to [GoDaddy DNS Management](https://dcc.godaddy.com/manage/dns) for `nxtrev.org`.
   - Add or update the following **4 `A` Records** for host `@`:
     | Type | Name / Host | Value | TTL |
