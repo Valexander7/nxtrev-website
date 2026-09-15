@@ -3,7 +3,7 @@
 **Project:** NXTREV Technology Inc. Corporate Website  
 **Domain:** `nxtrev.org`  
 **Hosting Target:** GitHub Pages ($0 recurring cost, automatic free SSL)  
-**Status:** **In Progress — Applying GoDaddy DNS & GitHub Pages Cutover**  
+**Status:** **Live & Deployed on GitHub Pages (`https://nxtrev.org`)**  
 **Last Updated:** September 15, 2026  
 
 ---
@@ -30,13 +30,13 @@
     git push -u origin main
     ```
 
-- [ ] **Step 3: Enable GitHub Pages & Custom Domain**
+- [x] **Step 3: Enable GitHub Pages & Custom Domain** (`nxtrev.org` bound)
   - Navigate to Repository **Settings** → **Pages**.
   - Source: Deploy from branch `main` / `(root)`.
   - Under **Custom domain**, enter: `nxtrev.org` (this creates a `CNAME` file in the repo root).
   - Save settings.
 
-- [ ] **Step 4: Configure GoDaddy DNS Records**
+- [x] **Step 4: Configure GoDaddy DNS Records** (4 A-records on `@` + `www` CNAME to `valexander7.github.io`)
   - Log in to [GoDaddy DNS Management](https://dcc.godaddy.com/manage/dns) for `nxtrev.org`.
   - Add or update the following **4 `A` Records** for host `@`:
     | Type | Name / Host | Value | TTL |
@@ -51,7 +51,7 @@
     | `CNAME` | `www` | `<username>.github.io` | 1 Hour / 3600s |
   - Remove any legacy Google Sites DNS records (`ghs.googlehosted.com` CNAME if present).
 
-- [ ] **Step 5: Enforce HTTPS & Verify SSL**
+- [x] **Step 5: Enforce HTTPS & Verify SSL** (Enforce HTTPS verified and active)
   - In GitHub Pages settings, wait for DNS check to succeed.
   - Check the box for **"Enforce HTTPS"** once the Let's Encrypt certificate is provisioned.
 
