@@ -27,6 +27,37 @@
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+    /* Tactile Elevation & Micro-interactions (Motion Dial 1-2) */
+    .card-hover {
+      transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    /* Category Filter Transition */
+    .product-category.fade-in {
+      animation: fadeInCategory 220ms ease-out forwards;
+    }
+    @keyframes fadeInCategory {
+      from { opacity: 0.3; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Accessibility: Strict prefers-reduced-motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .product-category.fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+      .card-hover:hover {
+        transform: none !important;
+      }
+    }
   </style>
   <link rel="canonical" href="https://nxtrev.org/products.html">
   <link rel="icon" type="image/svg+xml" href="assets/logos/nxtrev_icon_blue.svg">
@@ -61,7 +92,7 @@
   </div>
 
   <!-- NAVIGATION -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+  <header class="bg-white/85 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50 shadow-xs transition duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <!-- Logo Lockup -->
@@ -111,6 +142,41 @@
             Request Quotation / RFQ
           </a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center md:hidden">
+          <button id="mobileMenuBtn" type="button" class="text-slate-700 hover:text-nxtrev p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-nxtrev transition" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg transition-all duration-300 ease-in-out">
+      <div class="space-y-1 font-medium text-sm">
+        <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">Home</a>
+        <a href="products.html" class="block px-3 py-2 rounded-md bg-slate-50 text-nxtrev font-bold">Products & Solutions</a>
+        <div class="pl-4 space-y-1 text-xs text-slate-500 border-l-2 border-slate-200 ml-3 my-1">
+          <a href="#ate-systems" onclick="selectCategory('ate-systems'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev font-medium text-nxtrev">AccoTEST Semiconductor ATE</a>
+          <a href="#handling-automation" onclick="selectCategory('handling-automation'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev">Handling & Automation</a>
+          <a href="#optical-inspection" onclick="selectCategory('optical-inspection'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev">Automated Optical Inspection</a>
+          <a href="#reliability-hardware" onclick="selectCategory('reliability-hardware'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev">Reliability & Burn-In Boards</a>
+          <a href="#board-support" onclick="selectCategory('board-support'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev">Board-Level Support</a>
+          <a href="#esd-consumables" onclick="selectCategory('esd-consumables'); if (document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.add('hidden');" class="block py-1 hover:text-nxtrev">ESD Packaging & Consumables</a>
+        </div>
+        <a href="about.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">About & Team</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">Contact</a>
+      </div>
+      <div class="pt-2 border-t border-slate-100">
+        <a href="contact.html" class="block w-full text-center bg-nxtrev hover:bg-nxtrev-dark text-white text-sm font-semibold py-2.5 rounded-lg shadow-sm transition">
+          Request Quotation / RFQ
+        </a>
       </div>
     </div>
   </header>
@@ -183,7 +249,7 @@
       </div>
 
       <!-- STS8600 SoC -->
-      <div class="bg-[#0b132b] text-white rounded-lg p-6 sm:p-8 border border-slate-800 shadow-md">
+      <div class="bg-[#0b132b] text-white rounded-lg p-6 sm:p-8 border border-slate-800 shadow-md card-hover">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="lg:col-span-8 space-y-3">
             <span class="inline-block px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-md bg-blue-950 text-blue-300 border border-blue-800/60">
@@ -227,7 +293,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- STS8300 -->
-        <div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-3">
             <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 flex items-center justify-center h-48">
               <img src="assets/products/STS8300.png" alt="AccoTEST STS8300" class="max-h-40 w-auto object-contain">
@@ -252,7 +318,7 @@
         </div>
 
         <!-- STS8200 CROSS Series -->
-        <div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-3">
             <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 flex items-center justify-center h-48">
               <img src="assets/products/STS8200EX.png" alt="AccoTEST STS8200 CROSS" class="max-h-40 w-auto object-contain">
@@ -292,7 +358,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- Solution 1 -->
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🔄</div>
             <h3 class="text-base font-bold text-slate-900">Turret Test & Taping Handlers</h3>
@@ -311,7 +377,7 @@
         </div>
 
         <!-- Solution 2 -->
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">💠</div>
             <h3 class="text-base font-bold text-slate-900">Known Good Die (KGD) & WLBI</h3>
@@ -330,7 +396,7 @@
         </div>
 
         <!-- Solution 3 -->
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">✂️</div>
             <h3 class="text-base font-bold text-slate-900">Intelligent Trim, Form & Singulation</h3>
@@ -363,7 +429,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🔍</div>
             <h3 class="text-base font-bold text-slate-900">Strip-to-Strip High-Speed AOI</h3>
@@ -380,7 +446,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">📦</div>
             <h3 class="text-base font-bold text-slate-900">Bulk Component Vision Sorter</h3>
@@ -397,7 +463,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🌡️</div>
             <h3 class="text-base font-bold text-slate-900">3D Thermal Warpage Metrology</h3>
@@ -429,7 +495,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🔥</div>
             <h3 class="text-base font-bold text-slate-900">HAST & HTOL Reliability Boards</h3>
@@ -446,7 +512,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">⚡</div>
             <h3 class="text-base font-bold text-slate-900">ESD Test & Thermal Cycling Fixtures</h3>
@@ -463,7 +529,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">💾</div>
             <h3 class="text-base font-bold text-slate-900">Automated Device Programmers</h3>
@@ -495,7 +561,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🔧</div>
             <h3 class="text-base font-bold text-slate-900">Resource Module Conversions</h3>
@@ -512,7 +578,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🩺</div>
             <h3 class="text-base font-bold text-slate-900">Caldut Diagnostics & Board Repair</h3>
@@ -529,7 +595,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🏭</div>
             <h3 class="text-base font-bold text-slate-900">Pre-Owned Mainframes & Spares</h3>
@@ -561,7 +627,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🛡️</div>
             <h3 class="text-base font-bold text-slate-900">ESD Packaging & Barrier Bags</h3>
@@ -578,7 +644,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">🔌</div>
             <h3 class="text-base font-bold text-slate-900">Precision Contact Fingers & Sockets</h3>
@@ -595,7 +661,7 @@
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
             <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-base">💨</div>
             <h3 class="text-base font-bold text-slate-900">Static Elimination & Thermal Greases</h3>
@@ -655,13 +721,17 @@
         }
       });
 
-      // Show/Hide categories
+      // Show/Hide categories with smooth fade transition
       const categories = document.querySelectorAll('.product-category');
       categories.forEach(cat => {
         if (catId === 'all' || cat.id === catId) {
           cat.classList.remove('hidden');
+          cat.classList.remove('fade-in');
+          void cat.offsetWidth;
+          cat.classList.add('fade-in');
         } else {
           cat.classList.add('hidden');
+          cat.classList.remove('fade-in');
         }
       });
 
@@ -681,6 +751,29 @@
         selectCategory(hash);
       }
     });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIconOpen = document.getElementById('menuIconOpen');
+    const menuIconClose = document.getElementById('menuIconClose');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          menuIconOpen.classList.add('hidden');
+          menuIconClose.classList.remove('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
   </script>
 
 </body>
