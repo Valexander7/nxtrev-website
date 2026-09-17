@@ -10,6 +10,14 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontSize: {
+            '2xs': ['0.75rem', { lineHeight: '1rem' }],       /* 12px for rare badges */
+            xs: ['0.875rem', { lineHeight: '1.25rem' }],      /* 14px default for small/meta text */
+            sm: ['1rem', { lineHeight: '1.5rem' }],           /* 16px default for body copy & cards */
+            base: ['1.0625rem', { lineHeight: '1.65rem' }],   /* 17px default for section lead copy */
+            lg: ['1.1875rem', { lineHeight: '1.75rem' }],     /* 19px */
+            xl: ['1.375rem', { lineHeight: '1.85rem' }]       /* 22px */
+          },
           colors: {
             nxtrev: {
               DEFAULT: '#3058a6',
@@ -27,7 +35,14 @@
   <style>
     html { font-size: 16px; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; line-height: 1.6; }
-    h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+    p, li, dd { font-size: 1rem; line-height: 1.6; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+    /* Enforce minimum readable font sizes: prevent tiny arbitrary text from dropping below 13px */
+    .text-\[9px\], .text-\[10px\], .text-\[11px\] {
+      font-size: 0.8125rem !important;
+      line-height: 1.25rem !important;
+    }
 
     /* Tactile Elevation & Micro-interactions (Motion Dial 1-2) */
     .card-hover {

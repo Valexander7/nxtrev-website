@@ -10,6 +10,14 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontSize: {
+            '2xs': ['0.75rem', { lineHeight: '1rem' }],       /* 12px for rare badges */
+            xs: ['0.875rem', { lineHeight: '1.25rem' }],      /* 14px default for small/meta text */
+            sm: ['1rem', { lineHeight: '1.5rem' }],           /* 16px default for body copy & cards */
+            base: ['1.0625rem', { lineHeight: '1.65rem' }],   /* 17px default for section lead copy */
+            lg: ['1.1875rem', { lineHeight: '1.75rem' }],     /* 19px */
+            xl: ['1.375rem', { lineHeight: '1.85rem' }]       /* 22px */
+          },
           colors: {
             nxtrev: {
               DEFAULT: '#3058a6',
@@ -27,8 +35,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { font-size: 16px; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; line-height: 1.6; }
+    p, li, dd { font-size: 1rem; line-height: 1.6; }
     h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+    /* Enforce minimum readable font sizes: prevent tiny arbitrary text from dropping below 13px */
+    .text-\[9px\], .text-\[10px\], .text-\[11px\] {
+      font-size: 0.8125rem !important;
+      line-height: 1.25rem !important;
+    }
 
     @media print {
       body { background: white !important; color: black !important; font-size: 11pt; }
@@ -103,7 +119,7 @@
         <p class="text-sm text-slate-700 leading-relaxed">
           Complete turnkey electrical test and automated packaging cells combining the ATE tester, high-speed device handler, precision docking interface, load board, test socket, and 2D/3D optical mark check. NXTREV eliminates multi-vendor finger-pointing by managing alignment, electrical qualification, recipe creation, and local buy-off directly on your plant floor.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs pt-2">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm pt-2">
           <div class="bg-white p-3 rounded-lg border border-blue-100">
             <strong class="block text-slate-900 font-bold mb-1">ATE + Handler Docking</strong>
             <span class="text-slate-600">Hard docking kits, blind-mate interfaces, zero vibration coupling.</span>
@@ -135,10 +151,10 @@
             </div>
             <img src="assets/logos/accotest.png" alt="AccoTEST" class="h-6 w-auto object-contain">
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Beijing Huafeng Test & Control (STAR: 688200). Approaching 10,000 units shipped globally with no annual recurring software license fees.
           </p>
-          <div class="space-y-3 text-xs">
+          <div class="space-y-3 text-sm">
             <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/80">
               <strong class="text-slate-900 font-bold">STS8600 SoC Test Platform:</strong>
               <span class="text-slate-600 block mt-0.5">&gt; 2,000 analog channels, &gt; 4,000 digital channels @ 1.6 Gbps, &gt; 2,000A power delivery. Liquid-cooled test head for AI processors, automotive ECUs, and high-speed mixed signal.</span>
@@ -160,10 +176,10 @@
             <span class="text-[10px] font-bold text-nxtrev uppercase tracking-wider">Pillar 03 • Packaging Automation</span>
             <h2 class="text-lg font-bold text-slate-900">Device Handlers & Packaging Systems</h2>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-sm text-slate-600 leading-relaxed">
             High-throughput device handling, testing, sorting, and packaging automation designed for zero-jam performance and rapid package changeover.
           </p>
-          <div class="space-y-3 text-xs">
+          <div class="space-y-3 text-sm">
             <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/80">
               <strong class="text-slate-900 font-bold">High-Speed Rotary Turret Handlers:</strong>
               <span class="text-slate-600 block mt-0.5">Up to 35,000 UPH index rate for QFN, DFN, SOT, SOD, and SMA. Multi-site test contact, laser mark, 3D lead/mark inspect, and automated tape & reel.</span>
@@ -189,7 +205,7 @@
             <span class="text-[10px] font-bold text-nxtrev uppercase tracking-wider">Pillar 04 • Metrology & Reliability</span>
             <h2 class="text-lg font-bold text-slate-900">AOI, Metrology & Reliability Hardware</h2>
           </div>
-          <div class="space-y-3 text-xs">
+          <div class="space-y-3 text-sm">
             <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/80">
               <strong class="text-slate-900 font-bold">Automated Optical Inspection (AOI):</strong>
               <span class="text-slate-600 block mt-0.5">Strip-to-strip automated optical inspection, post-test visual lead coplanarity check, surface crack inspection, and 3D thermography/thermal warpage measurement.</span>
@@ -211,7 +227,7 @@
             <span class="text-[10px] font-bold text-nxtrev uppercase tracking-wider">Pillar 05 • Sustaining Engineering</span>
             <h2 class="text-lg font-bold text-slate-900">Field Service & ASL1000 Board Support</h2>
           </div>
-          <div class="space-y-3 text-xs">
+          <div class="space-y-3 text-sm">
             <div class="bg-slate-50 p-3 rounded-lg border border-slate-200/80">
               <strong class="text-slate-900 font-bold">Local Commissioning & PM:</strong>
               <span class="text-slate-600 block mt-0.5">Factory-certified field engineers on call for rapid installation, calibration, and emergency troubleshooting across Calabarzon and northern corridors.</span>
@@ -238,7 +254,7 @@
             <span class="text-[10px] font-bold text-nxtrev uppercase tracking-wider">Pillar 06 • Factory Operations Leadership</span>
             <h2 class="text-lg font-bold text-slate-900">Subcontractor Management & Operations</h2>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Backed by leadership experience from Elmer Baladjay, who brings over 15 years of semiconductor Assembly & Test operations leadership from International Rectifier (now part of Infineon Technologies). NXTREV coordinates between customers, suppliers, subcontractors, and technical teams with practical factory-floor understanding.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -275,7 +291,7 @@
             <span class="text-[10px] font-bold text-nxtrev uppercase tracking-wider">Pillar 07 • Supply Chain Partner</span>
             <h2 class="text-lg font-bold text-slate-900">Diversified Sourcing & Supply Chain</h2>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-sm text-slate-600 leading-relaxed">
             Built on the core principle of versatility, NXTREV specializes in sourcing and delivering a comprehensive range of products and services tailored to meet any operational requirement regardless of scale or complexity. Operating as an agile partner, NXTREV seamlessly connects businesses with dynamic cross-industry solutions.
           </p>
           <div class="space-y-2.5 text-xs">
