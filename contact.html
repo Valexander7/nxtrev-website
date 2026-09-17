@@ -453,6 +453,42 @@
         }
       });
     }
+
+    // Auto-select Equipment Model from URL query parameter (?product=...)
+    function autofillFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productParam = urlParams.get('product');
+      if (!productParam) return;
+
+      const select = document.getElementById('equipmentModel');
+      if (!select) return;
+
+      const targetVal = productParam.toLowerCase();
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.toLowerCase() === targetVal) {
+          select.selectedIndex = i;
+
+          // Subtle visual feedback that the field was preselected
+          select.classList.add('ring-2', 'ring-nxtrev', 'bg-blue-50/50');
+          setTimeout(() => {
+            select.classList.remove('bg-blue-50/50');
+          }, 1500);
+
+          // Smooth scroll to the RFQ form for direct intake
+          const rfqForm = document.getElementById('rfqForm');
+          if (rfqForm) {
+            rfqForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          break;
+        }
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', autofillFromUrl);
+    } else {
+      autofillFromUrl();
+    }
   </script>
 
 </body>
