@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Base Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a17"/>
+      <stop offset="50%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Heavy Industrial Depth Blur Filter -->
+    <filter id="bokehBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+
+    <!-- Linear Bay Light Gradient -->
+    <linearGradient id="overheadLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#0b132b" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Architectural Column Gradient -->
+    <linearGradient id="columnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#334155" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0b132b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Base Layer -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+
+  <!-- Softly Blurred Architectural Cleanroom Test Floor Geometry (Completely Unbranded) -->
+  <g filter="url(#bokehBlur)" opacity="0.85">
+    <!-- Recessed Overhead Bay Light Runs -->
+    <rect x="200" y="-100" width="180" height="700" fill="url(#overheadLight)" transform="rotate(-15 290 250)"/>
+    <rect x="750" y="-120" width="220" height="750" fill="url(#overheadLight)" transform="rotate(-15 860 255)"/>
+    <rect x="1350" y="-150" width="260" height="800" fill="url(#overheadLight)" transform="rotate(-15 1480 250)"/>
+
+    <!-- Soft Depth Shapes Representing Distant Production Bays -->
+    <rect x="100" y="550" width="450" height="380" rx="40" fill="#1e293b" opacity="0.3"/>
+    <rect x="650" y="520" width="550" height="420" rx="40" fill="#1e293b" opacity="0.25"/>
+    <rect x="1300" y="500" width="580" height="450" rx="40" fill="#1e293b" opacity="0.35"/>
+
+    <!-- Soft Horizontal Aisle Glow -->
+    <ellipse cx="960" cy="720" rx="850" ry="160" fill="#1e3a8a" opacity="0.18"/>
+    <ellipse cx="1400" cy="650" rx="450" ry="120" fill="#0284c7" opacity="0.12"/>
+  </g>
+
+  <!-- Midground Diffused Bokeh Highlights -->
+  <g filter="url(#softBlur)" opacity="0.6">
+    <circle cx="420" cy="280" r="140" fill="#38bdf8" opacity="0.08"/>
+    <circle cx="880" cy="220" r="160" fill="#818cf8" opacity="0.06"/>
+    <circle cx="1550" cy="320" r="200" fill="#38bdf8" opacity="0.09"/>
+    <circle cx="1220" cy="680" r="130" fill="#0284c7" opacity="0.1"/>
+    <circle cx="280" cy="720" r="150" fill="#1e3a8a" opacity="0.15"/>
+  </g>
+
+  <!-- Neutral Vignette Darkening at Edges -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="40%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="85%" stop-color="#020617" stop-opacity="0.65"/>
+    <stop offset="100%" stop-color="#020617" stop-opacity="0.9"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>
