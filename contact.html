@@ -258,7 +258,18 @@
       <!-- RFQ FORM -->
       <div class="lg:col-span-8 bg-white border border-slate-200 rounded-lg p-8 shadow-sm">
         <h2 class="text-xl font-bold text-slate-900 mb-2">B2B Specification & RFQ Intake</h2>
-        <p class="text-sm text-slate-500 mb-8">Please provide your corporate contact details and device parameters.</p>
+        <p class="text-sm text-slate-500 mb-6">Please provide your corporate contact details and device parameters.</p>
+
+        <!-- Draft Restored Banner (Device-Only) -->
+        <div id="draftRestoredBanner" class="hidden mb-6 p-3 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-600 flex items-center justify-between">
+          <span class="flex items-center space-x-1.5">
+            <span>💾</span>
+            <span>Draft restored on this device only.</span>
+          </span>
+          <button type="button" onclick="clearSavedDraft()" class="text-nxtrev hover:text-red-600 font-semibold underline transition">
+            Clear saved draft
+          </button>
+        </div>
 
         <form id="rfqForm" onsubmit="handleRFQSubmit(event)" class="space-y-6 text-sm">
 
@@ -360,29 +371,34 @@
             <textarea id="projectNotes" name="projectNotes" rows="4" placeholder="Mention target device packages (e.g., QFN, BGA, TO-220), maximum voltage/current requirements, docking interface (handler/prober), or specific test challenges..." class="w-full border border-slate-300 rounded-lg p-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-nxtrev"></textarea>
           </div>
 
-          <!-- Confidentiality & Technical File Route -->
+          <!-- Confidentiality Notice -->
           <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 flex items-start space-x-2.5">
             <span class="text-nxtrev font-bold text-sm shrink-0">ℹ️</span>
             <div class="leading-relaxed">
-              <strong>Confidential Files &amp; Technical Drawings:</strong> If your requirement involves confidential drawings, package diagrams, or BOMs under NDA, you can submit this preliminary inquiry first or email documents directly to <a href="mailto:sales@nxtrev.org" class="text-nxtrev underline font-semibold">sales@nxtrev.org</a>. Mutual NDAs are readily accommodated prior to detailed technical review.
+              For confidential drawings or specifications, contact us to arrange an appropriate sharing method and discuss NDA requirements.
             </div>
           </div>
 
           <button type="submit" id="submitRfqBtn" class="w-full bg-nxtrev hover:bg-nxtrev-dark text-white font-bold py-3.5 rounded-lg transition duration-150 text-base shadow-md flex items-center justify-center space-x-2">
-            <span>Submit Technical RFQ</span>
+            <span>Prepare RFQ Email</span>
             <span>→</span>
           </button>
         </form>
 
-        <!-- Resilient RFQ Intake Confirmation & Recovery -->
+        <!-- RFQ Email Preparation Notice & Recovery -->
         <div id="confirmationNotice" class="hidden mt-6 p-5 rounded-xl bg-blue-50 border border-blue-200 text-slate-900 text-sm space-y-4">
           <div class="flex items-start space-x-3">
-            <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+            <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">ℹ️</div>
             <div>
-              <div class="font-bold text-slate-900 text-base">Inquiry Saved Locally</div>
-              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
-                Your technical RFQ parameters have been saved in your browser session. <strong>Note:</strong> Automatic email client handoff <em>may fail</em> depending on your device or browser mail configuration. If your email application did not launch automatically, please click below or copy the inquiry text.
+              <div class="font-bold text-slate-900 text-base">Inquiry Prepared</div>
+              <p class="text-slate-700 text-sm mt-1 leading-relaxed">
+                Your inquiry is ready, but has not been sent. Open your email app and press Send, or copy the details and email <a href="mailto:sales@nxtrev.org" class="text-nxtrev font-bold underline">sales@nxtrev.org</a>.
               </p>
+              <div class="text-[11px] text-slate-500 mt-1 flex items-center space-x-2">
+                <span>Draft saved on this device only.</span>
+                <span>•</span>
+                <button type="button" onclick="clearSavedDraft()" class="text-slate-600 hover:text-red-600 underline font-medium">Clear saved draft</button>
+              </div>
             </div>
           </div>
 
@@ -390,7 +406,7 @@
 
           <div class="flex flex-wrap items-center gap-2.5 pt-1">
             <a id="openMailClientBtn" href="#" class="bg-nxtrev hover:bg-nxtrev-dark text-white font-semibold px-4 py-2.5 rounded-lg text-xs transition inline-flex items-center space-x-1.5 shadow-sm">
-              <span>✉️ Open in Email App</span>
+              <span>✉️ Open Email App</span>
             </a>
             <button type="button" id="copyRfqBtn" onclick="copyRfqToClipboard()" class="bg-white border border-slate-300 hover:border-slate-400 text-slate-800 font-semibold px-4 py-2.5 rounded-lg text-xs transition inline-flex items-center space-x-1.5 shadow-xs">
               <span id="copyRfqIcon">📋</span>
@@ -702,10 +718,65 @@
       }
     }
 
+    // Restore saved draft from this device on load (if storage available)
+    function restoreSavedDraft() {
+      try {
+        const saved = localStorage.getItem('nxtrev_rfq_draft');
+        if (!saved) return;
+        const data = JSON.parse(saved);
+        let restoredAny = false;
+
+        const setVal = (id, val) => {
+          const el = document.getElementById(id);
+          if (el && val && !el.value) {
+            el.value = val;
+            restoredAny = true;
+          }
+        };
+
+        if (data.name) setVal('fullName', data.name);
+        if (data.company) setVal('companyName', data.company);
+        if (data.email) setVal('workEmail', data.email);
+        if (data.phone && data.phone !== 'Not provided') {
+          setVal('phoneNumber', data.phone);
+        }
+        if (data.notes && data.notes !== 'No specific parameters noted') {
+          setVal('projectNotes', data.notes);
+        }
+
+        if (restoredAny) {
+          const banner = document.getElementById('draftRestoredBanner');
+          if (banner) banner.classList.remove('hidden');
+        }
+      } catch (e) {
+        // Storage unavailable or disabled; form operates cleanly regardless
+      }
+    }
+
+    // Clear saved draft on user request
+    function clearSavedDraft() {
+      try {
+        localStorage.removeItem('nxtrev_rfq_draft');
+      } catch (e) {}
+
+      const form = document.getElementById('rfqForm');
+      if (form) form.reset();
+
+      const banner = document.getElementById('draftRestoredBanner');
+      if (banner) banner.classList.add('hidden');
+
+      const notice = document.getElementById('confirmationNotice');
+      if (notice) notice.classList.add('hidden');
+    }
+
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', autofillFromUrl);
+      document.addEventListener('DOMContentLoaded', () => {
+        autofillFromUrl();
+        restoreSavedDraft();
+      });
     } else {
       autofillFromUrl();
+      restoreSavedDraft();
     }
   </script>
 
