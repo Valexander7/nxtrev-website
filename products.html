@@ -174,9 +174,8 @@
             </div>
           </div>
 
-          <a href="linecard.html" class="text-slate-600 hover:text-nxtrev transition flex items-center space-x-1">
+          <a href="linecard.html" class="text-slate-600 hover:text-nxtrev transition">
             <span>Line Card</span>
-            <span class="text-[10px] uppercase font-bold bg-blue-50 text-nxtrev px-1.5 py-0.5 rounded border border-blue-100">PDF</span>
           </a>
           <a href="about.html" class="text-slate-600 hover:text-nxtrev transition">About & Team</a>
           <a href="contact.html" class="text-slate-600 hover:text-nxtrev transition">Contact</a>
@@ -1039,7 +1038,7 @@
     <section class="bg-blue-50 border border-blue-200 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="space-y-1 text-center sm:text-left">
         <h3 class="text-lg font-bold text-slate-900">Need a printable overview for purchasing or engineering evaluation?</h3>
-        <p class="text-xs sm:text-sm text-slate-600">Access our consolidated 2026 Equipment & Solutions Line Card matrix in a clean, print-ready PDF format.</p>
+        <p class="text-xs sm:text-sm text-slate-600">Access our consolidated 2026 Equipment & Solutions Line Card matrix in a clean, print-ready layout.</p>
       </div>
       <a href="linecard.html" class="inline-flex items-center space-x-2 bg-nxtrev hover:bg-nxtrev-dark text-white font-bold px-6 py-3 rounded-lg text-xs transition shadow-sm shrink-0">
         <span>📄 Open Printable Line Card</span>
@@ -1083,17 +1082,19 @@
 
   <!-- CLIENT-SIDE CATEGORY FILTER LOGIC -->
   <script>
-    function selectCategory(catId) {
+    function selectCategory(catId, updateHash = true) {
       // Update dropdown selection
       const select = document.getElementById('categorySelect');
       if (select && select.value !== catId) {
         select.value = catId;
       }
 
-      // Update pills
+      // Update pills and accessible ARIA state
       const pills = document.querySelectorAll('.cat-pill');
       pills.forEach(pill => {
-        if (pill.getAttribute('data-cat') === catId) {
+        const isTarget = pill.getAttribute('data-cat') === catId;
+        pill.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
+        if (isTarget) {
           pill.classList.remove('bg-slate-100', 'text-slate-700');
           pill.classList.add('bg-nxtrev', 'text-white');
         } else {
@@ -1116,6 +1117,17 @@
         }
       });
 
+      // Synchronize browser URL hash cleanly without page jumps
+      if (updateHash) {
+        try {
+          if (catId === 'all') {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          } else {
+            history.replaceState(null, '', '#' + catId);
+          }
+        } catch (e) {}
+      }
+
       // Scroll to category if specific
       if (catId !== 'all') {
         const target = document.getElementById(catId);
@@ -1125,11 +1137,21 @@
       }
     }
 
-    // Auto-select based on hash on load
+    // Auto-select based on hash on initial load
     window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
-        selectCategory(hash);
+        selectCategory(hash, false);
+      }
+    });
+
+    // Synchronize category visibility dynamically on hashchange (e.g. dropdown navigation or browser back/forward)
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) {
+        selectCategory(hash, false);
+      } else if (!hash) {
+        selectCategory('all', false);
       }
     });
 
