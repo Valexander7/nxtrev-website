@@ -331,7 +331,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch text-sm">
               
               <!-- Electrical Subsystem -->
-              <div class="lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Electrical Subsystem</div>
                   <div class="text-base font-bold text-white">ATE Test Platform</div>
@@ -345,7 +345,7 @@
               </div>
 
               <!-- Interconnect Subsystem -->
-              <div class="lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Coupling Subsystem</div>
                   <div class="text-base font-bold text-white">Docking &amp; Interface</div>
@@ -359,7 +359,7 @@
               </div>
 
               <!-- Alternative Configurations & Outputs -->
-              <div class="lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2.5">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Alternative Handling Paths</div>
                   
@@ -1250,6 +1250,27 @@
       });
     }
   </script>
-
+  <!-- Test-cell subsystem map reveal (progressive enhancement) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script>
+    (function(){
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || typeof anime === 'undefined' || !('IntersectionObserver' in window)) return; // leave boxes fully visible
+      var boxes = document.querySelectorAll('.tc-anim');
+      if (!boxes.length) return;
+      boxes.forEach(function(b){ b.style.opacity = 0; });
+      var grid = boxes[0].parentElement;
+      var played = false;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting && !played) {
+            played = true; io.disconnect();
+            anime({ targets: '.tc-anim', opacity: [0,1], translateY: [24,0], duration: 620, delay: anime.stagger(160), easing: 'easeOutCubic' });
+          }
+        });
+      }, { threshold: 0.25 });
+      io.observe(grid);
+    })();
+  </script>
 </body>
 </html>
