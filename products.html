@@ -262,7 +262,7 @@
         
         <!-- Dropdown Selector (Mobile & Small Desktop) -->
         <div class="flex items-center space-x-3 w-full lg:w-auto">
-          <label for="categorySelect" class="text-sm font-bold uppercase tracking-wider text-slate-600 shrink-0">Filter Category:</label>
+          <label for="categorySelect" class="text-sm font-bold uppercase tracking-wider text-slate-600 shrink-0">Browse:</label>
           <select id="categorySelect" onchange="selectCategory(this.value)" class="w-full sm:w-auto border border-slate-300 rounded-lg px-3.5 py-2 text-sm font-bold text-slate-800 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-nxtrev">
             <option value="all">✦ All Equipment & Capabilities (Full Portfolio)</option>
             <option value="turnkey-solutions">1. Turnkey Integrated Test Cells (Flagship)</option>
@@ -277,8 +277,8 @@
           </select>
         </div>
 
-        <!-- Desktop Quick Pills -->
-        <div class="hidden xl:flex items-center space-x-1.5 text-sm overflow-x-auto pb-1 lg:pb-0">
+        <!-- Quick Pills (all widths; horizontal scroll on small screens) -->
+        <div class="flex items-center space-x-1.5 text-sm overflow-x-auto pb-1 lg:pb-0 w-full lg:w-auto -mx-4 px-4 lg:mx-0 lg:px-0">
           <button onclick="selectCategory('all')" class="cat-pill active px-3 py-1.5 rounded-md font-semibold transition bg-nxtrev text-white shadow-xs" data-cat="all">All</button>
           <button onclick="selectCategory('turnkey-solutions')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="turnkey-solutions">Turnkey Cells</button>
           <button onclick="selectCategory('ate-systems')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="ate-systems">AccoTEST ATE</button>
@@ -1140,16 +1140,11 @@
 
   <!-- CLIENT-SIDE CATEGORY FILTER LOGIC -->
   <script>
-    function selectCategory(catId, updateHash = true) {
-      // Update dropdown selection
+    // Highlight the active pill + dropdown for a category (no scroll, no hiding)
+    function highlightCategory(catId) {
       const select = document.getElementById('categorySelect');
-      if (select && select.value !== catId) {
-        select.value = catId;
-      }
-
-      // Update pills and accessible ARIA state
-      const pills = document.querySelectorAll('.cat-pill');
-      pills.forEach(pill => {
+      if (select && select.value !== catId) select.value = catId;
+      document.querySelectorAll('.cat-pill').forEach(pill => {
         const isTarget = pill.getAttribute('data-cat') === catId;
         pill.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
         if (isTarget) {
@@ -1160,22 +1155,13 @@
           pill.classList.add('bg-slate-100', 'text-slate-700');
         }
       });
+    }
 
-      // Show/Hide categories with smooth fade transition
-      const categories = document.querySelectorAll('.product-category');
-      categories.forEach(cat => {
-        if (catId === 'all' || cat.id === catId) {
-          cat.classList.remove('hidden');
-          cat.classList.remove('fade-in');
-          void cat.offsetWidth;
-          cat.classList.add('fade-in');
-        } else {
-          cat.classList.add('hidden');
-          cat.classList.remove('fade-in');
-        }
-      });
+    // Jump-nav: scroll to a category, keep the rest visible.
+    let spyLock = false;
+    function selectCategory(catId, updateHash = true) {
+      highlightCategory(catId);
 
-      // Synchronize browser URL hash cleanly without page jumps
       if (updateHash) {
         try {
           if (catId === 'all') {
@@ -1186,14 +1172,37 @@
         } catch (e) {}
       }
 
-      // Scroll to category if specific
-      if (catId !== 'all') {
-        const target = document.getElementById(catId);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      const target = catId === 'all'
+        ? document.querySelector('.product-category')
+        : document.getElementById(catId);
+      if (target) {
+        spyLock = true;
+        setTimeout(() => { spyLock = false; }, 700);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+
+    // Scroll-spy: keep the active pill in sync while browsing.
+    let spyTicking = false;
+    function onCatalogScroll() {
+      if (spyTicking || spyLock) return;
+      spyTicking = true;
+      requestAnimationFrame(() => {
+        const offset = 170;
+        let current = 'all';
+        document.querySelectorAll('.product-category').forEach(cat => {
+          if (cat.getBoundingClientRect().top - offset <= 0) current = cat.id;
+        });
+        highlightCategory(current);
+        spyTicking = false;
+      });
+    }
+    window.addEventListener('scroll', onCatalogScroll, { passive: true });
+
+    // Offset section tops so smooth-scroll clears the sticky header + filter bar.
+    const jumpStyle = document.createElement('style');
+    jumpStyle.textContent = '.product-category{scroll-margin-top:150px;}';
+    document.head.appendChild(jumpStyle);
 
     // Auto-select based on hash on initial load
     window.addEventListener('DOMContentLoaded', () => {
@@ -1203,13 +1212,13 @@
       }
     });
 
-    // Synchronize category visibility dynamically on hashchange (e.g. dropdown navigation or browser back/forward)
+    // Synchronize on hashchange (dropdown navigation or browser back/forward)
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
         selectCategory(hash, false);
       } else if (!hash) {
-        selectCategory('all', false);
+        highlightCategory('all');
       }
     });
 
