@@ -76,6 +76,12 @@
         transform: none !important;
       }
     }
+    .reveal-item { opacity: 0; transform: translateY(16px); transition: opacity 500ms cubic-bezier(0.16,1,0.3,1), transform 500ms cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
+    .reveal-item.is-revealed { opacity: 1; transform: translateY(0); }
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    @media (prefers-reduced-motion: reduce) { .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; } }
   </style>
   <link rel="canonical" href="https://nxtrev.org/products.html">
   <link rel="icon" type="image/svg+xml" href="assets/logos/nxtrev_icon_blue.svg">
@@ -302,7 +308,7 @@
     <!-- CATEGORY 0: TURNKEY INTEGRATED TEST CELLS (NEW HERO) -->
     <!-- ========================================================= -->
     <section id="turnkey-solutions" class="product-category space-y-8">
-      <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+      <div class="reveal-item border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
         <div>
           <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Turnkey Engineering & Integration</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Turnkey Integrated Test Cells</h2>
@@ -331,7 +337,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch text-sm">
               
               <!-- Electrical Subsystem -->
-              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="reveal-item lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Electrical Subsystem</div>
                   <div class="text-base font-bold text-white">ATE Test Platform</div>
@@ -345,7 +351,7 @@
               </div>
 
               <!-- Interconnect Subsystem -->
-              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="reveal-item lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Coupling Subsystem</div>
                   <div class="text-base font-bold text-white">Docking &amp; Interface</div>
@@ -359,7 +365,7 @@
               </div>
 
               <!-- Alternative Configurations & Outputs -->
-              <div class="tc-anim lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
+              <div class="reveal-item lg:col-span-4 bg-slate-900/90 border border-slate-700/80 rounded-xl p-5 space-y-3 flex flex-col justify-between">
                 <div class="space-y-2.5">
                   <div class="text-xs font-mono text-sky-400 font-bold uppercase">Alternative Handling Paths</div>
                   
@@ -396,7 +402,7 @@
       </div>
 
       <!-- Turnkey Key Benefits Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-3 card-hover">
           <div class="w-10 h-10 rounded-lg bg-blue-50 text-nxtrev flex items-center justify-center text-lg font-bold">⏱️</div>
           <h4 class="text-base font-bold text-slate-900">Accelerated Production Buy-Off</h4>
@@ -425,7 +431,7 @@
     <!-- CATEGORY 1: ACCOTEST ATE TEST SYSTEMS (EXCLUSIVE) -->
     <!-- ========================================================= -->
     <section id="ate-systems" class="product-category space-y-8">
-      <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+      <div class="reveal-item border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
         <div>
           <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Official Exclusive Representation</span>
           <h2 class="text-2xl font-bold text-slate-900">AccoTEST Semiconductor ATE Systems</h2>
@@ -478,7 +484,7 @@
       </div>
 
       <!-- STS8300 & STS8200 Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- STS8300 -->
         <div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
@@ -557,17 +563,17 @@
     <!-- CATEGORY 2: DEVICE HANDLING & PACKAGING AUTOMATION -->
     <!-- ========================================================= -->
     <section id="handling-automation" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3">
+      <div class="reveal-item border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Production Automation</span>
         <h2 class="text-2xl font-bold text-slate-900">Device Handling & Packaging Automation</h2>
         <p class="text-xs text-slate-500 mt-0.5">High-speed rotary turrets, strip test handling, Known Good Die (KGD) sorting, and leadframe trim & form.</p>
       </div>
 
-      <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
+      <div class="reveal-item bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
         <img src="assets/diagrams/handler-format-map.svg" alt="Concept diagram matching four device formats to handling methods: small packaged units to a rotary turret; leadframe strips to strip test and pick-and-place; power discretes to a gravity feed tube; bare die and wafer to a KGD sorter or prober." class="w-full h-auto" loading="lazy">
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Solution 1 -->
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
@@ -652,7 +658,7 @@
     <!-- CATEGORY 3: SUBCONTRACTOR MANAGEMENT & OPERATIONS (NEW) -->
     <!-- ========================================================= -->
     <section id="subcon-operations" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+      <div class="reveal-item border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
         <div>
           <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Factory Operations Leadership</span>
           <h2 class="text-2xl font-bold text-slate-900">Subcontractor Management and Operations Capability</h2>
@@ -661,12 +667,12 @@
         <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Executive Operations Bench</span>
       </div>
 
-      <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
+      <div class="reveal-item bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
         <img src="assets/diagrams/subcon-coordination-hub.svg" alt="Concept diagram showing NXTREV operations coordination as a central hub linking four parties: the customer (specs, drawings, delivery), foundries and OSAT assembly and test subcontractors (scheduling, lot expediting), equipment and materials suppliers (engineering liaison), and quality and engineering teams (yield, failure analysis)." class="w-full h-auto" loading="lazy">
       </div>
 
       <!-- Hero Card for Subcontractor Management -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm card-hover">
+      <div class="reveal-item bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm card-hover">
         <div class="max-w-3xl space-y-4">
           <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
             NXTREV supports customers in managing semiconductor-related subcontracting work through strong experience in assembly, test, manufacturing coordination, and supplier execution.
@@ -738,7 +744,7 @@
     <!-- CATEGORY 4: DIVERSIFIED SOURCING SOLUTIONS (NEW) -->
     <!-- ========================================================= -->
     <section id="sourcing-solutions" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+      <div class="reveal-item border-b border-slate-200 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
         <div>
           <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Supply Chain & Procurement</span>
           <h2 class="text-2xl font-bold text-slate-900">Sourcing Solutions</h2>
@@ -747,11 +753,11 @@
         <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">Agile Supply Chain</span>
       </div>
 
-      <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
+      <div class="reveal-item bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
         <img src="assets/diagrams/sourcing-flow.svg" alt="Concept flow diagram of the sourcing workflow: 1 Identify the exact part, spec, or equipment; 2 Source and negotiate with suppliers and overseas principals; 3 Quote and place the order; 4 Ship and clear PEZA or free-zone shipment coordinated with the customer's appointed freight forwarder and licensed customs broker; 5 Deliver on-site for qualification." class="w-full h-auto" loading="lazy">
       </div>
 
-      <div class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm card-hover space-y-6">
+      <div class="reveal-item bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm card-hover space-y-6">
         <div class="max-w-3xl space-y-3">
           <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
             <strong>NXTREV Technology Inc. is a diversified supply chain solutions partner.</strong> Built on the core principle of versatility, we specialize in sourcing and delivering a comprehensive range of products and services tailored to meet any operational requirement regardless of scale or complexity.
@@ -794,17 +800,17 @@
     <!-- CATEGORY 5: AUTOMATED OPTICAL INSPECTION (AOI) -->
     <!-- ========================================================= -->
     <section id="optical-inspection" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3">
+      <div class="reveal-item border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Quality Assurance & Metrology</span>
         <h2 class="text-2xl font-bold text-slate-900">Automated Optical Inspection (AOI)</h2>
         <p class="text-xs text-slate-500 mt-0.5">High-speed strip-to-strip inspection, 3D lead coplanarity metrology, and thermal warpage analyzers.</p>
       </div>
 
-      <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
+      <div class="reveal-item bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-6">
         <img src="assets/diagrams/aoi-inspection-targets.svg" alt="Concept diagram of optical inspection targets on a packaged device: wire bond and epoxy defects, marking legibility, surface and edge damage, lead coplanarity, and a 3D warpage profile curve showing deformation versus temperature." class="w-full h-auto" loading="lazy">
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <!-- Solution 1 -->
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
@@ -870,13 +876,13 @@
     <!-- CATEGORY 6: RELIABILITY HARDWARE & BURN-IN BOARDS -->
     <!-- ========================================================= -->
     <section id="reliability-hardware" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3">
+      <div class="reveal-item border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Qualification & Environmental Stress</span>
         <h2 class="text-2xl font-bold text-slate-900">Reliability, Burn-In & Environmental Boards</h2>
         <p class="text-xs text-slate-500 mt-0.5">High-layer count test hardware designed for extreme thermal and electrical stress environments.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
@@ -939,13 +945,13 @@
     <!-- CATEGORY 7: BOARD-LEVEL DIAGNOSTICS & ASL1000 SUPPORT -->
     <!-- ========================================================= -->
     <section id="board-support" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3">
+      <div class="reveal-item border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Sustaining Engineering & Life Extension</span>
         <h2 class="text-2xl font-bold text-slate-900">Board-Level Diagnostics & ASL1000 Support</h2>
         <p class="text-xs text-slate-500 mt-0.5">Component-level diagnostics, calibration, and refurbishment for ASL1000 instrument boards.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
@@ -1008,13 +1014,13 @@
     <!-- CATEGORY 8: ESD PACKAGING & CLEANROOM CONSUMABLES -->
     <!-- ========================================================= -->
     <section id="esd-consumables" class="product-category space-y-6">
-      <div class="border-b border-slate-200 pb-3">
+      <div class="reveal-item border-b border-slate-200 pb-3">
         <span class="text-xs font-bold text-nxtrev uppercase tracking-wider block">Production Consumables & Spares</span>
         <h2 class="text-2xl font-bold text-slate-900">ESD Packaging & Cleanroom Consumables</h2>
         <p class="text-xs text-slate-500 mt-0.5">High-reliability consumables and precision contact spares for daily backend packaging lines.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-item grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm flex flex-col justify-between space-y-4 card-hover">
           <div class="space-y-2.5">
@@ -1074,7 +1080,7 @@
     </section>
 
     <!-- CALLOUT BANNER: PRINTABLE LINE CARD -->
-    <section class="bg-blue-50 border border-blue-200 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <section class="reveal-item bg-blue-50 border border-blue-200 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="space-y-1 text-center sm:text-left">
         <h3 class="text-lg font-bold text-slate-900">Need a printable overview for purchasing or engineering evaluation?</h3>
         <p class="text-xs sm:text-sm text-slate-600">Access our consolidated 2026 Equipment & Solutions Line Card matrix in a clean, print-ready layout.</p>
@@ -1250,27 +1256,16 @@
       });
     }
   </script>
-  <!-- Test-cell subsystem map reveal (progressive enhancement) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   <script>
-    (function(){
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || typeof anime === 'undefined' || !('IntersectionObserver' in window)) return; // leave boxes fully visible
-      var boxes = document.querySelectorAll('.tc-anim');
-      if (!boxes.length) return;
-      boxes.forEach(function(b){ b.style.opacity = 0; });
-      var grid = boxes[0].parentElement;
-      var played = false;
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting && !played) {
-            played = true; io.disconnect();
-            anime({ targets: '.tc-anim', opacity: [0,1], translateY: [24,0], duration: 620, delay: anime.stagger(160), easing: 'easeOutCubic' });
-          }
-        });
-      }, { threshold: 0.25 });
-      io.observe(grid);
-    })();
+    document.addEventListener('DOMContentLoaded', function(){
+      var reveals = document.querySelectorAll('.reveal-item');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-revealed'); obs.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        reveals.forEach(function(el){ obs.observe(el); });
+      } else { reveals.forEach(function(el){ el.classList.add('is-revealed'); }); }
+    });
   </script>
 </body>
 </html>

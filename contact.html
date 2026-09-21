@@ -74,6 +74,9 @@
         transform: none !important;
       }
     }
+    .reveal-item { opacity: 0; transform: translateY(16px); transition: opacity 500ms cubic-bezier(0.16,1,0.3,1), transform 500ms cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
+    .reveal-item.is-revealed { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; } }
   </style>
   <link rel="canonical" href="https://nxtrev.org/contact.html">
   <link rel="icon" type="image/svg+xml" href="assets/logos/nxtrev_icon_blue.svg">
@@ -256,7 +259,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
       <!-- RFQ FORM -->
-      <div class="lg:col-span-8 bg-white border border-slate-200 rounded-lg p-8 shadow-sm">
+      <div class="reveal-item lg:col-span-8 bg-white border border-slate-200 rounded-lg p-8 shadow-sm">
         <h2 class="text-xl font-bold text-slate-900 mb-2">B2B Specification & RFQ Intake</h2>
         <p class="text-sm text-slate-500 mb-6">Please provide your corporate contact details and device parameters.</p>
 
@@ -422,7 +425,7 @@
       <!-- DIRECT CONTACT CARDS & LOCATIONS -->
       <div class="lg:col-span-4 space-y-6">
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-4 text-sm card-hover">
+        <div class="reveal-item bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-4 text-sm card-hover">
           <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-2">Direct Inquiry Channels</h3>
           <div class="space-y-3">
             <div>
@@ -458,7 +461,7 @@
         </div>
 
         <!-- Location & Google Maps Card -->
-        <div class="bg-[#0b132b] text-white rounded-lg p-6 shadow-sm space-y-4 text-sm border border-slate-800 card-hover">
+        <div class="reveal-item bg-[#0b132b] text-white rounded-lg p-6 shadow-sm space-y-4 text-sm border border-slate-800 card-hover">
           <div class="flex items-center justify-between border-b border-slate-800 pb-3">
             <div>
               <h3 class="text-base font-bold text-white">Corporate Headquarters</h3>
@@ -787,5 +790,16 @@
     }
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var reveals = document.querySelectorAll('.reveal-item');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-revealed'); obs.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        reveals.forEach(function(el){ obs.observe(el); });
+      } else { reveals.forEach(function(el){ el.classList.add('is-revealed'); }); }
+    });
+  </script>
 </body>
 </html>
