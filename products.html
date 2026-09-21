@@ -259,9 +259,9 @@
   <section class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        
-        <!-- Dropdown Selector (Mobile & Small Desktop) -->
-        <div class="flex items-center space-x-3 w-full lg:w-auto">
+
+        <!-- Dropdown Selector (shown below xl) -->
+        <div class="flex xl:hidden items-center space-x-3 w-full lg:w-auto">
           <label for="categorySelect" class="text-sm font-bold uppercase tracking-wider text-slate-600 shrink-0">Browse:</label>
           <select id="categorySelect" onchange="selectCategory(this.value)" class="w-full sm:w-auto border border-slate-300 rounded-lg px-3.5 py-2 text-sm font-bold text-slate-800 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-nxtrev">
             <option value="all">✦ All Equipment & Capabilities (Full Portfolio)</option>
@@ -277,8 +277,8 @@
           </select>
         </div>
 
-        <!-- Quick Pills (all widths; horizontal scroll on small screens) -->
-        <div class="flex items-center space-x-1.5 text-sm overflow-x-auto pb-1 lg:pb-0 w-full lg:w-auto -mx-4 px-4 lg:mx-0 lg:px-0">
+        <!-- Quick Pills (shown xl+; full width so they fit without scrolling) -->
+        <div class="hidden xl:flex items-center xl:justify-end gap-1.5 text-sm">
           <button onclick="selectCategory('all')" class="cat-pill active px-3 py-1.5 rounded-md font-semibold transition bg-nxtrev text-white shadow-xs" data-cat="all">All</button>
           <button onclick="selectCategory('turnkey-solutions')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="turnkey-solutions">Turnkey Cells</button>
           <button onclick="selectCategory('ate-systems')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="ate-systems">AccoTEST ATE</button>
@@ -288,6 +288,7 @@
           <button onclick="selectCategory('optical-inspection')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="optical-inspection">AOI</button>
           <button onclick="selectCategory('reliability-hardware')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="reliability-hardware">Reliability</button>
           <button onclick="selectCategory('board-support')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="board-support">ASL1000</button>
+          <button onclick="selectCategory('esd-consumables')" class="cat-pill px-3 py-1.5 rounded-md font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200" data-cat="esd-consumables">Consumables</button>
         </div>
 
       </div>
@@ -1205,7 +1206,7 @@
 
     // Offset section tops so smooth-scroll clears the sticky header + filter bar.
     const jumpStyle = document.createElement('style');
-    jumpStyle.textContent = '.product-category{scroll-margin-top:150px;}';
+    jumpStyle.textContent = '.product-category{scroll-margin-top:150px;} .cat-pill{white-space:nowrap;flex:0 0 auto;}';
     document.head.appendChild(jumpStyle);
 
     // Auto-select based on hash on initial load
