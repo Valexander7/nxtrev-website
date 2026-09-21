@@ -632,12 +632,10 @@
         notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
 
-      // Trigger mailto handoff (may fail silently depending on client/browser mail handling)
-      try {
-        window.location.href = mailtoUrl;
-      } catch (e) {
-        console.warn('Mail handoff exception:', e);
-      }
+      // No auto mailto: handoff. Corporate/webmail visitors often have no local mail
+      // client, so an auto-fired mailto: pops a browser error or silently fails right
+      // as this notice appears. The visitor deliberately clicks "Open Email App",
+      // copies the details, or uses the direct email link instead.
     }
 
     function copyRfqToClipboard() {
