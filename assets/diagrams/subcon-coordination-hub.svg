@@ -4,18 +4,20 @@
   <text x="40" y="58" fill="#0f172a" font-size="19" font-weight="800">One coordinating point across the subcontracting chain</text>
   <text x="40" y="80" fill="#64748b" font-size="12.5">NXTREV sits between the customer, the factories, and the suppliers so accountability stays clear end to end.</text>
 
-  <!-- Connector lines (drawn first, under nodes) -->
-  <line x1="490" y1="240" x2="262" y2="165" stroke="#3058a6" stroke-width="2"/>
-  <line x1="490" y1="272" x2="262" y2="345" stroke="#3058a6" stroke-width="2"/>
-  <line x1="710" y1="240" x2="938" y2="165" stroke="#3058a6" stroke-width="2"/>
-  <line x1="710" y1="272" x2="938" y2="345" stroke="#3058a6" stroke-width="2"/>
+  <!-- Connectors (drawn behind nodes and label chips) -->
+  <g stroke="#93b4e6" stroke-width="2" fill="none" stroke-linecap="round">
+    <line x1="490" y1="256" x2="262" y2="164"/>
+    <line x1="490" y1="256" x2="262" y2="348"/>
+    <line x1="710" y1="256" x2="938" y2="164"/>
+    <line x1="710" y1="256" x2="938" y2="348"/>
+  </g>
 
-  <!-- Link labels -->
-  <g font-size="11" font-weight="600" fill="#475569">
-    <text x="300" y="188">spec alignment · OTIF</text>
-    <text x="296" y="330">scheduling · lot expediting</text>
-    <text x="800" y="182">engineering liaison</text>
-    <text x="800" y="296">yield · RCA · CI</text>
+  <!-- Connector label chips (white pill masks the line behind the text) -->
+  <g font-size="11" font-weight="600" fill="#475569" text-anchor="middle">
+    <g transform="translate(376,210)"><rect x="-80" y="-11" width="160" height="22" rx="11" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="0" y="4">spec alignment · OTIF</text></g>
+    <g transform="translate(376,302)"><rect x="-90" y="-11" width="180" height="22" rx="11" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="0" y="4">scheduling · lot expediting</text></g>
+    <g transform="translate(824,210)"><rect x="-68" y="-11" width="136" height="22" rx="11" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="0" y="4">engineering liaison</text></g>
+    <g transform="translate(824,302)"><rect x="-60" y="-11" width="120" height="22" rx="11" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/><text x="0" y="4">yield · RCA · CI</text></g>
   </g>
 
   <!-- Center hub -->
