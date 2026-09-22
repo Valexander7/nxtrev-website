@@ -382,13 +382,25 @@
             </div>
           </div>
 
+          <!-- Honeypot (spam protection; visitors never see it) -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <button type="submit" id="submitRfqBtn" class="w-full bg-nxtrev hover:bg-nxtrev-dark text-white font-bold py-3.5 rounded-lg transition duration-150 text-base shadow-md flex items-center justify-center space-x-2">
-            <span>Prepare RFQ Email</span>
+            <span>Submit RFQ</span>
             <span>→</span>
           </button>
         </form>
 
-        <!-- RFQ Email Preparation Notice & Recovery -->
+        <!-- RFQ Submitted Successfully -->
+        <div id="rfqSuccess" class="hidden mt-6 p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-slate-900 space-y-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-emerald-600 text-xl">✓</span>
+            <span class="font-bold text-lg">RFQ received — thank you.</span>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">Our applications engineering team will review your requirement and reply within 1–2 business days.</p>
+        </div>
+
+        <!-- RFQ Email Preparation Notice & Recovery (fallback if submission fails) -->
         <div id="confirmationNotice" class="hidden mt-6 p-5 rounded-xl bg-blue-50 border border-blue-200 text-slate-900 text-sm space-y-4">
           <div class="flex items-start space-x-3">
             <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">ℹ️</div>
@@ -567,6 +579,8 @@
   </footer>
 
   <script>
+    var WEB3FORMS_ACCESS_KEY = '66ab2b07-8d7e-4fae-b624-a1466b937641';
+
     function handleRFQSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('fullName').value.trim();
@@ -580,16 +594,7 @@
       const notesInput = document.getElementById('projectNotes').value.trim();
       const notes = notesInput || 'No specific parameters noted';
 
-      const rfqPayload = {
-        name,
-        company,
-        email,
-        phone,
-        model,
-        timeline,
-        notes,
-        submittedAt: new Date().toISOString()
-      };
+      const rfqPayload = { name, company, email, phone, model, timeline, notes, submittedAt: new Date().toISOString() };
 
       // Resilient local recording: never lose entered inquiry details
       try {
@@ -614,21 +619,59 @@
         `Expected Timeline: ${timeline}\n\n` +
         `Device Specs & Technical Notes:\n${notes}\n`;
 
-      const subject = encodeURIComponent(`Technical RFQ Inquiry - ${model} - ${company}`);
+      const btn = document.getElementById('submitRfqBtn');
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span>Sending…</span>';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Technical RFQ Inquiry - ${model} - ${company}`,
+          from_name: 'NXTREV Website RFQ',
+          replyto: email,
+          name, company, email, phone,
+          equipment: model,
+          timeline,
+          notes,
+          message: summaryText,
+          botcheck: ''
+        })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data && data.success) {
+          try { localStorage.removeItem('nxtrev_rfq_draft'); } catch (e) {}
+          showRfqSuccess();
+        } else {
+          fallbackToMailto(summaryText);
+        }
+      })
+      .catch(() => fallbackToMailto(summaryText))
+      .finally(() => { btn.disabled = false; btn.innerHTML = original; });
+    }
+
+    function showRfqSuccess() {
+      const form = document.getElementById('rfqForm');
+      const success = document.getElementById('rfqSuccess');
+      if (form) form.classList.add('hidden');
+      if (success) {
+        success.classList.remove('hidden');
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function fallbackToMailto(summaryText) {
+      // Submission failed (offline / blocked): fall back to the prepared-email path so the lead is never lost.
+      const subject = encodeURIComponent('Technical RFQ Inquiry');
       const body = encodeURIComponent(summaryText);
       const mailtoUrl = `mailto:sales@nxtrev.org?subject=${subject}&body=${body}`;
-
-      // Populate preview / recovery block
       const summaryBlock = document.getElementById('rfqSummaryBlock');
-      if (summaryBlock) {
-        summaryBlock.textContent = summaryText;
-      }
-
+      if (summaryBlock) summaryBlock.textContent = summaryText;
       const openMailClientBtn = document.getElementById('openMailClientBtn');
-      if (openMailClientBtn) {
-        openMailClientBtn.href = mailtoUrl;
-      }
-
+      if (openMailClientBtn) openMailClientBtn.href = mailtoUrl;
       const notice = document.getElementById('confirmationNotice');
       if (notice) {
         notice.classList.remove('hidden');
@@ -637,11 +680,6 @@
         notice.classList.add('animate-slide-down');
         notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-
-      // No auto mailto: handoff. Corporate/webmail visitors often have no local mail
-      // client, so an auto-fired mailto: pops a browser error or silently fails right
-      // as this notice appears. The visitor deliberately clicks "Open Email App",
-      // copies the details, or uses the direct email link instead.
     }
 
     function copyRfqToClipboard() {
