@@ -1,0 +1,13 @@
+# GitHub Pages build settings. Keep internal notes, tooling and unused source
+# files in the repo but off the public site.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - DESIGN.md
+  - LOG.md
+  - todo.md
+  - tools
+  - assets/team
+  - "assets/logos/*.ai"
+  - "assets/logos/*.pdf"
+  - "*.DS_Store"
