@@ -113,6 +113,39 @@
       will-change: transform;
     }
 
+    /* Pinned scroll-scrubbed "How we work" stepper — desktop + motion only.
+       JS adds .is-scrubbing to the section. Without it (mobile, reduced-motion,
+       or no JS) the section stays a normal static grid. --q drives the spine,
+       --s each step's reveal. Progressive enhancement, no library. */
+    .hww-spine { display: none; }
+    .hww-hint { display: none; }
+    @media (min-width: 768px) {
+      .hww-pin.is-scrubbing { height: 220vh; position: relative; }
+      .hww-pin.is-scrubbing .hww-sticky {
+        position: sticky; top: 0; height: 100vh;
+        display: flex; align-items: center;
+      }
+      .hww-pin.is-scrubbing .hww-spine {
+        display: block; position: relative; height: 2px;
+        background: #e2e8f0; border-radius: 9999px; margin-bottom: 2.5rem;
+      }
+      .hww-pin.is-scrubbing .hww-spine-fill {
+        position: absolute; inset: 0; background: #3058a6; border-radius: 9999px;
+        transform-origin: left center; transform: scaleX(var(--q, 0));
+        will-change: transform;
+      }
+      .hww-pin.is-scrubbing .hww-step {
+        opacity: var(--s, 0);
+        transform: translateY(calc((1 - var(--s, 0)) * 28px));
+        will-change: opacity, transform;
+      }
+      .hww-pin.is-scrubbing .hww-hint {
+        display: flex; align-items: center; gap: .4rem; margin-top: 2rem;
+        font-size: .8125rem; font-weight: 700; letter-spacing: .05em;
+        text-transform: uppercase; color: #94a3b8;
+      }
+    }
+
     /* Accessibility: Strict prefers-reduced-motion support */
     @media (prefers-reduced-motion: reduce) {
       .reveal-item,
@@ -476,31 +509,35 @@
   </section>
 
   <!-- HOW WE WORK -->
-  <section class="bg-white border-b border-slate-200 py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-10">
-        <h2 class="text-xs uppercase font-bold tracking-widest text-nxtrev mb-2">How we work</h2>
-        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Fit, then integrate, then stay</p>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">The three disciplines behind every engagement below.</p>
+  <section class="bg-white border-b border-slate-200 hww-pin">
+    <div class="hww-sticky">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 w-full">
+        <div class="max-w-3xl mb-10">
+          <h2 class="text-xs uppercase font-bold tracking-widest text-nxtrev mb-2">How we work</h2>
+          <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Fit, then integrate, then stay</p>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">The three disciplines behind every engagement below.</p>
+        </div>
+        <div class="hww-spine" aria-hidden="true"><div class="hww-spine-fill"></div></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="hww-step border border-slate-200 rounded-lg p-6 bg-slate-50">
+            <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">01 · FIT</div>
+            <h3 class="font-bold text-slate-900 mb-2">Qualify before you quote</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">We check the requirement against the application and reject poor fit early, so you buy what actually works on your line.</p>
+          </div>
+          <div class="hww-step border border-slate-200 rounded-lg p-6 bg-slate-50">
+            <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">02 · INTEGRATE</div>
+            <h3 class="font-bold text-slate-900 mb-2">Dock, commission, buy off</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance — no multi-vendor finger-pointing.</p>
+          </div>
+          <div class="hww-step border border-slate-200 rounded-lg p-6 bg-slate-50">
+            <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">03 · SUPPORT</div>
+            <h3 class="font-bold text-slate-900 mb-2">Local follow-through</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Local spares, on-site response, and continuous improvement after handover — the part most suppliers disappear on.</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-8">Serving PEZA corridors: Laguna, Cavite, Batangas, Clark, Baguio.</p>
+        <div class="hww-hint" aria-hidden="true">Scroll to walk the process <span>↓</span></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">01 · FIT</div>
-          <h3 class="font-bold text-slate-900 mb-2">Qualify before you quote</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">We check the requirement against the application and reject poor fit early, so you buy what actually works on your line.</p>
-        </div>
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">02 · INTEGRATE</div>
-          <h3 class="font-bold text-slate-900 mb-2">Dock, commission, buy off</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance — no multi-vendor finger-pointing.</p>
-        </div>
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">03 · SUPPORT</div>
-          <h3 class="font-bold text-slate-900 mb-2">Local follow-through</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Local spares, on-site response, and continuous improvement after handover — the part most suppliers disappear on.</p>
-        </div>
-      </div>
-      <p class="text-xs text-slate-500 mt-8">Serving PEZA corridors: Laguna, Cavite, Batangas, Clark, Baguio.</p>
     </div>
   </section>
 
@@ -1278,6 +1315,49 @@
       enable();
       if (mq.addEventListener) {
         mq.addEventListener('change', function () { mq.matches ? disable() : enable(); });
+      }
+    })();
+
+    // Pinned scroll-scrubbed "How we work" stepper (desktop + motion only)
+    (function () {
+      const sec = document.querySelector('.hww-pin');
+      if (!sec) return;
+      const steps = Array.prototype.slice.call(sec.querySelectorAll('.hww-step'));
+      const mqPin = window.matchMedia('(min-width: 768px)');
+      const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let ticking = false;
+      function clamp(v) { return v < 0 ? 0 : (v > 1 ? 1 : v); }
+      function setProgress() {
+        const rect = sec.getBoundingClientRect();
+        const vh = window.innerHeight || 1;
+        const range = (sec.offsetHeight - vh) || 1;
+        const q = clamp((-rect.top) / range);
+        sec.style.setProperty('--q', q.toFixed(4));
+        for (let i = 0; i < steps.length; i++) {
+          const start = i * 0.30, dur = 0.30;
+          steps[i].style.setProperty('--s', clamp((q - start) / dur).toFixed(3));
+        }
+        ticking = false;
+      }
+      function onScroll() { if (ticking) return; ticking = true; requestAnimationFrame(setProgress); }
+      function detach() {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        sec.classList.remove('is-scrubbing');
+        sec.style.removeProperty('--q');
+        steps.forEach(function (st) { st.style.removeProperty('--s'); });
+      }
+      function enable() {
+        if (!(mqPin.matches && !mqReduce.matches)) { detach(); return; }
+        sec.classList.add('is-scrubbing');
+        setProgress();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+      }
+      enable();
+      if (mqPin.addEventListener) {
+        mqPin.addEventListener('change', enable);
+        mqReduce.addEventListener('change', enable);
       }
     })();
 
