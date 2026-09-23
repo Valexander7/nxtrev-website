@@ -1,0 +1,96 @@
+/* NXTREV motion layer. Plain CSS, no library.
+   Every effect is progressive: the page reads fully with JS off or with
+   prefers-reduced-motion, and motion.js only adds classes / custom props. */
+
+/* ---------- Cross-page transitions (Chrome, Edge, Safari 18.2+) ---------- */
+@view-transition { navigation: auto; }
+header.sticky { view-transition-name: site-header; }
+::view-transition-old(root) { animation: vt-out 260ms cubic-bezier(.4, 0, 1, 1) both; }
+::view-transition-new(root) { animation: vt-in 460ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes vt-out { to { opacity: 0; transform: scale(.985); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(14px); } }
+
+/* ---------- Hero headline: lines rise out of a mask ---------- */
+.hl-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.hl-inner { display: inline-block; }
+.js-motion .hl-inner {
+  transform: translateY(108%);
+  filter: blur(6px);
+  animation: hl-rise 1100ms cubic-bezier(.16, 1, .3, 1) forwards;
+}
+.js-motion .hl-line:nth-child(2) .hl-inner { animation-delay: 140ms; }
+@keyframes hl-rise { to { transform: none; filter: none; } }
+
+/* ---------- Product tile tilt (hero card) ---------- */
+.tilt { transform-style: preserve-3d; transition: transform 500ms cubic-bezier(.16, 1, .3, 1); position: relative; }
+.tilt.is-tilting { transition: transform 80ms linear; }
+.tilt img { transform: translateZ(28px); }
+.tilt::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.55), transparent 45%);
+  opacity: 0; transition: opacity 300ms ease;
+}
+.tilt.is-tilting::after { opacity: 1; }
+
+/* ---------- Statement: words light up as you read down ---------- */
+.stmt .w { transition: color 180ms linear; }
+.js-motion .stmt .w { color: #94a3b8; }
+.js-motion .stmt .w.lit { color: #0f172a; }
+.js-motion .stmt .w.lit.accent { color: #3058a6; }
+
+/* ---------- Stats ---------- */
+.stat-num { font-variant-numeric: tabular-nums; }
+.stats-armed .stat { opacity: 0; transform: translateY(24px); transition: opacity 700ms cubic-bezier(.16, 1, .3, 1), transform 700ms cubic-bezier(.16, 1, .3, 1); }
+.stats-armed .stat.in { opacity: 1; transform: none; }
+.stats-armed .stat:nth-child(2) { transition-delay: 90ms; }
+.stats-armed .stat:nth-child(3) { transition-delay: 180ms; }
+.stats-armed .stat:nth-child(4) { transition-delay: 270ms; }
+
+/* ---------- Scroll-scrubbed rise for key images ---------- */
+.js-motion .scrub-rise {
+  transform: translateY(calc((1 - var(--r, 1)) * 48px)) scale(calc(.9 + var(--r, 1) * .1));
+  opacity: calc(.25 + var(--r, 1) * .75);
+  will-change: transform, opacity;
+}
+
+/* ---------- AccoTEST product theater (desktop, pinned) ---------- */
+.ate-rail, .ate-img-stack { display: none; }
+/* overflow:hidden would break position:sticky; clip keeps the glow contained without that. */
+.ate-section { overflow: clip; }
+@media (min-width: 1024px) {
+  .ate-pin.is-theater { height: 330vh; position: relative; }
+  .ate-pin.is-theater .ate-sticky {
+    position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 5rem; /* clear the sticky site header */
+  }
+  .ate-pin.is-theater .ate-stage-card { transform: none !important; }
+  .ate-pin.is-theater .ate-img-stack { display: block; position: relative; width: 100%; height: 300px; }
+  .ate-pin.is-theater .ate-img-stack img {
+    position: absolute; inset: 0; margin: auto; max-height: 300px; width: auto; max-width: 100%;
+    will-change: transform, opacity, filter;
+  }
+  .ate-pin.is-theater #ate-display-image { display: none; }
+  .ate-pin.is-theater .ate-rail {
+    display: block; position: relative; height: 2px; width: 100%; max-width: 28rem;
+    margin: -1.5rem auto 2rem; background: rgba(148, 163, 184, .25); border-radius: 9999px;
+  }
+  .ate-pin.is-theater .ate-rail-fill {
+    position: absolute; inset: 0; background: #3058a6; border-radius: 9999px;
+    transform-origin: left center; transform: scaleX(var(--q, 0));
+  }
+  .ate-copy.swap { animation: copy-in 600ms cubic-bezier(.16, 1, .3, 1); }
+}
+@keyframes copy-in { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } }
+
+/* ---------- Reduced motion: everything static ---------- */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  .js-motion .hl-inner { animation: none; transform: none; filter: none; }
+  .js-motion .stmt .w { color: inherit; }
+  .stats-armed .stat { opacity: 1; transform: none; transition: none; }
+  .js-motion .scrub-rise { transform: none; opacity: 1; }
+  .tilt, .tilt img { transform: none !important; }
+  .tilt::after { display: none; }
+  .ate-copy.swap { animation: none; }
+}
