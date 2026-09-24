@@ -78,39 +78,6 @@
     });
   }
 
-  // ---- Scroll-scrubbed rise for key images ----
-  function scrubRise() {
-    var els = Array.prototype.slice.call(document.querySelectorAll('.scrub-rise'));
-    if (!els.length) return;
-    tasks.push(function () {
-      var vh = window.innerHeight;
-      for (var i = 0; i < els.length; i++) {
-        var r = els[i].getBoundingClientRect();
-        if (r.top > vh || r.bottom < 0) continue;
-        els[i].style.setProperty('--r', reduce.matches ? 1 : clamp((vh - r.top) / (vh * 0.55)).toFixed(3));
-      }
-    });
-  }
-
-  // ---- Tilt the hero product tile toward the pointer ----
-  function tilt() {
-    var el = document.querySelector('.tilt');
-    if (!el || !window.matchMedia('(hover: hover)').matches) return;
-    el.addEventListener('pointermove', function (e) {
-      if (reduce.matches) return;
-      var r = el.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-      el.classList.add('is-tilting');
-      el.style.transform = 'perspective(700px) rotateX(' + ((0.5 - y) * 12).toFixed(2) + 'deg) rotateY(' + ((x - 0.5) * 16).toFixed(2) + 'deg)';
-      el.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
-      el.style.setProperty('--my', (y * 100).toFixed(1) + '%');
-    });
-    el.addEventListener('pointerleave', function () {
-      el.classList.remove('is-tilting');
-      el.style.transform = '';
-    });
-  }
-
   // ---- AccoTEST theater: pinned stage, scroll moves through the three platforms ----
   function theater() {
     var pin = document.querySelector('.ate-pin');
@@ -175,7 +142,7 @@
   }
 
   function init() {
-    statement(); stats(); scrubRise(); tilt(); theater();
+    statement(); stats(); theater();
     request();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
