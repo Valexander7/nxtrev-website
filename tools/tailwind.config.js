@@ -1,7 +1,7 @@
 // Tailwind build config. Mirrors the theme that used to live inline in each page.
 // Rebuild after changing any classes: ./tools/build-css.sh
 module.exports = {
-  content: ['./*.html', './about-us/**/*.html', './products/**/*.html', './accotest/**/*.html', './assets/js/*.js', './tools/partials/*.html'],
+  content: ['./*.html', './about-us/**/*.html', './products/**/*.html', './accotest/**/*.html', './assets/js/*.js', './_includes/*.html'],
   theme: {
     extend: {
       fontSize: {

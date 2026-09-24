@@ -20,4 +20,4 @@ Pages load `assets/css/site.css`, compiled from the classes used in the HTML. Af
 Internal files (this file, LOG.md, todo.md, DESIGN.md, tools/, assets/team/) are kept off the public site by `_config.yml`. Add new internal files there too.
 
 ## Shared header and footer
-The header, footer and head assets are copied into every page from `tools/partials/`. Edit the partial, run `python3 tools/sync-chrome.py`, then `./tools/build-css.sh`, and commit the pages and `site.css` together. Product family pages live in `products/`; the old `products.html#anchor` links redirect to them. Image slots and rules are in `IMAGERY.md`.
+The header, footer and head assets are Jekyll includes in `_includes/`, built by GitHub Pages. Pages start with front matter (`root`, `section`); keep it. Edit an include, run `./tools/build-css.sh`, and preview with `./tools/preview.sh` (a plain static server shows raw `{% include %}` tags). Product family pages live in `products/`; the old `products.html#anchor` links redirect to them. Image slots and rules are in `IMAGERY.md`.

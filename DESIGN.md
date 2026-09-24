@@ -40,4 +40,13 @@ Density lives inside components; air lives between them. Whitespace comes from s
 * **Icons:** SVG only, never emoji.
 * **Motion:** one easing, `cubic-bezier(0.16, 1, 0.3, 1)`; fade and rise of 16px or less, 500ms or less, once per element; one hero entrance per page; at most one pinned scroll sequence per page (the AccoTEST stage). Everything is off under `prefers-reduced-motion`.
 * **Buttons:** pill-shaped `.btn-primary` for the single main action, `.btn-secondary` or a text link for the rest.
-* **Shared header and footer** live in `tools/partials/`. Edit them there, run `python3 tools/sync-chrome.py`, then `./tools/build-css.sh`.
+* **Shared header and footer** are Jekyll includes in `_includes/` (GitHub Pages builds them). Each page sets `root` and `section` in its front matter. Preview with `./tools/preview.sh`.
+* **Dial:** ENERGY 2 / RHYTHM 2 / MOTION 2. Confident but calm; sections vary in composition around a steady grid; motion is a hero entrance, scroll reveals and the one pinned AccoTEST stage.
+
+### Why these choices (one line each)
+* **Eyebrow labels** (small uppercase, 0.14em tracking) are the site's one typographic motif: they name the section in the buyer's vocabulary before the heading makes the claim. Use one per section, never two.
+* **Arrows** appear only on text links that lead to another page or site, so a reader can tell "goes somewhere" from "does something". Buttons carry no arrows.
+* **Pill shape** is reserved for buttons and status tags; tabs, jump links and cards use 8–16px radii.
+* **How we work has three steps** because the method really has three stages (fit, integrate, support), not because of a template.
+* **Product tiles are identical** because the families are parallel choices for the buyer; the flagship is marked by position (first) and on the products index.
+* **Light theme only:** DESIGN.md defines a light palette for a B2B reference site that is printed and read in offices; dark navy is used as a stage colour, not a theme.

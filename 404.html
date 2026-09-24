@@ -1,3 +1,8 @@
+---
+root: "/"
+section: none
+permalink: /404.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,32 +33,17 @@
       }
     })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>body{font-family:'Plus Jakarta Sans',sans-serif}h1,.font-heading{font-family:'Montserrat',sans-serif}</style>
-  <link rel="stylesheet" href="/assets/css/site.css">
+  {% include head-assets.html %}
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
-  <!-- Top Bar -->
-  <header class="bg-nxtrev-navy border-b border-slate-800 py-4 px-6">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="/index.html" class="flex items-center space-x-2">
-        <span class="text-xl font-bold tracking-tight text-white">NXT<span class="text-nxtrev-light">REV</span></span>
-        <span class="text-xs text-slate-400 uppercase tracking-widest pl-2 border-l border-slate-700">Technology</span>
-      </a>
-      <a href="/contact.html" class="text-sm font-semibold bg-nxtrev hover:bg-nxtrev-dark text-white px-4 py-2 rounded-lg transition">
-        Request RFQ
-      </a>
-    </div>
-  </header>
+<body class="flex min-h-screen flex-col bg-white">
+  {% include header.html %}
 
   <!-- Main 404 Notice -->
-  <main class="max-w-2xl mx-auto px-6 py-16 text-center my-auto">
+  <main id="main" class="wrap section my-auto max-w-2xl text-center">
     <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-nxtrev-pale text-nxtrev font-bold text-xl mb-6">
       404
     </div>
-    <h1 class="text-3xl font-bold text-slate-900 mb-4">Page Not Found</h1>
+    <h1 class="h-section mb-4">Page Not Found</h1>
     <p class="text-slate-600 text-base mb-8 leading-relaxed">
       The link you followed may be outdated or moved during our recent website update. Please choose one of the direct destinations below:
     </p>
@@ -82,11 +72,8 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-6 px-6 text-center text-xs border-t border-slate-800">
-    <div class="max-w-6xl mx-auto">
-      © 2026 NXTREV Technology Inc. All rights reserved. • Alabang, Muntinlupa City, Philippines
-    </div>
-  </footer>
+  {% include footer.html %}
+
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

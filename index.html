@@ -1,3 +1,7 @@
+---
+root: ""
+section: home
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NXTREV Technology | Semiconductor Test Equipment, Philippines</title>
   <meta name="description" content="NXTREV Technology Inc. is a Philippine technology representative and solutions partner helping semiconductor manufacturers evaluate, acquire, and support specialized production technologies, turnkey test cells, and factory operations.">
-  <!-- chrome:head-assets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/logos/nxtrev_icon_blue.svg">
-  <link rel="apple-touch-icon" href="assets/logos/nxtrev_logo_iconmark_blue.png">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="stylesheet" href="assets/css/motion.css">
-  <script>document.documentElement.classList.add('js-motion')</script>
-  <!-- /chrome:head-assets -->
+  {% include head-assets.html %}
   <link rel="canonical" href="https://nxtrev.org/">
   <link rel="preload" as="image" href="assets/imagery/env-hero.webp" imagesrcset="assets/imagery/env-hero-960.webp 960w, assets/imagery/env-hero.webp 1672w" imagesizes="100vw">
 
@@ -26,7 +21,7 @@
   <meta property="og:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="NXTREV Technology Inc. — Global technology. Local follow-through.">
+  <meta property="og:image:alt" content="NXTREV Technology Inc.: Global technology. Local follow-through.">
   <meta property="og:site_name" content="NXTREV Technology Inc.">
 
   <!-- Twitter Card -->
@@ -80,79 +75,7 @@
 </head>
 <body class="flex min-h-screen flex-col bg-white">
 
-  <!-- chrome:header -->
-  <a href="#main" class="skip-link">Skip to content</a>
-  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-md">
-    <div class="wrap flex h-16 items-center justify-between gap-6">
-      <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="NXTREV Technology Inc. home">
-        <img src="assets/logos/nxtrev_icon_blue.svg" width="42" height="68" alt="" class="h-8 w-auto">
-        <img src="assets/logos/nxtrev_wordmark_blue.svg" width="76" height="20" alt="" class="h-[18px] w-auto">
-      </a>
-
-      <nav class="hidden items-center gap-8 lg:flex" aria-label="Main">
-        <div class="relative">
-          <button id="productsMenuBtn" type="button" class="nav-link flex items-center gap-1.5" aria-expanded="false" aria-controls="productsMenu">
-            Products
-            <svg class="h-3.5 w-3.5 text-slate-400" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div id="productsMenu" hidden class="absolute left-1/2 top-full w-[40rem] -translate-x-1/2 pt-3">
-            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl">
-              <ul class="grid grid-cols-2 gap-x-8 gap-y-1">
-                <li><a href="products/test-cells.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Turnkey Integrated Test Cells</span><span class="block text-xs text-slate-500">Tester, handler, docking, commissioned on-site.</span></a></li>
-                <li><a href="products/accotest.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">AccoTEST Semiconductor ATE</span><span class="block text-xs text-slate-500">SoC, PMIC and power-discrete test platforms.</span></a></li>
-                <li><a href="products/handling.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Handling &amp; Packaging Automation</span><span class="block text-xs text-slate-500">Turret, strip, gravity-feed and KGD handlers.</span></a></li>
-                <li><a href="products/inspection.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Automated Optical Inspection</span><span class="block text-xs text-slate-500">Strip AOI, coplanarity and 3D warpage.</span></a></li>
-                <li><a href="products/reliability.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Reliability &amp; Burn-In Boards</span><span class="block text-xs text-slate-500">HAST/HTOL, ESD, thermal cycling, programming.</span></a></li>
-                <li><a href="products/board-support.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Board Diagnostics &amp; ASL1000</span><span class="block text-xs text-slate-500">Conversions, repair, pre-owned spares.</span></a></li>
-                <li><a href="products/consumables.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">ESD Packaging &amp; Consumables</span><span class="block text-xs text-slate-500">Carrier tape, contact spares, static control.</span></a></li>
-                <li><a href="products/operations.html" class="block rounded-lg p-2.5 hover:bg-slate-50"><span class="block text-sm font-semibold text-slate-900">Operations &amp; Sourcing</span><span class="block text-xs text-slate-500">Subcontractor management and supply chain.</span></a></li>
-              </ul>
-              <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-sm">
-                <a href="products.html" class="link-more">All products <span aria-hidden="true">&rarr;</span></a>
-                <a href="linecard.html" class="font-medium text-slate-600 hover:text-slate-900">Printable line card</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="linecard.html" class="nav-link">Line Card</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="contact.html" class="btn-primary hidden !px-5 !py-2 sm:inline-flex">Request a quote</a>
-        <button id="mobileMenuBtn" type="button" class="rounded-full p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg id="menuIconOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg id="menuIconClose" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobileMenu" hidden class="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden">
-      <nav class="wrap space-y-6 py-6" aria-label="Mobile">
-        <div>
-          <a href="products.html" class="eyebrow">Products</a>
-          <ul class="mt-3 space-y-1">
-            <li><a href="products/test-cells.html" class="block py-2 text-base font-medium text-slate-900">Turnkey Integrated Test Cells</a></li>
-            <li><a href="products/accotest.html" class="block py-2 text-base font-medium text-slate-900">AccoTEST Semiconductor ATE</a></li>
-            <li><a href="products/handling.html" class="block py-2 text-base font-medium text-slate-900">Handling &amp; Packaging Automation</a></li>
-            <li><a href="products/inspection.html" class="block py-2 text-base font-medium text-slate-900">Automated Optical Inspection</a></li>
-            <li><a href="products/reliability.html" class="block py-2 text-base font-medium text-slate-900">Reliability &amp; Burn-In Boards</a></li>
-            <li><a href="products/board-support.html" class="block py-2 text-base font-medium text-slate-900">Board Diagnostics &amp; ASL1000</a></li>
-            <li><a href="products/consumables.html" class="block py-2 text-base font-medium text-slate-900">ESD Packaging &amp; Consumables</a></li>
-            <li><a href="products/operations.html" class="block py-2 text-base font-medium text-slate-900">Operations &amp; Sourcing</a></li>
-          </ul>
-        </div>
-        <ul class="space-y-1 border-t border-slate-200 pt-6">
-          <li><a href="linecard.html" class="block py-2 text-base font-medium text-slate-900">Line Card</a></li>
-          <li><a href="about.html" class="block py-2 text-base font-medium text-slate-900">About &amp; Team</a></li>
-          <li><a href="contact.html" class="block py-2 text-base font-medium text-slate-900">Contact</a></li>
-        </ul>
-        <a href="contact.html" class="btn-primary w-full">Request a quote</a>
-      </nav>
-    </div>
-  </header>
-  <!-- /chrome:header -->
+  {% include header.html %}
 
   <main id="main">
 
@@ -167,11 +90,11 @@
         <span class="hl-line"><span class="hl-inner text-blue-300">Local follow-through.</span></span>
       </h1>
       <p class="lead prose-w mt-6 !text-slate-300 hero-in hero-in-d1">
-        We help Philippine semiconductor and electronics manufacturers evaluate, acquire, and support specialized production technologies, turnkey test cells, and factory operations—from initial specification through on-site qualification and continuous line support.
+        We help Philippine semiconductor and electronics manufacturers evaluate, acquire, and support specialized production technologies, turnkey test cells, and factory operations, from initial specification through on-site qualification and continuous line support.
       </p>
       <div class="mt-10 flex flex-wrap items-center gap-3 hero-in hero-in-d2">
         <a href="contact.html" class="btn-primary">Request a Quote / Discuss Requirement</a>
-        <a href="products.html" class="btn-ghost-dark">Explore Equipment Catalog</a>
+        <a href="products.html" class="btn-ghost-dark">View Equipment Catalog</a>
         <a href="linecard.html" class="px-3 py-3 text-sm font-semibold text-slate-300 underline-offset-4 hover:text-white hover:underline">View / Print Line Card</a>
       </div>
     </div>
@@ -199,8 +122,8 @@
       </p>
       <dl class="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-slate-200 pt-12 md:mt-20 lg:grid-cols-4">
         <div class="stat flex flex-col-reverse justify-end">
-          <dt class="mt-2 text-sm text-slate-600">AccoTEST testers delivered worldwide</dt>
-          <dd class="font-heading text-h2 font-extrabold text-slate-900 md:text-display"><span class="stat-num" data-count="9000" data-suffix="+">9,000+</span></dd>
+          <dt class="mt-2 text-sm text-slate-600">AccoTEST testers delivered worldwide, as of October 2026</dt>
+          <dd class="font-heading text-h2 font-extrabold text-slate-900 md:text-display"><span class="stat-num" data-count="10000">10,000</span></dd>
         </div>
         <div class="stat flex flex-col-reverse justify-end">
           <dt class="mt-2 text-sm text-slate-600">AccoTEST platform families we represent in the Philippines</dt>
@@ -241,7 +164,7 @@
           <a href="products/accotest.html" class="group block">
             <div class="frame flex aspect-[4/3] items-center justify-center !bg-white p-6 ring-1 ring-inset ring-slate-200"><img src="assets/products/STS8600.webp" width="800" height="615" alt="AccoTEST STS8600 SoC test platform" loading="lazy" class="!static !h-auto max-h-full !w-auto max-w-full !object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"></div>
             <h3 class="h-card mt-5 group-hover:text-nxtrev">AccoTEST ATE Systems</h3>
-            <p class="mt-1.5 text-sm text-slate-600">SoC, PMIC, and power-discrete test platforms — authorized Philippine sales representative.</p>
+            <p class="mt-1.5 text-sm text-slate-600">SoC, PMIC, and power-discrete test platforms, from their authorized Philippine sales representative.</p>
           </a>
         </li>
         <li class="reveal-item reveal-d2">
@@ -297,17 +220,17 @@
         <p class="eyebrow !text-blue-300">Authorized Sales Representative • Philippines</p>
         <h2 id="ate-heading" class="h-section mt-3 !text-white">Precision Semiconductor ATE.</h2>
         <p class="lead mt-5 !text-slate-300">
-          Production-proven Automatic Test Equipment from Beijing Huafeng Test &amp; Control Technology Co., Ltd. (STAR: 688200), with more than 9,000 testers delivered worldwide to tier-1 semiconductor IDMs and OSATs.
+          Production-proven Automatic Test Equipment from Beijing Huafeng Test &amp; Control Technology Co., Ltd. (STAR: 688200), with 10,000 testers delivered worldwide to tier-1 semiconductor IDMs and OSATs as of October 2026.
         </p>
         <p class="mt-3 text-sm text-slate-400">Scroll or pick a platform below to inspect architecture, throughput, and target device applications.</p>
       </div>
 
       <div class="ate-pin mt-12"><div class="ate-sticky">
         <div class="mb-10 flex justify-center">
-          <div class="inline-flex max-w-full gap-1 overflow-x-auto rounded-full bg-white/10 p-1" role="group" aria-label="AccoTEST platforms">
-            <button id="tab-sts8600" type="button" onclick="switchAtePlatform('sts8600')" aria-pressed="true" class="ate-tab-btn shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition-colors sm:px-5">STS8600 <span class="hidden font-normal opacity-70 sm:inline">SoC Flagship</span></button>
-            <button id="tab-sts8300" type="button" onclick="switchAtePlatform('sts8300')" aria-pressed="false" class="ate-tab-btn shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white sm:px-5">STS8300 <span class="hidden font-normal opacity-70 sm:inline">PMIC &amp; Mixed-Signal</span></button>
-            <button id="tab-sts8200" type="button" onclick="switchAtePlatform('sts8200')" aria-pressed="false" class="ate-tab-btn shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white sm:px-5">STS8200 CROSS <span class="hidden font-normal opacity-70 sm:inline">Power &amp; GaN/SiC</span></button>
+          <div class="inline-flex max-w-full gap-1 overflow-x-auto rounded-xl bg-white/10 p-1" role="group" aria-label="AccoTEST platforms">
+            <button id="tab-sts8600" type="button" onclick="switchAtePlatform('sts8600')" aria-pressed="true" class="ate-tab-btn shrink-0 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition-colors sm:px-5">STS8600 <span class="hidden font-normal opacity-70 sm:inline">SoC Flagship</span></button>
+            <button id="tab-sts8300" type="button" onclick="switchAtePlatform('sts8300')" aria-pressed="false" class="ate-tab-btn shrink-0 rounded-lg px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white sm:px-5">STS8300 <span class="hidden font-normal opacity-70 sm:inline">PMIC &amp; Mixed-Signal</span></button>
+            <button id="tab-sts8200" type="button" onclick="switchAtePlatform('sts8200')" aria-pressed="false" class="ate-tab-btn shrink-0 rounded-lg px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white sm:px-5">STS8200<span class="hidden sm:inline"> CROSS</span> <span class="hidden font-normal opacity-70 sm:inline">Power &amp; GaN/SiC</span></button>
           </div>
         </div>
 
@@ -362,12 +285,12 @@
         <li class="reveal-item reveal-d1 border-t-2 border-nxtrev pt-6">
           <p class="text-sm font-bold tracking-wider text-nxtrev">02 · INTEGRATE</p>
           <h3 class="h-sub mt-3">Dock, commission, buy off</h3>
-          <p class="mt-3 text-sm text-slate-600">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance — no multi-vendor finger-pointing.</p>
+          <p class="mt-3 text-sm text-slate-600">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance. No multi-vendor finger-pointing.</p>
         </li>
         <li class="reveal-item reveal-d2 border-t-2 border-nxtrev pt-6">
           <p class="text-sm font-bold tracking-wider text-nxtrev">03 · SUPPORT</p>
           <h3 class="h-sub mt-3">Local follow-through</h3>
-          <p class="mt-3 text-sm text-slate-600">Local spares, on-site response, and continuous improvement after handover — the part most suppliers disappear on.</p>
+          <p class="mt-3 text-sm text-slate-600">Local spares, on-site response, and continuous improvement after handover: the part most suppliers disappear on.</p>
         </li>
       </ol>
       <p class="mt-10 text-xs text-slate-500">Serving PEZA corridors: Laguna, Cavite, Batangas, Clark, Baguio.</p>
@@ -397,16 +320,16 @@
       <div class="lg:col-span-4">
         <p class="eyebrow">Proof, not promises</p>
         <h2 id="proof" class="h-section mt-3">Follow-through, in practice</h2>
-        <p class="mt-5 text-sm text-slate-600">A running log of recent engagements across our test, handling, and sourcing work. Customer identities are withheld under NDA — we protect programs, not just parts.</p>
+        <p class="mt-5 text-sm text-slate-600">A running log of recent engagements across our test, handling, and sourcing work. Customer identities are withheld under NDA. We protect programs, not just parts.</p>
       </div>
       <ol class="divide-y divide-slate-200 border-y border-slate-200 lg:col-span-8">
         <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
           <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-500">Test &amp; Support</span></div>
-          <p class="text-sm text-slate-700 sm:col-span-3">Board repair, calibration, and device-loop testing kept running for a global semiconductor IDM's Philippine backend line — recurring, under a single technical owner.</p>
+          <p class="text-sm text-slate-700 sm:col-span-3">Board repair, calibration, and device-loop testing kept running for a global semiconductor IDM's Philippine backend line, recurring, under a single technical owner.</p>
         </li>
         <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
           <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-500">Integration</span></div>
-          <p class="text-sm text-slate-700 sm:col-span-3">An AccoTEST evaluation tester placed at a Philippine OSAT — principal coordination, PEZA free-zone shipment, and on-site setup.</p>
+          <p class="text-sm text-slate-700 sm:col-span-3">An AccoTEST evaluation tester placed at a Philippine OSAT: principal coordination, PEZA free-zone shipment, and on-site setup.</p>
         </li>
         <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
           <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-500">Sourcing</span></div>
@@ -414,7 +337,7 @@
         </li>
         <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
           <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q2</span><span class="block text-slate-500">Handling</span></div>
-          <p class="text-sm text-slate-700 sm:col-span-3">A pick-and-place nozzle program in qualification with a Philippine test house — sample, fit check, and cost model.</p>
+          <p class="text-sm text-slate-700 sm:col-span-3">A pick-and-place nozzle program in qualification with a Philippine test house: sample, fit check, and cost model.</p>
         </li>
       </ol>
     </div>
@@ -477,7 +400,7 @@
       <div class="frame aspect-[16/9] reveal-item">
         <picture>
           <source srcset="assets/imagery/nxtrev-hq.webp" type="image/webp">
-          <img src="assets/imagery/nxtrev-hq.jpg" width="1600" height="808" alt="NXTREV Technology Inc. corporate headquarters — a two-story building with a blue gate on Mayor J. Posadas Avenue, Posadas Village, Muntinlupa City" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+          <img src="assets/imagery/nxtrev-hq.jpg" width="1600" height="808" alt="NXTREV Technology Inc. corporate headquarters: a two-story building with a blue gate on Mayor J. Posadas Avenue, Posadas Village, Muntinlupa City" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
         </picture>
       </div>
       <div>
@@ -508,67 +431,7 @@
 
   </main>
 
-  <!-- chrome:footer -->
-  <footer class="mt-auto bg-slate-950 text-slate-400">
-    <div class="wrap grid gap-12 py-16 md:grid-cols-12">
-      <div class="space-y-5 md:col-span-4">
-        <a href="index.html" class="inline-flex items-center gap-2.5" aria-label="NXTREV Technology Inc. home">
-          <img src="assets/logos/nxtrev_icon_white.svg" width="42" height="68" alt="" class="h-8 w-auto">
-          <img src="assets/logos/nxtrev_wordmark_white.svg" width="76" height="20" alt="" class="h-[18px] w-auto">
-        </a>
-        <p class="text-sm text-slate-300">Global technology. Local follow-through.</p>
-        <p class="text-xs">Brand promise: clear commitments, followed through to completion.</p>
-        <div class="flex items-center gap-4">
-          <a href="https://www.linkedin.com/company/nxtrev/" target="_blank" rel="noopener noreferrer" class="text-slate-400 transition-colors hover:text-white" aria-label="NXTREV Technology Inc. on LinkedIn">
-            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/people/NXTREV-Technology-Inc/61559629637818/" target="_blank" rel="noopener noreferrer" class="text-slate-400 transition-colors hover:text-white" aria-label="NXTREV Technology Inc. on Facebook">
-            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <nav class="md:col-span-3" aria-label="Products">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">Products</h2>
-        <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="products/test-cells.html" class="hover:text-white">Turnkey Integrated Test Cells</a></li>
-          <li><a href="products/accotest.html" class="hover:text-white">AccoTEST Semiconductor ATE</a></li>
-          <li><a href="products/handling.html" class="hover:text-white">Handling &amp; Packaging Automation</a></li>
-          <li><a href="products/inspection.html" class="hover:text-white">Automated Optical Inspection</a></li>
-          <li><a href="products/reliability.html" class="hover:text-white">Reliability &amp; Burn-In Boards</a></li>
-          <li><a href="products/board-support.html" class="hover:text-white">Board Diagnostics &amp; ASL1000</a></li>
-          <li><a href="products/consumables.html" class="hover:text-white">ESD Packaging &amp; Consumables</a></li>
-          <li><a href="products/operations.html" class="hover:text-white">Operations &amp; Sourcing</a></li>
-        </ul>
-      </nav>
-
-      <nav class="md:col-span-2" aria-label="Company">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">Company</h2>
-        <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="about.html" class="hover:text-white">About &amp; Team</a></li>
-          <li><a href="products.html" class="hover:text-white">All Products</a></li>
-          <li><a href="linecard.html" class="hover:text-white">Line Card</a></li>
-          <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
-        </ul>
-      </nav>
-
-      <div class="md:col-span-3">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">Corporate Headquarters</h2>
-        <address class="mt-4 space-y-2.5 text-sm not-italic">
-          <p>107 Mayor J. Posadas Avenue, Posadas Village, Sucat, Muntinlupa City 1770, Metro Manila, Philippines</p>
-          <p>Mon–Fri: 9AM – 6PM</p>
-          <p><a href="mailto:sales@nxtrev.org" class="text-slate-200 hover:text-white">sales@nxtrev.org</a></p>
-          <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="hover:text-white">Get directions <span aria-hidden="true">&nearr;</span></a></p>
-        </address>
-      </div>
-    </div>
-    <div class="wrap space-y-2 border-t border-slate-800 py-8 text-xs">
-      <p>&copy; 2026 NXTREV Technology Inc. All rights reserved.</p>
-      <p>AccoTEST&reg; and associated product names and imagery are trademarks of Beijing Huafeng Test &amp; Control Technology Co., Ltd. NXTREV Technology Inc. is their authorized sales representative in the Philippines.</p>
-      <p>Factory and component photographs on this site are illustrative. AccoTEST product images are supplied by the principal.</p>
-    </div>
-  </footer>
-  <!-- /chrome:footer -->
+  {% include footer.html %}
 
   <!-- AccoTEST platform data and switcher (used by the stage above and motion.js) -->
   <script>

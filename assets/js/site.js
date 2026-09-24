@@ -5,12 +5,17 @@
   var btn = document.getElementById('mobileMenuBtn');
   var menu = document.getElementById('mobileMenu');
   if (btn && menu) {
+    function setMenu(open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.hidden = !open;
+      document.getElementById('menuIconOpen').classList.toggle('hidden', open);
+      document.getElementById('menuIconClose').classList.toggle('hidden', !open);
+    }
     btn.addEventListener('click', function () {
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      menu.hidden = open;
-      document.getElementById('menuIconOpen').classList.toggle('hidden', !open);
-      document.getElementById('menuIconClose').classList.toggle('hidden', open);
+      setMenu(btn.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setMenu(false); btn.focus(); }
     });
   }
 
