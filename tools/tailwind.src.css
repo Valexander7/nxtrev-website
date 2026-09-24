@@ -1,3 +1,93 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Shared rules for every page. The heading scale, spacing set and motion
+   limits come from DESIGN.md (Craft Layer); change them there first. */
+
+@layer base {
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+  body { @apply font-sans text-slate-800 antialiased; line-height: 1.6; }
+  h1, h2, h3, h4 { @apply font-heading; }
+  :focus-visible { outline: 2px solid #3058a6; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: #dbe4f5; }
+}
+
+@layer components {
+  /* Layout: one container width, three section paddings. */
+  .wrap { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-16 md:py-24; }
+  .section-lg { @apply py-24 md:py-32; }
+  .prose-w { max-width: 68ch; }
+
+  /* Type scale */
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.14em] text-nxtrev; }
+  .h-display { @apply font-heading font-extrabold text-display-sm md:text-display; }
+  .h-section { @apply font-heading font-extrabold text-h2-sm md:text-h2 text-slate-900; }
+  .h-sub { @apply font-heading font-bold text-xl md:text-h3 text-slate-900; }
+  .h-card { @apply font-heading font-bold text-lg text-slate-900; }
+  .lead { @apply text-lg text-slate-600; }
+
+  /* Buttons and links */
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200; }
+  .btn-primary { @apply btn bg-nxtrev text-white hover:bg-nxtrev-dark; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-slate-900 hover:border-slate-900; }
+  .btn-light { @apply btn bg-white text-slate-900 hover:bg-slate-100; }
+  .btn-ghost-dark { @apply btn border border-white/30 text-white hover:border-white; }
+  .link-more { @apply font-semibold text-nxtrev underline-offset-4 hover:underline; }
+  .link-more-dark { @apply font-semibold text-blue-300 underline-offset-4 hover:text-white hover:underline; }
+
+  /* Photo frames: fixed aspect ratio, so nothing shifts while images load. */
+  .frame { @apply relative overflow-hidden rounded-2xl bg-slate-200; }
+  .frame > img { @apply absolute inset-0 h-full w-full object-cover; }
+
+  /* Spec tables */
+  .spec-table { @apply w-full text-left text-sm; border-collapse: collapse; }
+  .spec-table tr { @apply border-t border-slate-200; }
+  .spec-table tr:last-child { @apply border-b; }
+  .spec-table th { @apply py-3 pr-6 align-top font-semibold text-slate-900; width: 38%; }
+  .spec-table td { @apply py-3 align-top text-slate-600; }
+  .spec-table-dark tr { @apply border-slate-700; }
+  .spec-table-dark th { @apply text-white; }
+  .spec-table-dark td { @apply text-slate-300; }
+
+  /* Collapsed detail */
+  .disclose { @apply border-t border-slate-200; }
+  .disclose:last-of-type { @apply border-b; }
+  .disclose > summary { @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-heading text-lg font-bold text-slate-900; }
+  .disclose > summary::-webkit-details-marker { display: none; }
+  .disclose > summary::after {
+    content: ""; flex: none; width: .65rem; height: .65rem; margin-right: .25rem;
+    border-right: 2px solid #64748b; border-bottom: 2px solid #64748b;
+    transform: rotate(45deg) translateY(-2px); transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .disclose[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+  .disclose > .disclose-body { @apply pb-6; }
+
+  /* Header */
+  .nav-link { @apply text-sm font-medium text-slate-600 transition-colors hover:text-slate-900; }
+  .nav-link[aria-current="page"] { @apply text-slate-900 font-semibold; }
+  .skip-link { @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:shadow-lg; }
+}
+
+/* Motion: fade and rise only, one easing, 500ms at most. */
+.js-motion .reveal-item { opacity: 0; transform: translateY(16px); transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1); }
+.js-motion .reveal-item.is-revealed { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 80ms; }
+.reveal-d2 { transition-delay: 160ms; }
+.reveal-d3 { transition-delay: 240ms; }
+.js-motion .hero-in { animation: hero-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-in-d1 { animation-delay: 80ms; }
+.hero-in-d2 { animation-delay: 160ms; }
+@keyframes hero-in { from { opacity: 0; transform: translateY(16px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .reveal-item, .js-motion .reveal-item.is-revealed { opacity: 1; transform: none; transition: none; }
+  .js-motion .hero-in { animation: none; }
+  .disclose > summary::after { transition: none; }
+}
+
+/* Contact page: the inquiry notice slides in after a failed send. */
+.animate-slide-down { animation: slide-down 250ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes slide-down { from { opacity: 0; transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .animate-slide-down { animation: none; } }

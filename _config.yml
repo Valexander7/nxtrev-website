@@ -7,6 +7,8 @@ exclude:
   - LOG.md
   - todo.md
   - tools
+  - IMAGERY.md
+  - anti-slop
   - assets/team
   - "assets/logos/*.ai"
   - "assets/logos/*.pdf"

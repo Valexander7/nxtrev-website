@@ -1,3 +1,7 @@
+---
+root: ""
+section: about
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,62 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Strategic Identity & Leadership Team | NXTREV Technology Inc.</title>
   <meta name="description" content="Purpose, Mission, Strategic Positioning, and Leadership Team of NXTREV Technology Inc. Global technology. Local follow-through.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html { font-size: 16px; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; line-height: 1.6; }
-    p, li, dd { font-size: 1rem; line-height: 1.6; }
-    h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
-
-    /* Enforce minimum readable font sizes: prevent tiny arbitrary text from dropping below 13px */
-    .text-\[9px\], .text-\[10px\], .text-\[11px\] {
-      font-size: 0.8125rem !important;
-      line-height: 1.25rem !important;
-    }
-
-    /* Tactile Elevation & Micro-interactions (Motion Dial 1-2) */
-    .card-hover {
-      transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-    }
-
-    /* Scroll Reveals */
-    .reveal-item {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-item.is-revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger Delays */
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
-    .delay-300 { transition-delay: 300ms; }
-    .delay-400 { transition-delay: 400ms; }
-
-    /* Accessibility: Strict prefers-reduced-motion support */
-    @media (prefers-reduced-motion: reduce) {
-      .reveal-item {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-        transition: none !important;
-      }
-      .card-hover:hover {
-        transform: none !important;
-      }
-    }
-  </style>
+  {% include head-assets.html %}
   <link rel="canonical" href="https://nxtrev.org/about.html">
-  <link rel="icon" type="image/svg+xml" href="assets/logos/nxtrev_icon_blue.svg">
-  <link rel="apple-touch-icon" href="assets/logos/nxtrev_logo_iconmark_blue.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -70,7 +20,7 @@
   <meta property="og:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="NXTREV Technology Inc. — Global technology. Local follow-through.">
+  <meta property="og:image:alt" content="NXTREV Technology Inc.: Global technology. Local follow-through.">
   <meta property="og:site_name" content="NXTREV Technology Inc.">
 
   <!-- Twitter Card -->
@@ -79,487 +29,197 @@
   <meta name="twitter:title" content="Strategic Identity & Leadership Team | NXTREV Technology Inc.">
   <meta name="twitter:description" content="Purpose, Mission, Strategic Positioning, and Leadership Team of NXTREV Technology Inc. Global technology. Local follow-through.">
   <meta name="twitter:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="stylesheet" href="assets/css/motion.css">
-  <script>document.documentElement.classList.add('js-motion')</script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="flex min-h-screen flex-col bg-white">
 
-  <!-- TOP BAR -->
-  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center space-x-1 group" title="Get Directions to Corporate Headquarters on Google Maps">
-        <span>📍 Corporate Headquarters: Posadas Village, Muntinlupa City<span class="hidden xl:inline">, Metro Manila, Philippines</span></span>
-        <span class="text-[11px] text-slate-500 group-hover:text-slate-300">↗</span>
-      </a>
-      <div class="flex items-center space-x-4 text-xs">
-        <a href="mailto:sales@nxtrev.org" class="hover:text-white transition whitespace-nowrap">✉️ sales@nxtrev.org</a>
-        <span class="text-slate-700 hidden sm:inline">|</span>
-        <div class="flex items-center space-x-3">
-          <a href="https://www.linkedin.com/company/nxtrev/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center space-x-1 group" title="NXTREV Technology Inc. on LinkedIn" aria-label="LinkedIn">
-            <svg class="w-3.5 h-3.5 fill-current text-slate-400 group-hover:text-blue-400 transition" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            <span class="hidden sm:inline text-[11px]">LinkedIn</span>
-          </a>
-          <a href="https://www.facebook.com/people/NXTREV-Technology-Inc/61559629637818/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center space-x-1 group" title="NXTREV Technology Inc. on Facebook" aria-label="Facebook">
-            <svg class="w-3.5 h-3.5 fill-current text-slate-400 group-hover:text-blue-400 transition" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-            <span class="hidden sm:inline text-[11px]">Facebook</span>
-          </a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center space-x-1 group" title="NXTREV Technology Inc. on Google Maps" aria-label="Google Maps">
-            <svg class="w-3.5 h-3.5 fill-current text-slate-400 group-hover:text-rose-400 transition" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <span class="hidden sm:inline text-[11px]">Maps</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include header.html %}
 
-  <!-- NAVIGATION -->
-  <header class="bg-white/85 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50 shadow-xs transition duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo Lockup -->
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <img src="assets/logos/nxtrev_icon_blue.svg" width="42" height="68" alt="NXTREV Icon" class="h-10 w-auto group-hover:scale-105 transition transform">
-          <div class="flex flex-col">
-            <img src="assets/logos/nxtrev_wordmark_blue.svg" width="76" height="20" alt="NXTREV" class="h-5 w-auto">
-            <span class="text-[9px] tracking-[0.22em] text-nxtrev uppercase font-bold pt-0.5">Technology Inc.</span>
-          </div>
-        </a>
+  <main id="main">
 
-        <!-- Desktop Navigation with Products Dropdown -->
-        <nav class="hidden xl:flex items-center space-x-8 font-medium text-sm whitespace-nowrap">
-          <a href="index.html" class="text-slate-600 hover:text-nxtrev transition">Home</a>
-
-          <!-- Products Dropdown -->
-          <div class="relative group">
-            <a href="products.html" class="flex items-center space-x-1.5 text-slate-600 group-hover:text-nxtrev font-medium text-sm py-2 transition">
-              <span>Products & Solutions</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-nxtrev transition transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <!-- Dropdown Menu -->
-            <div class="absolute left-0 top-full pt-1 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="bg-white rounded-xl shadow-xl border border-slate-200 py-2 divide-y divide-slate-100 text-sm">
-                <div class="px-3.5 py-2 bg-blue-50/60">
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-nxtrev block">Flagship Offering</span>
-                  <a href="products.html#turnkey-solutions" class="block font-bold text-slate-900 hover:text-nxtrev pt-0.5">Turnkey Integrated Test Cells →</a>
-                </div>
-                <div class="py-1.5">
-                  <a href="products.html#ate-systems" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev font-medium">AccoTEST Semiconductor ATE</a>
-                  <a href="products.html#handling-automation" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Handling & Packaging Automation</a>
-                  <a href="products.html#subcon-operations" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Subcontractor Management & Ops</a>
-                  <a href="products.html#sourcing-solutions" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Diversified Sourcing Solutions</a>
-                  <a href="products.html#optical-inspection" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Automated Optical Inspection (AOI)</a>
-                  <a href="products.html#reliability-hardware" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Reliability & Burn-In Boards</a>
-                  <a href="products.html#board-support" class="block px-3.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-nxtrev">Board-Level Support (ASL1000)</a>
-                </div>
-                <div class="p-2.5 bg-slate-50 flex items-center justify-between text-xs">
-                  <a href="linecard.html" class="font-bold text-nxtrev hover:underline">📄 View / Print Line Card →</a>
-                  <a href="products.html" class="text-slate-500 hover:text-slate-800">All Products</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a href="linecard.html" class="text-slate-600 hover:text-nxtrev transition">
-            <span>Line Card</span>
-          </a>
-          <a href="about.html" class="text-nxtrev font-bold transition">About & Team</a>
-          <a href="contact.html" class="text-slate-600 hover:text-nxtrev transition">Contact</a>
-        </nav>
-
-        <div class="hidden xl:flex items-center">
-          <a href="contact.html" class="whitespace-nowrap bg-nxtrev hover:bg-nxtrev-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition">
-            Request a Quote / RFQ
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center xl:hidden">
-          <button id="mobileMenuBtn" type="button" class="text-slate-700 hover:text-nxtrev p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-nxtrev transition" aria-label="Toggle navigation menu" aria-expanded="false">
-            <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Menu Drawer -->
-    <div id="mobileMenu" class="xl:hidden hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg transition-all duration-300 ease-in-out">
-      <div class="space-y-1 font-medium text-sm">
-        <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">Home</a>
-        <a href="products.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">Products & Solutions</a>
-        <div class="pl-4 space-y-1 text-xs text-slate-500 border-l-2 border-slate-200 ml-3 my-1">
-          <a href="products.html#turnkey-solutions" class="block py-1 hover:text-nxtrev font-bold text-nxtrev">Turnkey Integrated Test Cells</a>
-          <a href="products.html#ate-systems" class="block py-1 hover:text-nxtrev font-medium text-slate-700">AccoTEST Semiconductor ATE</a>
-          <a href="products.html#handling-automation" class="block py-1 hover:text-nxtrev">Handling & Packaging Automation</a>
-          <a href="products.html#subcon-operations" class="block py-1 hover:text-nxtrev">Subcontractor Management & Ops</a>
-          <a href="products.html#sourcing-solutions" class="block py-1 hover:text-nxtrev">Diversified Sourcing Solutions</a>
-          <a href="products.html#optical-inspection" class="block py-1 hover:text-nxtrev">Automated Optical Inspection</a>
-          <a href="products.html#reliability-hardware" class="block py-1 hover:text-nxtrev">Reliability & Burn-In Boards</a>
-          <a href="products.html#board-support" class="block py-1 hover:text-nxtrev">Board-Level Support (ASL1000)</a>
-        </div>
-        <a href="linecard.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700 font-semibold">📄 View / Print Line Card</a>
-        <a href="about.html" class="block px-3 py-2 rounded-md bg-slate-50 text-nxtrev font-bold">About & Team</a>
-        <a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-slate-50 hover:text-nxtrev text-slate-700">Contact</a>
-      </div>
-      <div class="pt-2 border-t border-slate-100">
-        <a href="contact.html" class="block w-full text-center bg-nxtrev hover:bg-nxtrev-dark text-white text-sm font-semibold py-2.5 rounded-lg shadow-sm transition">
-          Request a Quote / RFQ
-        </a>
-      </div>
-      <div class="pt-3 border-t border-slate-100 flex items-center justify-center space-x-5 text-xs font-semibold text-slate-600">
-        <a href="https://www.linkedin.com/company/nxtrev/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1.5 hover:text-nxtrev transition">
-          <svg class="w-4 h-4 fill-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          <span>LinkedIn</span>
-        </a>
-        <span class="text-slate-300">•</span>
-        <a href="https://www.facebook.com/people/NXTREV-Technology-Inc/61559629637818/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1.5 hover:text-nxtrev transition">
-          <svg class="w-4 h-4 fill-[#1877f2]" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-          <span>Facebook</span>
-        </a>
-        <span class="text-slate-300">•</span>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1.5 hover:text-nxtrev transition">
-          <svg class="w-4 h-4 fill-rose-500" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>Maps</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HEADER -->
-  <section class="bg-slate-950 text-white py-12 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Corporate Identity & Leadership</div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">Global Technology. Local Follow-Through.</h1>
-      <p class="text-slate-300 max-w-2xl text-sm sm:text-base leading-relaxed">
-        Helping Philippine semiconductor and electronics manufacturers evaluate, acquire, and support specialized production technologies.
-      </p>
+  <!-- PAGE HEADER -->
+  <section class="bg-slate-950 text-white">
+    <div class="wrap section">
+      <p class="eyebrow !text-blue-300 hero-in">Corporate Identity &amp; Leadership</p>
+      <h1 class="h-display mt-5 max-w-4xl text-white hero-in">Global Technology. Local Follow-Through.</h1>
+      <p class="lead prose-w mt-6 !text-slate-300 hero-in hero-in-d1">Helping Philippine semiconductor and electronics manufacturers evaluate, acquire, and support specialized production technologies.</p>
     </div>
   </section>
 
-  <!-- PURPOSE, MISSION, VISION -->
-  <section class="bg-white border-b border-slate-200 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
-        <div class="border-l-4 border-nxtrev pl-4 space-y-1">
-          <span class="text-slate-500 font-bold uppercase tracking-wider text-xs">Purpose</span>
-          <div class="font-bold text-slate-900 text-base">Productive Use</div>
-          <p class="text-slate-600">To help Philippine manufacturers put suitable technology to productive use.</p>
-        </div>
-        <div class="border-l-4 border-slate-900 pl-4 space-y-1">
-          <span class="text-slate-500 font-bold uppercase tracking-wider text-xs">Mission</span>
-          <div class="font-bold text-slate-900 text-base">Evaluate, Acquire, Support</div>
-          <p class="text-slate-600">We help manufacturers evaluate, acquire, and support specialized production technologies.</p>
-        </div>
-        <div class="border-l-4 border-nxtrev pl-4 space-y-1">
-          <span class="text-slate-500 font-bold uppercase tracking-wider text-xs">Vision</span>
-          <div class="font-bold text-slate-900 text-base">Preferred Partner</div>
-          <p class="text-slate-600">To become the Philippines' preferred partner for specialized semiconductor technology.</p>
-        </div>
-        <div class="border-l-4 border-slate-900 pl-4 space-y-1">
-          <span class="text-slate-500 font-bold uppercase tracking-wider text-xs">Brand Promise</span>
-          <div class="font-bold text-slate-900 text-base">Clear Commitments</div>
-          <p class="text-slate-600">Specific, supportable commitments followed through to verified completion.</p>
-        </div>
+  <!-- PURPOSE, MISSION, VISION, PROMISE -->
+  <section class="section bg-white" aria-label="Purpose, mission, vision and brand promise">
+    <dl class="wrap grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="border-t-2 border-nxtrev pt-5">
+        <dt><span class="block text-xs font-bold uppercase tracking-wider text-slate-600">Purpose</span><span class="h-card mt-2 block">Productive Use</span></dt>
+        <dd class="mt-2 text-sm text-slate-600">To help Philippine manufacturers put suitable technology to productive use.</dd>
       </div>
+      <div class="border-t-2 border-slate-900 pt-5">
+        <dt><span class="block text-xs font-bold uppercase tracking-wider text-slate-600">Mission</span><span class="h-card mt-2 block">Evaluate, Acquire, Support</span></dt>
+        <dd class="mt-2 text-sm text-slate-600">We help manufacturers evaluate, acquire, and support specialized production technologies.</dd>
+      </div>
+      <div class="border-t-2 border-nxtrev pt-5">
+        <dt><span class="block text-xs font-bold uppercase tracking-wider text-slate-600">Vision</span><span class="h-card mt-2 block">Preferred Partner</span></dt>
+        <dd class="mt-2 text-sm text-slate-600">To become the Philippines' preferred partner for specialized semiconductor technology.</dd>
+      </div>
+      <div class="border-t-2 border-slate-900 pt-5">
+        <dt><span class="block text-xs font-bold uppercase tracking-wider text-slate-600">Brand Promise</span><span class="h-card mt-2 block">Clear Commitments</span></dt>
+        <dd class="mt-2 text-sm text-slate-600">Specific, supportable commitments followed through to verified completion.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- FIVE CORE VALUES -->
+  <section id="values" class="section scroll-mt-16 bg-slate-50" aria-labelledby="values-h">
+    <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="eyebrow">Operating Standards</p>
+        <h2 id="values-h" class="h-section mt-3">Our 5 Core Values</h2>
+        <p class="mt-5 text-sm text-slate-600">Anchored in observable behaviors, not slogans.</p>
+      </div>
+      <dl class="divide-y divide-slate-200 border-y border-slate-200 lg:col-span-8">
+        <div class="grid gap-1 py-5 sm:grid-cols-3 sm:gap-6"><dt><span class="block text-xs font-semibold uppercase tracking-wider text-nxtrev">01 · Recommendation</span><span class="mt-1 block font-semibold text-slate-900">Fit Before Sale</span></dt><dd class="text-sm text-slate-600 sm:col-span-2">Recommend what suits the application. Clarify acceptance criteria and reject poor fit early.</dd></div>
+        <div class="grid gap-1 py-5 sm:grid-cols-3 sm:gap-6"><dt><span class="block text-xs font-semibold uppercase tracking-wider text-nxtrev">02 · Accountability</span><span class="mt-1 block font-semibold text-slate-900">Commit with Clarity</span></dt><dd class="text-sm text-slate-600 sm:col-span-2">Specific commitments only. Confirm scope, exclusions, dates, and support boundaries in writing.</dd></div>
+        <div class="grid gap-1 py-5 sm:grid-cols-3 sm:gap-6"><dt><span class="block text-xs font-semibold uppercase tracking-wider text-nxtrev">03 · Execution</span><span class="mt-1 block font-semibold text-slate-900">Own Follow-Through</span></dt><dd class="text-sm text-slate-600 sm:col-span-2">Single owner per order. Progress work through verified completion, not just forwarded emails.</dd></div>
+        <div class="grid gap-1 py-5 sm:grid-cols-3 sm:gap-6"><dt><span class="block text-xs font-semibold uppercase tracking-wider text-nxtrev">04 · Integrity</span><span class="mt-1 block font-semibold text-slate-900">Tell Truth Early</span></dt><dd class="text-sm text-slate-600 sm:col-span-2">Surface facts, limits, and uncertainties while action is still possible. Separate facts from forecasts.</dd></div>
+        <div class="grid gap-1 py-5 sm:grid-cols-3 sm:gap-6"><dt><span class="block text-xs font-semibold uppercase tracking-wider text-nxtrev">05 · Relationship</span><span class="mt-1 block font-semibold text-slate-900">Build Beyond Sale</span></dt><dd class="text-sm text-slate-600 sm:col-span-2">Strengthen continuing support depth, document reusable learning, and protect the installed base.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <!-- MAIN SECTION -->
-  <main class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-
-    <!-- 5 CORE VALUES (CRISP & SCANNABLE) -->
-    <div id="values">
-      <div class="text-center max-w-2xl mx-auto mb-8 space-y-1">
-        <span class="text-xs uppercase font-bold tracking-widest text-nxtrev">Operating Standards</span>
-        <h2 class="text-2xl font-bold text-slate-900">Our 5 Core Values</h2>
-        <p class="text-sm text-slate-600">Anchored in observable behaviors, not slogans.</p>
+  <!-- HOW WE WORK -->
+  <section class="section bg-white" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="max-w-3xl">
+        <p class="eyebrow">How we work</p>
+        <h2 id="how-h" class="h-section mt-3">Fit, then integrate, then stay</h2>
+        <p class="lead mt-5">The three disciplines behind every engagement below.</p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
-        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-xs space-y-1.5 card-hover reveal-item">
-          <span class="text-nxtrev font-bold text-xs uppercase">01 • Recommendation</span>
-          <h3 class="font-bold text-slate-900 text-base">Fit Before Sale</h3>
-          <p class="text-slate-600 leading-relaxed">Recommend what suits the application. Clarify acceptance criteria and reject poor fit early.</p>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-xs space-y-1.5 card-hover reveal-item delay-100">
-          <span class="text-nxtrev font-bold text-xs uppercase">02 • Accountability</span>
-          <h3 class="font-bold text-slate-900 text-base">Commit with Clarity</h3>
-          <p class="text-slate-600 leading-relaxed">Specific commitments only. Confirm scope, exclusions, dates, and support boundaries in writing.</p>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-xs space-y-1.5 card-hover reveal-item delay-200">
-          <span class="text-nxtrev font-bold text-xs uppercase">03 • Execution</span>
-          <h3 class="font-bold text-slate-900 text-base">Own Follow-Through</h3>
-          <p class="text-slate-600 leading-relaxed">Single owner per order. Progress work through verified completion, not just forwarded emails.</p>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-xs space-y-1.5 card-hover reveal-item delay-300">
-          <span class="text-nxtrev font-bold text-xs uppercase">04 • Integrity</span>
-          <h3 class="font-bold text-slate-900 text-base">Tell Truth Early</h3>
-          <p class="text-slate-600 leading-relaxed">Surface facts, limits, and uncertainties while action is still possible. Separate facts from forecasts.</p>
-        </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-5 shadow-xs space-y-1.5 card-hover reveal-item delay-400">
-          <span class="text-nxtrev font-bold text-xs uppercase">05 • Relationship</span>
-          <h3 class="font-bold text-slate-900 text-base">Build Beyond Sale</h3>
-          <p class="text-slate-600 leading-relaxed">Strengthen continuing support depth, document reusable learning, and protect the installed base.</p>
-        </div>
-      </div>
+      <ol class="mt-14 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+        <li class="reveal-item border-t-2 border-nxtrev pt-6">
+          <p class="text-sm font-bold tracking-wider text-nxtrev">01 · FIT</p>
+          <h3 class="h-sub mt-3">Qualify before you quote</h3>
+          <p class="mt-3 text-sm text-slate-600">We check the requirement against the application and reject poor fit early, so you buy what actually works on your line.</p>
+        </li>
+        <li class="reveal-item reveal-d1 border-t-2 border-nxtrev pt-6">
+          <p class="text-sm font-bold tracking-wider text-nxtrev">02 · INTEGRATE</p>
+          <h3 class="h-sub mt-3">Dock, commission, buy off</h3>
+          <p class="mt-3 text-sm text-slate-600">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance. No multi-vendor finger-pointing.</p>
+        </li>
+        <li class="reveal-item reveal-d2 border-t-2 border-nxtrev pt-6">
+          <p class="text-sm font-bold tracking-wider text-nxtrev">03 · SUPPORT</p>
+          <h3 class="h-sub mt-3">Local follow-through</h3>
+          <p class="mt-3 text-sm text-slate-600">Local spares, on-site response, and continuous improvement after handover: the part most suppliers disappear on.</p>
+        </li>
+      </ol>
+      <p class="mt-10 text-xs text-slate-500">Serving PEZA corridors: Laguna, Cavite, Batangas, Clark, Baguio.</p>
     </div>
+  </section>
 
-    <!-- HOW WE WORK -->
-    <div class="pt-6 border-t border-slate-200 space-y-8">
-      <div class="text-center max-w-2xl mx-auto space-y-1">
-        <span class="text-xs uppercase font-bold tracking-widest text-nxtrev">How we work</span>
-        <h2 class="text-2xl font-bold text-slate-900">Fit, then integrate, then stay</h2>
-        <p class="text-slate-600 text-sm mt-2">The three disciplines behind every engagement below.</p>
+  <!-- FOLLOW-THROUGH LEDGER -->
+  <section class="section bg-slate-50" aria-labelledby="proof-h">
+    <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="eyebrow">Proof, not promises</p>
+        <h2 id="proof-h" class="h-section mt-3">Follow-through, in practice</h2>
+        <p class="mt-5 text-sm text-slate-600">A running log of recent engagements across our test, handling, and sourcing work. Customer identities are withheld under NDA. We protect programs, not just parts.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">01 · FIT</div>
-          <h3 class="font-bold text-slate-900 mb-2">Qualify before you quote</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">We check the requirement against the application and reject poor fit early, so you buy what actually works on your line.</p>
-        </div>
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">02 · INTEGRATE</div>
-          <h3 class="font-bold text-slate-900 mb-2">Dock, commission, buy off</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">One vendor owns tester, handler, docking, tooling, and on-site qualification to a verified acceptance — no multi-vendor finger-pointing.</p>
-        </div>
-        <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
-          <div class="text-nxtrev font-extrabold text-xs tracking-wider mb-1">03 · SUPPORT</div>
-          <h3 class="font-bold text-slate-900 mb-2">Local follow-through</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Local spares, on-site response, and continuous improvement after handover — the part most suppliers disappear on.</p>
-        </div>
-      </div>
-      <p class="text-xs text-slate-500 text-center">Serving PEZA corridors: Laguna, Cavite, Batangas, Clark, Baguio.</p>
-    </div>
-
-    <!-- FOLLOW-THROUGH LEDGER -->
-    <div class="pt-6 border-t border-slate-200 space-y-8">
-      <div class="text-center max-w-2xl mx-auto space-y-1">
-        <span class="text-xs uppercase font-bold tracking-widest text-nxtrev">Proof, not promises</span>
-        <h2 class="text-2xl font-bold text-slate-900">Follow-through, in practice</h2>
-        <p class="text-slate-600 text-sm mt-2">A running log of recent engagements across our test, handling, and sourcing work. Customer identities are withheld under NDA — we protect programs, not just parts.</p>
-      </div>
-      <ol class="space-y-4 max-w-4xl mx-auto">
-        <li class="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col sm:flex-row gap-2 sm:gap-5">
-          <div class="shrink-0 flex sm:flex-col gap-2 sm:gap-1.5">
-            <span class="text-xs font-bold uppercase tracking-wider text-nxtrev bg-blue-50 rounded-md px-2.5 py-1 h-fit whitespace-nowrap">2026 · Q3</span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 rounded-md px-2 py-1 h-fit whitespace-nowrap">Test &amp; Support</span>
-          </div>
-          <p class="text-sm text-slate-700 leading-relaxed">Board repair, calibration, and device-loop testing kept running for a global semiconductor IDM's Philippine backend line — recurring, under a single technical owner.</p>
+      <ol class="divide-y divide-slate-200 border-y border-slate-200 lg:col-span-8">
+        <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
+          <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-600">Test &amp; Support</span></div>
+          <p class="text-sm text-slate-700 sm:col-span-3">Board repair, calibration, and device-loop testing kept running for a global semiconductor IDM's Philippine backend line, recurring, under a single technical owner.</p>
         </li>
-        <li class="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col sm:flex-row gap-2 sm:gap-5">
-          <div class="shrink-0 flex sm:flex-col gap-2 sm:gap-1.5">
-            <span class="text-xs font-bold uppercase tracking-wider text-nxtrev bg-blue-50 rounded-md px-2.5 py-1 h-fit whitespace-nowrap">2026 · Q3</span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 rounded-md px-2 py-1 h-fit whitespace-nowrap">Integration</span>
-          </div>
-          <p class="text-sm text-slate-700 leading-relaxed">An AccoTEST evaluation tester placed at a Philippine OSAT — principal coordination, PEZA free-zone shipment, and on-site setup.</p>
+        <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
+          <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-600">Integration</span></div>
+          <p class="text-sm text-slate-700 sm:col-span-3">An AccoTEST evaluation tester placed at a Philippine OSAT: principal coordination, PEZA free-zone shipment, and on-site setup.</p>
         </li>
-        <li class="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col sm:flex-row gap-2 sm:gap-5">
-          <div class="shrink-0 flex sm:flex-col gap-2 sm:gap-1.5">
-            <span class="text-xs font-bold uppercase tracking-wider text-nxtrev bg-blue-50 rounded-md px-2.5 py-1 h-fit whitespace-nowrap">2026 · Q3</span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 rounded-md px-2 py-1 h-fit whitespace-nowrap">Sourcing</span>
-          </div>
-          <p class="text-sm text-slate-700 leading-relaxed">ESD packaging and conductive-foam consumables sourced for a Metro Manila electronics manufacturer, with accredited-lab compliance documentation.</p>
+        <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
+          <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q3</span><span class="block text-slate-600">Sourcing</span></div>
+          <p class="text-sm text-slate-700 sm:col-span-3">ESD packaging and conductive-foam consumables sourced for a Metro Manila electronics manufacturer, with accredited-lab compliance documentation.</p>
         </li>
-        <li class="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col sm:flex-row gap-2 sm:gap-5">
-          <div class="shrink-0 flex sm:flex-col gap-2 sm:gap-1.5">
-            <span class="text-xs font-bold uppercase tracking-wider text-nxtrev bg-blue-50 rounded-md px-2.5 py-1 h-fit whitespace-nowrap">2026 · Q2</span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-600 bg-white border border-slate-200 rounded-md px-2 py-1 h-fit whitespace-nowrap">Handling</span>
-          </div>
-          <p class="text-sm text-slate-700 leading-relaxed">A pick-and-place nozzle program in qualification with a Philippine test house — sample, fit check, and cost model.</p>
+        <li class="grid gap-2 py-6 sm:grid-cols-4 sm:gap-6">
+          <div class="text-xs font-semibold uppercase tracking-wider"><span class="block text-nxtrev">2026 · Q2</span><span class="block text-slate-600">Handling</span></div>
+          <p class="text-sm text-slate-700 sm:col-span-3">A pick-and-place nozzle program in qualification with a Philippine test house: sample, fit check, and cost model.</p>
         </li>
       </ol>
     </div>
+  </section>
 
-    <!-- LEADERSHIP & TECHNICAL BENCH -->
-    <div id="team" class="pt-6 border-t border-slate-200 space-y-10">
-      <div class="text-center max-w-2xl mx-auto space-y-1">
-        <span class="text-xs uppercase font-bold tracking-widest text-nxtrev">Leadership & Technical Bench</span>
-        <h2 class="text-2xl font-bold text-slate-900">Executive Leadership & Engineering Team</h2>
-        <p class="text-sm text-slate-600">Anchored by seasoned semiconductor operations experience and dedicated field applications support.</p>
-      </div>
-
-      <!-- Principal partnership credential -->
-      <div class="flex flex-col items-center gap-2">
-        <div class="bg-white px-4 py-2 rounded-lg border border-slate-200 flex items-center justify-center shadow-xs">
-          <img src="assets/logos/accotest.webp" width="655" height="96" alt="AccoTEST Logo" class="h-7 w-auto object-contain">
+  <!-- LEADERSHIP & TECHNICAL BENCH -->
+  <section id="team" class="section scroll-mt-16 bg-white" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Leadership &amp; Technical Bench</p>
+          <h2 id="team-h" class="h-section mt-3">Executive Leadership &amp; Engineering Team</h2>
+          <p class="mt-5 text-sm text-slate-600">Anchored by seasoned semiconductor operations experience and dedicated field applications support.</p>
         </div>
-        <span class="inline-flex items-center space-x-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold uppercase tracking-wide px-3 py-1">
-          <span aria-hidden="true">✓</span><span>Authorized Philippines Partner</span>
-        </span>
-      </div>
-
-      <!-- Executive Leadership: Elmer Baladjay -->
-      <div class="max-w-3xl mx-auto bg-white border border-slate-200 rounded-lg p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 card-hover reveal-item">
-        <div class="w-20 h-20 rounded-full bg-nxtrev text-white font-bold flex items-center justify-center text-xl tracking-wider shadow-md shrink-0">
-          EAB
-        </div>
-        <div class="space-y-3 text-center sm:text-left flex-1">
-          <div>
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 class="font-bold text-slate-900 text-lg">Elmer A. Baladjay</h3>
-              <span class="text-xs font-bold text-nxtrev uppercase tracking-wider bg-blue-50 px-2.5 py-0.5 rounded border border-blue-100 inline-block self-center sm:self-auto">Executive Leadership</span>
-            </div>
-            <p class="text-sm font-semibold text-slate-600 pt-0.5">President</p>
-          </div>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Leads corporate strategy, technology principal partnerships, and commercial governance with over 15 years of semiconductor Assembly & Test operations leadership from International Rectifier / Infineon Technologies.
-          </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="flex h-10 items-center rounded-lg border border-slate-200 bg-white px-3"><img src="assets/logos/accotest.webp" width="655" height="96" alt="AccoTEST" class="h-5 w-auto"></span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-700"><svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg>Authorized Philippines Partner</span>
         </div>
       </div>
 
-      <!-- Specialized Field Engineering Bench -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-3 card-hover reveal-item">
-          <div class="w-9 h-9 rounded-lg bg-blue-50 text-nxtrev font-bold flex items-center justify-center text-base border border-blue-100">
-            ⚡
-          </div>
-          <h3 class="text-base font-bold text-slate-900">ATE Applications & Conversion</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Factory-certified engineering support for AccoTEST STS8600, STS8300, and STS8200 series platforms—specializing in test program conversion, pin-count feasibility, and prober/handler docking integration.
-          </p>
+      <!-- Executive leadership -->
+      <div class="mt-14 grid grid-cols-1 items-start gap-6 border-t border-slate-200 pt-10 sm:grid-cols-12">
+        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-nxtrev font-heading text-xl font-bold tracking-wider text-white sm:col-span-2" aria-hidden="true">EAB</div>
+        <div class="sm:col-span-10">
+          <p class="text-xs font-bold uppercase tracking-wider text-nxtrev">Executive Leadership</p>
+          <h3 class="h-sub mt-1">Elmer A. Baladjay</h3>
+          <p class="mt-1 text-sm font-semibold text-slate-600">President</p>
+          <p class="prose-w mt-4 text-base text-slate-600">Leads corporate strategy, technology principal partnerships, and commercial governance with over 15 years of semiconductor Assembly &amp; Test operations leadership from International Rectifier / Infineon Technologies.</p>
         </div>
+      </div>
 
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-3 card-hover reveal-item delay-100">
-          <div class="w-9 h-9 rounded-lg bg-blue-50 text-nxtrev font-bold flex items-center justify-center text-base border border-blue-100">
-            🛠️
-          </div>
-          <h3 class="text-base font-bold text-slate-900">On-Site Field Service & Commissioning</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Dedicated field service engineers providing rapid on-site commissioning, board diagnostics (including legacy ASL1000 support), preventive maintenance, and line troubleshooting across Philippine PEZA corridors.
-          </p>
+      <!-- Field engineering bench -->
+      <div class="mt-14 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+        <div class="reveal-item border-t-2 border-nxtrev pt-6">
+          <svg class="h-6 w-6 text-nxtrev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3 class="h-card mt-4">ATE Applications &amp; Conversion</h3>
+          <p class="mt-3 text-sm text-slate-600">Factory-certified engineering support for AccoTEST STS8600, STS8300, and STS8200 series platforms, specializing in test program conversion, pin-count feasibility, and prober/handler docking integration.</p>
         </div>
-
-        <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-3 card-hover reveal-item delay-200">
-          <div class="w-9 h-9 rounded-lg bg-blue-50 text-nxtrev font-bold flex items-center justify-center text-base border border-blue-100">
-            📦
-          </div>
-          <h3 class="text-base font-bold text-slate-900">Commercial Operations & Logistics</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Coordinated order fulfillment and PEZA / free-zone shipment coordination (import and export documentation handled together with the customer's appointed courier, freight forwarder, and licensed customs broker), plus direct factory follow-through, to ensure timely delivery and clear support boundaries from inquiry through final acceptance.
-          </p>
+        <div class="reveal-item reveal-d1 border-t-2 border-nxtrev pt-6">
+          <svg class="h-6 w-6 text-nxtrev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+          <h3 class="h-card mt-4">On-Site Field Service &amp; Commissioning</h3>
+          <p class="mt-3 text-sm text-slate-600">Dedicated field service engineers providing rapid on-site commissioning, board diagnostics (including legacy ASL1000 support), preventive maintenance, and line troubleshooting across Philippine PEZA corridors.</p>
+        </div>
+        <div class="reveal-item reveal-d2 border-t-2 border-nxtrev pt-6">
+          <svg class="h-6 w-6 text-nxtrev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+          <h3 class="h-card mt-4">Commercial Operations &amp; Logistics</h3>
+          <p class="mt-3 text-sm text-slate-600">Coordinated order fulfillment and PEZA / free-zone shipment coordination (import and export documentation handled together with the customer's appointed courier, freight forwarder, and licensed customs broker), plus direct factory follow-through, to ensure timely delivery and clear support boundaries from inquiry through final acceptance.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- CORPORATE HEADQUARTERS PHOTO -->
-    <figure class="relative">
-      <picture>
-        <source srcset="assets/imagery/nxtrev-hq.webp" type="image/webp">
-        <img src="assets/imagery/nxtrev-hq.jpg" alt="NXTREV Technology Inc. corporate headquarters — a two-story building with a blue gate on Mayor J. Posadas Avenue, Posadas Village, Muntinlupa City" width="1600" height="807" class="scrub-rise w-full h-auto rounded-lg border border-slate-200 shadow-sm" loading="lazy">
-      </picture>
-      <figcaption class="absolute left-3 bottom-3 sm:left-6 sm:bottom-6 bg-slate-950/85 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 sm:px-6 sm:py-4 shadow-xl max-w-[85%]">
-        <span class="block text-[11px] sm:text-xs uppercase tracking-[0.15em] text-sky-400 font-bold">Corporate Headquarters</span>
-        <span class="block text-lg sm:text-2xl font-extrabold text-white leading-tight mt-0.5">NXTREV Technology Inc.</span>
-        <span class="block text-xs sm:text-sm text-slate-300 mt-1">Posadas Village · Muntinlupa City, Philippines</span>
-      </figcaption>
-    </figure>
-
-    <!-- CORPORATE HEADQUARTERS LOCATION CARD -->
-    <div class="bg-white border border-slate-200 rounded-lg p-6 sm:p-8 shadow-sm flex flex-col md:flex-row justify-between items-center gap-6 card-hover reveal-item">
-      <div class="space-y-1.5 text-center md:text-left">
-        <span class="text-xs uppercase font-bold tracking-wider text-nxtrev">Commercial & Operations Center</span>
-        <h3 class="text-lg font-bold text-slate-900">Corporate Headquarters — Muntinlupa City</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">
-          Posadas Village, 107 Mayor J. Posadas Ave., Brgy. Sucat, Muntinlupa City, 1770 Metro Manila, Philippines<br>
-          <span class="text-slate-500 font-medium">📍 Located in: <strong>Jesus Is Alive Community - Alabang</strong> • Office Hours: Mon–Fri, 9:00 AM – 6:00 PM</span>
-        </p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="bg-nxtrev hover:bg-nxtrev-dark text-white font-bold px-5 py-2.5 rounded-lg text-sm transition text-center shadow">
-          🗺️ Get Directions on Google Maps →
-        </a>
-        <a href="contact.html" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition text-center">
-          ✉️ Contact Technical Team
-        </a>
+  <!-- CORPORATE HEADQUARTERS -->
+  <section class="section bg-slate-50" aria-labelledby="hq-h">
+    <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+      <figure class="lg:col-span-7">
+        <div class="frame aspect-[16/9]">
+          <picture>
+            <source srcset="assets/imagery/nxtrev-hq.webp" type="image/webp">
+            <img src="assets/imagery/nxtrev-hq.jpg" alt="NXTREV Technology Inc. corporate headquarters: a two-story building with a blue gate on Mayor J. Posadas Avenue, Posadas Village, Muntinlupa City" width="1600" height="807" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+          </picture>
+        </div>
+        <figcaption class="mt-3 text-xs text-slate-600">NXTREV Technology Inc. · Posadas Village · Muntinlupa City, Philippines</figcaption>
+      </figure>
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Commercial &amp; Operations Center</p>
+        <h2 id="hq-h" class="h-sub mt-3">Corporate Headquarters, Muntinlupa City</h2>
+        <p class="mt-4 text-sm text-slate-600">Posadas Village, 107 Mayor J. Posadas Ave., Brgy. Sucat, Muntinlupa City, 1770 Metro Manila, Philippines</p>
+        <p class="mt-2 text-sm text-slate-600">Located in: <strong class="text-slate-900">Jesus Is Alive Community - Alabang</strong> · Office Hours: Mon–Fri, 9:00 AM – 6:00 PM</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Posadas+Village,+107+Mayor+J.Posadas+Ave,+Brgy.+Sucat,+Muntinlupa,+1770+Metro+Manila" target="_blank" rel="noopener noreferrer" class="btn-primary">Get Directions on Google Maps</a>
+          <a href="contact.html" class="btn-secondary">Contact Technical Team</a>
+        </div>
       </div>
     </div>
+  </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-950 text-slate-400 text-sm py-10 border-t border-slate-800 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div class="flex items-center space-x-3">
-        <img src="assets/logos/nxtrev_icon_white.svg" width="42" height="68" alt="NXTREV Icon" class="h-6 w-auto">
-        <img src="assets/logos/nxtrev_wordmark_white.svg" width="76" height="20" alt="NXTREV" class="h-3.5 w-auto">
-        <span class="text-slate-600">|</span>
-        <span class="text-slate-400 text-[11px]">Global technology. Local follow-through.</span>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-5">
-        <div class="flex space-x-4">
-          <a href="index.html" class="hover:text-white">Home</a>
-          <a href="products.html" class="hover:text-white">Equipment</a>
-          <a href="linecard.html" class="hover:text-white">Line Card</a>
-          <a href="contact.html" class="hover:text-white">Contact Us</a>
-        </div>
-        <span class="text-slate-700 hidden sm:inline">|</span>
-        <div class="flex items-center space-x-3">
-          <a href="https://www.linkedin.com/company/nxtrev/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center space-x-1" title="NXTREV on LinkedIn" aria-label="LinkedIn">
-            <svg class="w-3.5 h-3.5 fill-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            <span class="text-[11px]">LinkedIn</span>
-          </a>
-          <a href="https://www.facebook.com/people/NXTREV-Technology-Inc/61559629637818/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center space-x-1" title="NXTREV on Facebook" aria-label="Facebook">
-            <svg class="w-3.5 h-3.5 fill-[#1877f2]" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-            <span class="text-[11px]">Facebook</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-slate-800 text-center space-y-1.5">
-      <p class="text-[11px] text-slate-400">&copy; 2026 NXTREV Technology Inc. All rights reserved.</p>
-      <p class="text-[11px] text-slate-400 leading-relaxed">AccoTEST&reg; and associated product names and imagery are trademarks of Beijing Huafeng Test &amp; Control Technology Co., Ltd. NXTREV Technology Inc. is their authorized sales representative in the Philippines.</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 
-  <!-- MOBILE NAV TOGGLE & SCROLL OBSERVER SCRIPT -->
-  <script>
-    // Mobile Navigation Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIconOpen = document.getElementById('menuIconOpen');
-    const menuIconClose = document.getElementById('menuIconClose');
 
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isOpen = !mobileMenu.classList.contains('hidden');
-        if (isOpen) {
-          mobileMenu.classList.add('hidden');
-          menuIconOpen.classList.remove('hidden');
-          menuIconClose.classList.add('hidden');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        } else {
-          mobileMenu.classList.remove('hidden');
-          menuIconOpen.classList.add('hidden');
-          menuIconClose.classList.remove('hidden');
-          mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    }
-
-    // Scroll Reveal Observer
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
-
-      document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
-    } else {
-      document.querySelectorAll('.reveal-item').forEach(el => el.classList.add('is-revealed'));
-    }
-  </script>
-
-  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
