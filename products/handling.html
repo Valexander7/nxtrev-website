@@ -61,8 +61,59 @@ section: products
         <p class="eyebrow">Handler formats</p>
         <h2 id="handlers" class="h-section mt-3">Matched to your package format</h2>
       </div>
-      <figure class="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-8">
-        <img src="../assets/diagrams/handler-format-map.svg" alt="Concept diagram matching four device formats to handling methods: small packaged units to a rotary turret; leadframe strips to strip test and pick-and-place; power discretes to a gravity feed tube; bare die and wafer to a KGD sorter or prober." class="h-auto w-full" loading="lazy">
+      <figure class="mb-12 rounded-3xl bg-slate-50 p-6 sm:p-10 lg:p-14">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Selecting a handler</p>
+          <h3 class="h-sub mt-3">Match your device format to the handling method</h3>
+          <p class="mt-3 text-sm text-slate-600">The package or die format you start with determines the mechanism that feeds, tests, and sorts it.</p>
+        </div>
+        <ul class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <li>
+            <a href="#turret" class="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-400">
+              <svg viewBox="0 0 48 48" class="h-12 w-12" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="11" y="13" width="26" height="22" rx="3" fill="#e2e8f0"/><path d="M16 8v5M22 8v5M26 8v5M32 8v5M16 35v5M22 35v5M26 35v5M32 35v5"/></svg>
+              <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-600">Device format</p>
+              <p class="h-card mt-1">Small packaged units</p>
+              <svg class="my-4 h-8 w-4 text-slate-300" viewBox="0 0 16 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2v27M3 24l5 5 5-5"/></svg>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-600">Handler</p>
+              <p class="mt-1 text-lg font-semibold text-nxtrev group-hover:underline">Rotary turret + taping</p>
+              <p class="mt-auto pt-4 text-sm text-slate-600">QFN · DFN · SOT · SOD · SMA</p>
+            </a>
+          </li>
+          <li>
+            <a href="#strip" class="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-400">
+              <svg viewBox="0 0 48 48" class="h-12 w-12" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="16" width="42" height="16" rx="2"/><rect x="8" y="20" width="8" height="8" rx="1" fill="#e2e8f0"/><rect x="20" y="20" width="8" height="8" rx="1" fill="#e2e8f0"/><rect x="32" y="20" width="8" height="8" rx="1" fill="#e2e8f0"/><circle cx="8" cy="12" r="1.2" fill="#0f172a"/><circle cx="18" cy="12" r="1.2" fill="#0f172a"/><circle cx="28" cy="12" r="1.2" fill="#0f172a"/><circle cx="38" cy="12" r="1.2" fill="#0f172a"/></svg>
+              <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-600">Device format</p>
+              <p class="h-card mt-1">Leadframe strips / matrix</p>
+              <svg class="my-4 h-8 w-4 text-slate-300" viewBox="0 0 16 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2v27M3 24l5 5 5-5"/></svg>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-600">Handler</p>
+              <p class="mt-1 text-lg font-semibold text-nxtrev group-hover:underline">Strip test / pick-and-place</p>
+              <p class="mt-auto pt-4 text-sm text-slate-600">Pre-singulation · high parallelism</p>
+            </a>
+          </li>
+          <li>
+            <a href="#gravity" class="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-400">
+              <svg viewBox="0 0 48 48" class="h-12 w-12" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="20" height="11" rx="1.5"/><circle cx="24" cy="9.5" r="2.5"/><rect x="14" y="15" width="20" height="15" rx="1.5" fill="#e2e8f0"/><path d="M18 30v14M24 30v14M30 30v14"/></svg>
+              <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-600">Device format</p>
+              <p class="h-card mt-1">Power discretes</p>
+              <svg class="my-4 h-8 w-4 text-slate-300" viewBox="0 0 16 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2v27M3 24l5 5 5-5"/></svg>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-600">Handler</p>
+              <p class="mt-1 text-lg font-semibold text-nxtrev group-hover:underline">Gravity feed tube system</p>
+              <p class="mt-auto pt-4 text-sm text-slate-600">TO-220 · TO-247 · DPAK · Bridge</p>
+            </a>
+          </li>
+          <li>
+            <a href="#kgd" class="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-400">
+              <svg viewBox="0 0 48 48" class="h-12 w-12" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="19"/><path d="M11 17h26M9 24h30M11 31h26M17 11v26M24 5v38M31 11v26" stroke-width="1" stroke="#94a3b8"/><rect x="24" y="24" width="7" height="7" fill="#3058a6" stroke="none"/></svg>
+              <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-600">Device format</p>
+              <p class="h-card mt-1">Bare die / wafer</p>
+              <svg class="my-4 h-8 w-4 text-slate-300" viewBox="0 0 16 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2v27M3 24l5 5 5-5"/></svg>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-600">Handler</p>
+              <p class="mt-1 text-lg font-semibold text-nxtrev group-hover:underline">KGD sorter / prober · WLBI</p>
+              <p class="mt-auto pt-4 text-sm text-slate-600">Chiplets · gel-pak · waffle · tape</p>
+            </a>
+          </li>
+        </ul>
+        <figcaption class="mt-10 text-xs text-slate-600">Concept illustration of handling principles, not a specific machine layout or guaranteed configuration.</figcaption>
       </figure>
       <div>
       <article id="turret" class="grid scroll-mt-24 grid-cols-1 gap-8 border-t border-slate-200 py-12 first:border-t-0 lg:grid-cols-12 lg:gap-12">
