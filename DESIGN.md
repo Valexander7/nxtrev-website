@@ -38,6 +38,7 @@ Density lives inside components; air lives between them. Whitespace comes from s
 * **Color:** blue marks actions and links. Sections alternate white and `#f8fafc`; dark navy is kept for the hero, the AccoTEST stage and the footer. No decorative gradients or glows.
 * **Imagery:** named products appear only as renders from `assets/products/` or supplied by the principal. Environment photos live in `assets/imagery/env-*.webp`, sit in fixed-ratio `.frame` boxes (3:2, 4:5, 16:9, 21:9) and never show a recognizable product or brand.
 * **Icons:** SVG only, never emoji.
+* **Diagrams are built in HTML**, not exported as images: live text on the type scale, simple line drawings without lettering, numbered markers matched to an HTML list, and layouts that stack on phones. Each sits on a light panel (`rounded-3xl bg-slate-50`, or white on a grey section) with a one-line concept caption.
 * **Motion:** one easing, `cubic-bezier(0.16, 1, 0.3, 1)`; fade and rise of 16px or less, 500ms or less, once per element; one hero entrance per page; at most one pinned scroll sequence per page (the AccoTEST stage). Everything is off under `prefers-reduced-motion`.
 * **Buttons:** pill-shaped `.btn-primary` for the single main action, `.btn-secondary` or a text link for the rest.
 * **Shared header and footer** are Jekyll includes in `_includes/` (GitHub Pages builds them). Each page sets `root` and `section` in its front matter. Preview with `./tools/preview.sh`.
