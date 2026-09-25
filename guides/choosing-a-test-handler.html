@@ -1,0 +1,207 @@
+---
+root: "../"
+section: guides
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing a Test Handler for Your Package | NXTREV Technology Inc.</title>
+  <meta name="description" content="How to choose between rotary turret, strip, gravity feed and KGD sorter handlers, based on package format, test sites and temperature. Practical advice from NXTREV in the Philippines.">
+  {% include head-assets.html %}
+  <link rel="canonical" href="https://nxtrev.org/guides/choosing-a-test-handler.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nxtrev.org/guides/choosing-a-test-handler.html">
+  <meta property="og:title" content="Choosing a Test Handler for Your Package | NXTREV Technology Inc.">
+  <meta property="og:description" content="How to choose between rotary turret, strip, gravity feed and KGD sorter handlers, based on package format, test sites and temperature. Practical advice from NXTREV in the Philippines.">
+  <meta property="og:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="NXTREV Technology Inc.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Choosing a Test Handler for Your Package | NXTREV Technology Inc.">
+  <meta name="twitter:description" content="How to choose between rotary turret, strip, gravity feed and KGD sorter handlers, based on package format, test sites and temperature. Practical advice from NXTREV in the Philippines.">
+  <meta name="twitter:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <script type="application/ld+json" data-page>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nxtrev.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://nxtrev.org/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Choosing a Test Handler for Your Package",
+          "item": "https://nxtrev.org/guides/choosing-a-test-handler.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://nxtrev.org/guides/choosing-a-test-handler.html#article",
+      "headline": "Choosing a Test Handler for Your Package",
+      "description": "How to choose between rotary turret, strip, gravity feed and KGD sorter handlers, based on package format, test sites and temperature. Practical advice from NXTREV in the Philippines.",
+      "url": "https://nxtrev.org/guides/choosing-a-test-handler.html",
+      "mainEntityOfPage": "https://nxtrev.org/guides/choosing-a-test-handler.html",
+      "datePublished": "2026-09-25",
+      "dateModified": "2026-09-25",
+      "inLanguage": "en",
+      "wordCount": 848,
+      "author": {
+        "@type": "Person",
+        "name": "John Eliel C. Baladjay",
+        "jobTitle": "Business Operations Manager",
+        "worksFor": {
+          "@id": "https://nxtrev.org/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://nxtrev.org/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://nxtrev.org/#website"
+      },
+      "image": "https://nxtrev.org/assets/social/nxtrev-share.jpg"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="flex min-h-screen flex-col bg-white">
+
+  {% include header.html %}
+
+  <main id="main">
+
+  <article>
+  <header class="bg-white pb-12 pt-8 md:pb-16">
+    <div class="wrap">
+      <nav aria-label="Breadcrumb" class="text-xs text-slate-500"><a href="index.html" class="hover:text-slate-900">Guides</a> <span aria-hidden="true">/</span> <span aria-current="page">Choosing a test handler</span></nav>
+      <div class="mt-10 max-w-3xl">
+        <p class="eyebrow hero-in">Guide &middot; Handling</p>
+        <h1 class="h-section mt-3 lg:text-display-sm hero-in">Choosing a Test Handler for Your Package</h1>
+        <p class="lead mt-5 hero-in hero-in-d1">Turret, strip, gravity feed or KGD sorter. The way your device arrives at test decides most of the answer. Here is how we narrow it down.</p>
+        <p class="mt-6 text-xs text-slate-500 hero-in hero-in-d2">By <span class="font-semibold text-slate-700">John Eliel C. Baladjay</span>, Business Operations Manager &middot; <time datetime="2026-09-25">September 25, 2026</time> &middot; 4 min read</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="border-t border-slate-200 bg-white">
+    <div class="wrap grid grid-cols-1 gap-12 py-12 md:py-16 lg:grid-cols-12 lg:gap-16">
+      <div class="guide prose-w lg:col-span-8">
+<p>When a plant tells me "we need a handler", my first question is never about the machine. It is about the device: how big is it, and how does it arrive at test? Tubes, trays, reels, strips, or wafer. That one answer rules out most of the options before we ever talk about brands or budgets.</p>
+
+<p>This guide covers how we narrow it down with engineers, and where people get caught.</p>
+
+<h2 id="format">Start with the format, not the machine</h2>
+<p>A handler has one job: present each device to the tester, make reliable contact, and sort the result. How it does that depends on what it is handed. Four formats cover most backend lines we visit:</p>
+<div class="table-scroll"><table class="spec-table">
+  <caption class="sr-only">Device format and matching handler type</caption>
+  <thead><tr><th scope="col">Device format</th><th scope="col">Handler type</th><th scope="col">Typical packages</th></tr></thead>
+  <tbody>
+    <tr><td>Small packaged units</td><td>Rotary turret with taping</td><td>QFN, DFN, SOT, SOD, SMA</td></tr>
+    <tr><td>Leadframe strips or matrix</td><td>Strip test and pick-and-place</td><td>High-density strip before singulation</td></tr>
+    <tr><td>Power discretes</td><td>Gravity feed tube system</td><td>TO-220, TO-247, D2PAK, bridge</td></tr>
+    <tr><td>Bare die or wafer</td><td>KGD sorter, prober, WLBI</td><td>Chiplets in gel-pak, waffle pack or tape</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="three-questions">The three questions I ask first</h2>
+<ol>
+  <li><strong>What are the package dimensions, down to the thickness?</strong> A 1.0 × 0.6 mm part and a 2 × 2 mm part may look close on paper, but they can need completely different input systems.</li>
+  <li><strong>How does it come in and how must it leave?</strong> Tube to tube, tray to tray, or onto tape and reel. The output format usually matters to your customer more than to you.</li>
+  <li><strong>What does the test need?</strong> Number of sites, and whether you test at room temperature only or also hot and cold. A quad-site, tri-temp requirement narrows the field quickly.</li>
+</ol>
+<p>With those three answers I can usually tell you which family fits within the same day. Everything after that is speed, contact and price.</p>
+
+<h2 id="turret">Rotary turret handlers</h2>
+<p>Turret handlers combine multi-site electrical test, 2D/3D vision, laser marking and automated tape and reel in one machine, with index rates up to 35,000 units per hour. They suit high-volume small packages where the output goes straight onto tape.</p>
+<p>For very small packages, a turret with bowl-feed input is often the only practical option. Loose parts that size do not travel well through tubes or trays.</p>
+
+<h2 id="strip">Strip test handlers</h2>
+<p>Strip handlers test devices while they are still on the leadframe or substrate, before singulation. Many devices are contacted at once, which keeps the tester busy and cuts index dead-time. They dock directly to the ATE.</p>
+<p>Strip test makes sense when your assembly flow already keeps parts on the strip and you want parallelism without buying a very high-speed singulated handler. If parts are singulated early in your flow, or come from different assembly lines, a turret is usually simpler.</p>
+
+<h2 id="gravity">Gravity feed handlers for power discretes</h2>
+<p>Power packages such as TO-220, TO-247 and D2PAK are fed by gravity through tubes and sorted into multi-bin sort tubes. Contact uses high-voltage Kelvin isolation, rated up to 3,000V dielectric isolation.</p>
+<p>Kelvin contact matters here because power devices are measured at milliohm levels. Without separate force and sense contacts, the resistance of the contact itself shows up in your reading, and good parts can fail for on-resistance. The high-voltage isolation keeps the breakdown tests safe for the machine and the operator.</p>
+<p>One thing I learned the practical way: a new power package is its own project even when the tester stays the same. We have seen a customer who already runs TO-247 on a line still need a completely separate setup for a newer power package, meaning new sockets, change kits and handler configuration. Plan the budget for that from day one.</p>
+
+<h2 id="kgd">KGD sorters and wafer-level burn-in</h2>
+<p>Bare die and chiplets need precision pick-and-place sorters, often with 6-side micro-crack optical inspection, and sort into gel-pak, waffle pack or tape. Wafer-level burn-in (WLBI) contact equipment is used for advanced chiplet screening.</p>
+
+<h2 id="mistakes">Mistakes to avoid</h2>
+<ul>
+  <li><strong>Assuming a conversion kit will fix a size gap.</strong> A common request is to convert an existing handler to a much smaller package. Sometimes it works. Often, for very small parts, the input method itself is wrong, and no kit changes that. Ask before you buy the kit.</li>
+  <li><strong>Choosing the handler before the socket.</strong> Contact is where yield is won or lost. Talk to the socket maker early. For new packages we usually sign an NDA with the socket partner first so drawings can be shared openly.</li>
+  <li><strong>Ignoring used equipment.</strong> A well-maintained used handler, checked properly, is a sensible way to add capacity or run a qualification without waiting for a new build.</li>
+  <li><strong>Forgetting the brand question.</strong> We cannot represent every handler brand. When we cannot supply one, we will tell you straight and suggest an alternative that fits the package, rather than leave you waiting.</li>
+</ul>
+
+<h2 id="before-quote">Before you ask for a quote</h2>
+<p>Having these ready saves at least one round of email:</p>
+<ul>
+  <li>Package drawing with dimensions and thickness</li>
+  <li>Input and output format (tube, tray, reel, strip, wafer)</li>
+  <li>Target units per hour and number of test sites</li>
+  <li>Test temperatures (ambient, hot, cold)</li>
+  <li>Tester model the handler will dock to</li>
+  <li>Sample devices, if you can release them</li>
+</ul>
+
+      </div>
+      <aside class="lg:col-span-4" aria-label="About this guide">
+        <div class="space-y-8 lg:sticky lg:top-24">
+          <nav aria-label="In this guide" class="hidden lg:block">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">In this guide</p>
+            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#format" class="text-slate-600 hover:text-slate-900">Start with the format, not the machine</a></li><li><a href="#three-questions" class="text-slate-600 hover:text-slate-900">The three questions I ask first</a></li><li><a href="#turret" class="text-slate-600 hover:text-slate-900">Rotary turret handlers</a></li><li><a href="#strip" class="text-slate-600 hover:text-slate-900">Strip test handlers</a></li><li><a href="#gravity" class="text-slate-600 hover:text-slate-900">Gravity feed handlers for power discretes</a></li><li><a href="#kgd" class="text-slate-600 hover:text-slate-900">KGD sorters and wafer-level burn-in</a></li><li><a href="#mistakes" class="text-slate-600 hover:text-slate-900">Mistakes to avoid</a></li><li><a href="#before-quote" class="text-slate-600 hover:text-slate-900">Before you ask for a quote</a></li></ul>
+          </nav>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Related products</p>
+            <a href="../products/handling.html" class="link-more mt-3 inline-block text-sm">Handling &amp; Packaging Automation <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </article>
+
+  <section class="section bg-slate-50" aria-labelledby="next-step">
+    <div class="wrap">
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div class="max-w-2xl">
+          <h2 id="next-step" class="h-sub">Next step</h2>
+          <p class="mt-3 text-sm text-slate-600">Send your package drawing, input and output format, target UPH and tester model, and we will tell you which handler format fits. Email <a href="mailto:sales@nxtrev.org" class="link-more">sales@nxtrev.org</a> or use the form.</p>
+        </div>
+        <div class="flex shrink-0 flex-wrap gap-3">
+          <a href="../contact.html" class="btn-primary">Ask for a handler fit check</a>
+        </div>
+      </div>
+      <nav class="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 text-sm" aria-label="More guides">
+        <a href="index.html" class="group"><span class="block text-xs text-slate-500">Back to</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev"><span aria-hidden="true">&larr;</span> All guides</span></a>
+        <a href="choosing-an-accotest-platform.html" class="group text-right"><span class="block text-xs text-slate-500">Next guide</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev">Choosing an AccoTEST platform <span aria-hidden="true">&rarr;</span></span></a>
+      </nav>
+    </div>
+  </section>
+
+  </main>
+
+  {% include footer.html %}
+
+  <script src="../assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+---
+root: "../"
+section: guides
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keeping an ASL1000 Fleet Running | NXTREV Technology Inc.</title>
+  <meta name="description" content="Options for keeping ASL1000 testers in production: board repair with caldut diagnostics, monthly repair service, resource module conversions, and pre-owned mainframes and spare boards with diagnostics reports.">
+  {% include head-assets.html %}
+  <link rel="canonical" href="https://nxtrev.org/guides/asl1000-fleet-support.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nxtrev.org/guides/asl1000-fleet-support.html">
+  <meta property="og:title" content="Keeping an ASL1000 Fleet Running | NXTREV Technology Inc.">
+  <meta property="og:description" content="Options for keeping ASL1000 testers in production: board repair with caldut diagnostics, monthly repair service, resource module conversions, and pre-owned mainframes and spare boards with diagnostics reports.">
+  <meta property="og:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="NXTREV Technology Inc.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Keeping an ASL1000 Fleet Running | NXTREV Technology Inc.">
+  <meta name="twitter:description" content="Options for keeping ASL1000 testers in production: board repair with caldut diagnostics, monthly repair service, resource module conversions, and pre-owned mainframes and spare boards with diagnostics reports.">
+  <meta name="twitter:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <script type="application/ld+json" data-page>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nxtrev.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://nxtrev.org/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Keeping an ASL1000 Fleet Running",
+          "item": "https://nxtrev.org/guides/asl1000-fleet-support.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://nxtrev.org/guides/asl1000-fleet-support.html#article",
+      "headline": "Keeping an ASL1000 Fleet Running",
+      "description": "Options for keeping ASL1000 testers in production: board repair with caldut diagnostics, monthly repair service, resource module conversions, and pre-owned mainframes and spare boards with diagnostics reports.",
+      "url": "https://nxtrev.org/guides/asl1000-fleet-support.html",
+      "mainEntityOfPage": "https://nxtrev.org/guides/asl1000-fleet-support.html",
+      "datePublished": "2026-09-25",
+      "dateModified": "2026-09-25",
+      "inLanguage": "en",
+      "wordCount": 623,
+      "author": {
+        "@type": "Person",
+        "name": "John Eliel C. Baladjay",
+        "jobTitle": "Business Operations Manager",
+        "worksFor": {
+          "@id": "https://nxtrev.org/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://nxtrev.org/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://nxtrev.org/#website"
+      },
+      "image": "https://nxtrev.org/assets/social/nxtrev-share.jpg"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="flex min-h-screen flex-col bg-white">
+
+  {% include header.html %}
+
+  <main id="main">
+
+  <article>
+  <header class="bg-white pb-12 pt-8 md:pb-16">
+    <div class="wrap">
+      <nav aria-label="Breadcrumb" class="text-xs text-slate-500"><a href="index.html" class="hover:text-slate-900">Guides</a> <span aria-hidden="true">/</span> <span aria-current="page">Keeping an ASL1000 fleet running</span></nav>
+      <div class="mt-10 max-w-3xl">
+        <p class="eyebrow hero-in">Guide &middot; Board Support</p>
+        <h1 class="h-section mt-3 lg:text-display-sm hero-in">Keeping an ASL1000 Fleet Running</h1>
+        <p class="lead mt-5 hero-in hero-in-d1">Repair, convert or add pre-owned capacity. The options for an ageing ASL1000 fleet, and what to send us for an assessment.</p>
+        <p class="mt-6 text-xs text-slate-500 hero-in hero-in-d2">By <span class="font-semibold text-slate-700">John Eliel C. Baladjay</span>, Business Operations Manager &middot; <time datetime="2026-09-25">September 25, 2026</time> &middot; 3 min read</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="border-t border-slate-200 bg-white">
+    <div class="wrap grid grid-cols-1 gap-12 py-12 md:py-16 lg:grid-cols-12 lg:gap-16">
+      <div class="guide prose-w lg:col-span-8">
+<p>Many Philippine test floors still run ASL1000 testers, and some of those testers are older than the engineers running them. They keep running because the analog test they do is still needed, and a platform change means requalifying every device. So the practical question is not whether to replace the fleet, but how to keep it healthy for the next few years.</p>
+<p>A note before we start: the ASL1000 is a third-party platform. NXTREV is not affiliated with its maker. What we offer is independent board-level service and spares for fleets that are already installed.</p>
+
+<h2 id="options">Three options for an ageing fleet</h2>
+<div class="table-scroll"><table class="spec-table">
+  <caption class="sr-only">Options for keeping an ASL1000 fleet running</caption>
+  <thead><tr><th scope="col">Option</th><th scope="col">When it makes sense</th></tr></thead>
+  <tbody>
+    <tr><td>Repair</td><td>A board has failed and the same board type is still what the line needs. Usually the first thing to try.</td></tr>
+    <tr><td>Convert</td><td>You have instrument boards sitting idle, while another board type is the bottleneck. Converting the idle board adds capacity without buying new hardware.</td></tr>
+    <tr><td>Add pre-owned</td><td>You need more testers or more boards than repair and conversion can give, or you want spares on the shelf before the next failure.</td></tr>
+  </tbody>
+</table></div>
+<p>Many plants end up using all three: repair as the routine, conversions when the product mix shifts, and pre-owned boards to rebuild the spares shelf.</p>
+
+<h2 id="repair">Repair: what happens</h2>
+<p>Failed instrument boards, power supplies and analog matrix modules get caldut diagnostics first, to find out which function actually fails. Then comes component-level repair using OEM-grade relays and DACs, and multi-hour burn-in validation before the board goes back into a tester.</p>
+<p>Some customers send boards one at a time. Others prefer a monthly board repair service, where boards from the whole fleet are collected, repaired and returned on a regular cycle under one quotation for the month. The monthly cycle is easier for purchasing, and it stops failed boards from piling up in a drawer until someone has budget.</p>
+
+<h2 id="conversions">Conversions: turning idle boards into needed ones</h2>
+<p>Resource module conversions turn underused instrument boards into needed ones. One example is converting HVS850 boards into DVI300 power instruments. Each converted board is verified with a full factory caldut buy-off and is covered by a complete functional warranty.</p>
+<p>A conversion pays off when the board you have is sitting unused and the board you need is hard to find or keeps your testers waiting. Before you decide, count how many testers each board type actually limits. That number tells you how many conversions are worth doing.</p>
+
+<h2 id="pre-owned">Pre-owned mainframes and boards</h2>
+<p>We source pre-owned ASL1000 mainframes, test heads and spare boards. Each one comes with a 100% board diagnostics report, so you know what you are receiving before it goes on the line. For plants inside economic zones, we coordinate the PEZA or free-zone documents as well; see our <a href="peza-equipment-import.html">guide to bringing equipment into a PEZA or freeport zone</a>.</p>
+<p>Recent spares requests we have quoted include DDD digital boards and OVI source boards. If you send the part numbers, we will tell you what is available and in what condition.</p>
+
+<h2 id="stock">What to keep in stock on site</h2>
+<p>There is no universal list. It depends on your device mix. My suggestion is to look at the last year of board failures and ask two questions: which board types stopped a tester, and which of those took longest to replace. Those are the boards to keep on the shelf. We keep critical board stock ourselves, so talk to us before you build a large inventory of your own.</p>
+
+<h2 id="what-to-send">What to send us for an assessment</h2>
+<ul>
+  <li>Board part numbers and serial numbers</li>
+  <li>The fault symptom: failing caldut test, error message, or which measurement drifts</li>
+  <li>Whether the fault is constant or intermittent</li>
+  <li>Which tester and slot it came from</li>
+  <li>How many testers depend on that board type</li>
+</ul>
+
+      </div>
+      <aside class="lg:col-span-4" aria-label="About this guide">
+        <div class="space-y-8 lg:sticky lg:top-24">
+          <nav aria-label="In this guide" class="hidden lg:block">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">In this guide</p>
+            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#options" class="text-slate-600 hover:text-slate-900">Three options for an ageing fleet</a></li><li><a href="#repair" class="text-slate-600 hover:text-slate-900">Repair: what happens</a></li><li><a href="#conversions" class="text-slate-600 hover:text-slate-900">Conversions: turning idle boards into needed ones</a></li><li><a href="#pre-owned" class="text-slate-600 hover:text-slate-900">Pre-owned mainframes and boards</a></li><li><a href="#stock" class="text-slate-600 hover:text-slate-900">What to keep in stock on site</a></li><li><a href="#what-to-send" class="text-slate-600 hover:text-slate-900">What to send us for an assessment</a></li></ul>
+          </nav>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Related products</p>
+            <a href="../products/board-support.html" class="link-more mt-3 inline-block text-sm">Board Diagnostics &amp; ASL1000 <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </article>
+
+  <section class="section bg-slate-50" aria-labelledby="next-step">
+    <div class="wrap">
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div class="max-w-2xl">
+          <h2 id="next-step" class="h-sub">Next step</h2>
+          <p class="mt-3 text-sm text-slate-600">Send the board part numbers and fault symptoms, and we will assess repair, conversion or replacement. Email <a href="mailto:sales@nxtrev.org" class="link-more">sales@nxtrev.org</a> or use the form.</p>
+        </div>
+        <div class="flex shrink-0 flex-wrap gap-3">
+          <a href="../contact.html?product=Board-Repair" class="btn-primary">Send a board for assessment</a>
+        </div>
+      </div>
+      <nav class="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 text-sm" aria-label="More guides">
+        <a href="test-cell-buy-off.html" class="group"><span class="block text-xs text-slate-500">Previous guide</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev"><span aria-hidden="true">&larr;</span> Test cell buy-off</span></a>
+        <a href="index.html" class="group text-right"><span class="block text-xs text-slate-500">Back to</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev">All guides <span aria-hidden="true">&rarr;</span></span></a>
+      </nav>
+    </div>
+  </section>
+
+  </main>
+
+  {% include footer.html %}
+
+  <script src="../assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>
