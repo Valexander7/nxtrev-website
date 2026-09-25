@@ -9,6 +9,7 @@ exclude:
   - tools
   - IMAGERY.md
   - anti-slop
+  - guides-drafts
   - assets/team
   - "assets/logos/*.ai"
   - "assets/logos/*.pdf"
