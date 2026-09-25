@@ -64,6 +64,21 @@
   .disclose[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
   .disclose > .disclose-body { @apply pb-6; }
 
+  /* Guide articles: long-form body copy at 17px with room between ideas. */
+  .guide > * + * { @apply mt-5; }
+  .guide h2 { @apply h-sub mt-14 scroll-mt-24; }
+  .guide p, .guide li { @apply text-base text-slate-700; }
+  .guide ul { @apply list-disc space-y-2 pl-6; }
+  .guide ol { @apply list-decimal space-y-3 pl-6; }
+  .guide li::marker { @apply text-slate-400; }
+  .guide strong { @apply font-semibold text-slate-900; }
+  .guide p a, .guide li a { @apply font-semibold text-nxtrev underline underline-offset-4; }
+  .guide .spec-table thead th { @apply w-auto pb-3 pt-0 text-xs uppercase tracking-[0.1em] text-slate-500; }
+  .guide .spec-table thead tr { @apply border-t-0; }
+  .guide .spec-table td { @apply pr-6; }
+  .guide .spec-table td:first-child { @apply font-semibold text-slate-900; }
+  .table-scroll { @apply overflow-x-auto; }
+
   /* Header */
   .nav-link { @apply text-sm font-medium text-slate-600 transition-colors hover:text-slate-900; }
   .nav-link[aria-current="page"] { @apply text-slate-900 font-semibold; }

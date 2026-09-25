@@ -1,6 +1,6 @@
 # Guides: plan
 
-Internal folder, kept off the public site by `_config.yml`. Drafts here become pages under `/guides/` once NXTREV's team has filled the gaps and checked the facts.
+Internal folder, kept off the public site by `_config.yml`. All five guides were published on 2026-09-25 under `/guides/`, written in John Eliel Baladjay's voice from NXTREV's own project emails (no customer names, prices or third-party brands). The drafts below are kept for reference; edit the live pages in `guides/` from now on.
 
 ## Why
 The site has product pages but nothing that explains or compares. Buyers, and AI search tools such as ChatGPT and Google's AI answers, need pages that answer real questions before they can recommend a supplier. Each guide answers one question a Philippine test or equipment engineer actually asks, using NXTREV's own experience.

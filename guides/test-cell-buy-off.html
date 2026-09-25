@@ -1,0 +1,203 @@
+---
+root: "../"
+section: guides
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Delivery to Buy-Off: Turnkey Test Cell Acceptance | NXTREV Technology Inc.</title>
+  <meta name="description" content="How a turnkey semiconductor test cell goes from delivery to production release: pre-shipment checks, on-site steps, correlation, Gage R&amp;R and yield buy-off criteria, and common causes of delay.">
+  {% include head-assets.html %}
+  <link rel="canonical" href="https://nxtrev.org/guides/test-cell-buy-off.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nxtrev.org/guides/test-cell-buy-off.html">
+  <meta property="og:title" content="From Delivery to Buy-Off: Turnkey Test Cell Acceptance | NXTREV Technology Inc.">
+  <meta property="og:description" content="How a turnkey semiconductor test cell goes from delivery to production release: pre-shipment checks, on-site steps, correlation, Gage R&amp;R and yield buy-off criteria, and common causes of delay.">
+  <meta property="og:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="NXTREV Technology Inc.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="From Delivery to Buy-Off: Turnkey Test Cell Acceptance | NXTREV Technology Inc.">
+  <meta name="twitter:description" content="How a turnkey semiconductor test cell goes from delivery to production release: pre-shipment checks, on-site steps, correlation, Gage R&amp;R and yield buy-off criteria, and common causes of delay.">
+  <meta name="twitter:image" content="https://nxtrev.org/assets/social/nxtrev-share.jpg">
+  <script type="application/ld+json" data-page>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nxtrev.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://nxtrev.org/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "From Delivery to Buy-Off: Turnkey Test Cell Acceptance",
+          "item": "https://nxtrev.org/guides/test-cell-buy-off.html"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://nxtrev.org/guides/test-cell-buy-off.html#article",
+      "headline": "From Delivery to Buy-Off: Turnkey Test Cell Acceptance",
+      "description": "How a turnkey semiconductor test cell goes from delivery to production release: pre-shipment checks, on-site steps, correlation, Gage R&R and yield buy-off criteria, and common causes of delay.",
+      "url": "https://nxtrev.org/guides/test-cell-buy-off.html",
+      "mainEntityOfPage": "https://nxtrev.org/guides/test-cell-buy-off.html",
+      "datePublished": "2026-09-25",
+      "dateModified": "2026-09-25",
+      "inLanguage": "en",
+      "wordCount": 718,
+      "author": {
+        "@type": "Person",
+        "name": "John Eliel C. Baladjay",
+        "jobTitle": "Business Operations Manager",
+        "worksFor": {
+          "@id": "https://nxtrev.org/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://nxtrev.org/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://nxtrev.org/#website"
+      },
+      "image": "https://nxtrev.org/assets/social/nxtrev-share.jpg"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="flex min-h-screen flex-col bg-white">
+
+  {% include header.html %}
+
+  <main id="main">
+
+  <article>
+  <header class="bg-white pb-12 pt-8 md:pb-16">
+    <div class="wrap">
+      <nav aria-label="Breadcrumb" class="text-xs text-slate-500"><a href="index.html" class="hover:text-slate-900">Guides</a> <span aria-hidden="true">/</span> <span aria-current="page">Test cell buy-off</span></nav>
+      <div class="mt-10 max-w-3xl">
+        <p class="eyebrow hero-in">Guide &middot; Test Cells</p>
+        <h1 class="h-section mt-3 lg:text-display-sm hero-in">From Delivery to Buy-Off: Turnkey Test Cell Acceptance</h1>
+        <p class="lead mt-5 hero-in hero-in-d1">What happens between the crate arriving and production release, and what to agree on before the equipment ships so buy-off does not stall.</p>
+        <p class="mt-6 text-xs text-slate-500 hero-in hero-in-d2">By <span class="font-semibold text-slate-700">John Eliel C. Baladjay</span>, Business Operations Manager &middot; <time datetime="2026-09-25">September 25, 2026</time> &middot; 3 min read</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="border-t border-slate-200 bg-white">
+    <div class="wrap grid grid-cols-1 gap-12 py-12 md:py-16 lg:grid-cols-12 lg:gap-16">
+      <div class="guide prose-w lg:col-span-8">
+<p>A test cell is only useful once it is released to production. Everything between the crate arriving and that release is buy-off, and it is where projects either move quickly or stall for weeks. I have learned that most of the stalls are decided long before delivery.</p>
+<p>This guide explains what a turnkey cell covers, what we check before it ships, and what to agree on up front so buy-off does not turn into a debate.</p>
+
+<h2 id="turnkey">What "turnkey" covers</h2>
+<p>A test cell has three parts, and turnkey means one vendor owns all three and how they fit together:</p>
+<div class="table-scroll"><table class="spec-table">
+  <caption class="sr-only">The three subsystems of a test cell</caption>
+  <tbody>
+    <tr><th scope="row">Electrical subsystem</th><td>The ATE: instruments, test head and the test program.</td></tr>
+    <tr><th scope="row">Coupling subsystem</th><td>Docking and interface: load board, sockets or probe card, and the docking hardware.</td></tr>
+    <tr><th scope="row">Handling path</th><td>A handler for packaged units, or a wafer prober.</td></tr>
+  </tbody>
+</table></div>
+<p>When these come from different suppliers, every problem at the interface becomes a discussion about whose problem it is. That is the main reason to buy turnkey: one party owns the whole cell through to a verified acceptance.</p>
+
+<h2 id="before-shipping">Before the crate ships</h2>
+<p>Before delivery, we pre-verify the parts that most often cause trouble on site:</p>
+<ul>
+  <li><strong>Docking</strong> between the tester and the prober or handler</li>
+  <li><strong>Load board mechanical tolerance</strong>, so the board seats correctly in the docking hardware</li>
+  <li><strong>Socket contact pressure</strong>, because weak or uneven contact shows up later as yield loss that looks like a device problem</li>
+</ul>
+<p>We also confirm the site logistics at this stage: crate size and weight, forklift or mover, floor space, power and facilities, and, for zone locations, the permit dates. A cell that arrives before its permit does not help anyone.</p>
+
+<h2 id="on-site">On site, step by step</h2>
+<ol>
+  <li><strong>Receiving and placement.</strong> Unpack, place and level the equipment, and connect power and facilities.</li>
+  <li><strong>Power-up and system checks.</strong> Tester self-test and calibration, handler or prober setup.</li>
+  <li><strong>Docking.</strong> Dock the tester to the handler or prober and confirm alignment and planarity.</li>
+  <li><strong>Program bring-up.</strong> Load the test program and run it on known units. For a device with no existing program, this is the longest step: writing and debugging the program, optimizing test time, and checking for spikes and noise.</li>
+  <li><strong>Correlation.</strong> Test the same units on the new cell and on your reference, and compare.</li>
+  <li><strong>Gage R&amp;R.</strong> Measure how repeatable and reproducible the cell is.</li>
+  <li><strong>Yield buy-off.</strong> Run your actual production silicon and confirm yield meets the agreed threshold.</li>
+  <li><strong>Release to production.</strong></li>
+</ol>
+
+<h2 id="criteria">Acceptance criteria to agree up front</h2>
+<p>Buy-off means the cell passes correlation, Gage R&amp;R and yield buy-off on your actual production silicon. Write the numbers down before the equipment ships:</p>
+<ul>
+  <li><strong>Correlation limits.</strong> Which parameters, how many units, and how close the readings must be to your reference data. Agree which reference counts: an existing tester, a golden unit set, or characterization data.</li>
+  <li><strong>Gage R&amp;R target.</strong> A widely used industry guideline treats a measurement system under 10% of tolerance as acceptable, and 10% to 30% as possibly acceptable depending on how critical the parameter is. Your quality team may already have a standard; use theirs.</li>
+  <li><strong>Yield threshold.</strong> Usually set against the yield you already see on the same device elsewhere.</li>
+  <li><strong>The samples.</strong> Who supplies them, how many, and whether they include known failing units. Buy-off without real rejects only proves that good parts pass.</li>
+</ul>
+
+<h2 id="delays">What delays buy-off</h2>
+<ul>
+  <li><strong>No test program yet.</strong> For a new device, the program has to be written, optimized and correlated. This is real engineering time. Start it as soon as the test plan is final, not when the tester arrives.</li>
+  <li><strong>No manual socket.</strong> A manual socket lets engineers debug and correlate the program while the handler is still being docked. Without one, program work waits for the full cell.</li>
+  <li><strong>Criteria agreed after the fact.</strong> If the limits are argued once the data is in, every result becomes negotiable.</li>
+  <li><strong>Documents and permits.</strong> For zone locations, a permit that expires or a company name that does not match the registration can hold equipment at the gate.</li>
+</ul>
+
+<h2 id="after-release">After release</h2>
+<p>Release is not the end of our work. Our field service engineers own line calibration, Gage R&amp;R and sustaining preventive maintenance. My advice for the first months: watch yield and bin trends closely, because early drift usually points to contact wear or a setup that needs tuning, and both are cheap to fix early.</p>
+
+      </div>
+      <aside class="lg:col-span-4" aria-label="About this guide">
+        <div class="space-y-8 lg:sticky lg:top-24">
+          <nav aria-label="In this guide" class="hidden lg:block">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">In this guide</p>
+            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#turnkey" class="text-slate-600 hover:text-slate-900">What "turnkey" covers</a></li><li><a href="#before-shipping" class="text-slate-600 hover:text-slate-900">Before the crate ships</a></li><li><a href="#on-site" class="text-slate-600 hover:text-slate-900">On site, step by step</a></li><li><a href="#criteria" class="text-slate-600 hover:text-slate-900">Acceptance criteria to agree up front</a></li><li><a href="#delays" class="text-slate-600 hover:text-slate-900">What delays buy-off</a></li><li><a href="#after-release" class="text-slate-600 hover:text-slate-900">After release</a></li></ul>
+          </nav>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Related products</p>
+            <a href="../products/test-cells.html" class="link-more mt-3 inline-block text-sm">Turnkey Integrated Test Cells <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </article>
+
+  <section class="section bg-slate-50" aria-labelledby="next-step">
+    <div class="wrap">
+      <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+        <div class="max-w-2xl">
+          <h2 id="next-step" class="h-sub">Next step</h2>
+          <p class="mt-3 text-sm text-slate-600">Send the device, package and target throughput, and we will propose a test cell and the acceptance plan that goes with it. Email <a href="mailto:sales@nxtrev.org" class="link-more">sales@nxtrev.org</a> or use the form.</p>
+        </div>
+        <div class="flex shrink-0 flex-wrap gap-3">
+          <a href="../contact.html?product=Turnkey-Test-Cell" class="btn-primary">Ask for a test cell proposal</a>
+        </div>
+      </div>
+      <nav class="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 text-sm" aria-label="More guides">
+        <a href="peza-equipment-import.html" class="group"><span class="block text-xs text-slate-500">Previous guide</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev"><span aria-hidden="true">&larr;</span> Equipment into a PEZA or freeport zone</span></a>
+        <a href="asl1000-fleet-support.html" class="group text-right"><span class="block text-xs text-slate-500">Next guide</span><span class="font-semibold text-slate-900 group-hover:text-nxtrev">Keeping an ASL1000 fleet running <span aria-hidden="true">&rarr;</span></span></a>
+      </nav>
+    </div>
+  </section>
+
+  </main>
+
+  {% include footer.html %}
+
+  <script src="../assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>
