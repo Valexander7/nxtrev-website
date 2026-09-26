@@ -72,3 +72,5 @@ header.sticky { view-transition-name: site-header; }
   .stats-armed .stat { opacity: 1; transform: none; transition: none; }
   .ate-copy.swap { animation: none; }
 }
+.hero-video { opacity: 0; transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1); }
+.hero-video.is-playing { opacity: 1; }

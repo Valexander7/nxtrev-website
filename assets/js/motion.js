@@ -5,6 +5,51 @@
   var desktop = window.matchMedia('(min-width: 1024px)');
   function clamp(v) { return v < 0 ? 0 : (v > 1 ? 1 : v); }
 
+  function heroVideo() {
+    var video = document.getElementById('hero-video');
+    if (!video) return;
+    var source = video.querySelector('source');
+    var loaded = false;
+    var inView = true;
+
+    function stop() {
+      video.classList.remove('is-playing');
+      video.pause();
+      video.hidden = true;
+    }
+
+    function sync() {
+      if (!desktop.matches || reduce.matches || document.hidden || !inView ||
+          (navigator.connection && navigator.connection.saveData)) {
+        stop();
+        return;
+      }
+      video.hidden = false;
+      if (!loaded) {
+        source.src = source.getAttribute('data-src');
+        loaded = true;
+        video.load();
+      }
+      var playback = video.play();
+      if (playback && playback.catch) playback.catch(stop);
+    }
+
+    video.addEventListener('playing', function () { video.classList.add('is-playing'); });
+    video.addEventListener('error', stop);
+    source.addEventListener('error', stop);
+    document.addEventListener('visibilitychange', sync);
+    desktop.addEventListener('change', sync);
+    reduce.addEventListener('change', sync);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        sync();
+      }).observe(video.parentNode);
+    }
+    if (document.readyState === 'complete') sync();
+    else window.addEventListener('load', sync, { once: true });
+  }
+
   // One shared rAF loop for every scroll-linked effect.
   var tasks = [];
   var ticking = false;
@@ -142,7 +187,7 @@
   }
 
   function init() {
-    statement(); stats(); theater();
+    heroVideo(); statement(); stats(); theater();
     request();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
