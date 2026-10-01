@@ -18,6 +18,7 @@ Internal file (excluded from the site by `_config.yml`). Lists every environment
 | `env-aoi` | 3:2 | 1536×1024 | Home tile, `products/inspection.html` |
 | `env-reliability` | 3:2 | 1536×1024 | Home tile, `products/reliability.html` |
 | `env-board-repair` | 4:5 | 1122×1402 | Home tile, `products/board-support.html` |
+| `env-test-sockets` | 3:2 | 1536×1024 | `products/test-sockets.html`, `products.html` tile |
 | `env-consumables` | 4:5 | 1122×1402 | Home tile, `products/consumables.html` |
 | `env-sourcing` | 3:2 | 1535×1023 | `products/operations.html` (sourcing) |
 | `env-operations` | 3:2 | 1536×1024 | Home tile, `products/operations.html` |
