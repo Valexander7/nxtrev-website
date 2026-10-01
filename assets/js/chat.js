@@ -25,7 +25,7 @@
     { key: 'email', ask: 'And your work email, so we can reply?', type: 'email' }
   ];
 
-  // TODO(human): decide when the package and quantity questions are skipped.
+  // Package and quantity are only asked for physical parts.
   function skipPackage(a) {
     return PART_TOPICS.indexOf(a.topic) === -1;
   }
