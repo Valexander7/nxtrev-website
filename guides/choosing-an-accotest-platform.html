@@ -109,21 +109,25 @@ section: guides
 <h2 id="short-version">The short version</h2>
 <div class="table-scroll"><table class="spec-table">
   <caption class="sr-only">Device type and matching AccoTEST platform</caption>
-  <thead><tr><th scope="col">If your device is…</th><th scope="col">Look at</th><th scope="col">Why</th></tr></thead>
+  <thead><tr><th scope="col">If your device is…</th><th scope="col">Look at</th><th scope="col">Why</th><th scope="col">RFQ / Specs</th></tr></thead>
   <tbody>
-    <tr><td>An SoC, MCU, FPGA or wireless device with many high-speed pins</td><td>STS8600</td><td>Over 2,000 analog channels, digital speed over 4,000 @ 1.6 Gbps, power delivery over 2,000A, 20 / 8 slot configurations</td></tr>
-    <tr><td>A PMIC, smart power stage, IPD or battery-management device</td><td>STS8300</td><td>All-in-one test head with 300–500+ analog channels and up to 32 parallel sites with hard docking</td></tr>
-    <tr><td>A MOSFET, IGBT, SiC or GaN device, a power module or known good die</td><td>STS8200 CROSS</td><td>Up to 26 slots; the AXE-PLUS reaches 2000V / 2000A DC and 1200V / 18,000A short-circuit</td></tr>
+    <tr><td>An SoC, MCU, FPGA or wireless device with many high-speed pins</td><td>STS8600</td><td>Over 2,000 analog channels, digital speed over 4,000 @ 1.6 Gbps, power delivery over 2,000A, 20 / 8 slot configurations</td><td><a href="../contact.html?product=STS8600" class="font-semibold text-nxtrev hover:underline">Inquire STS8600 &rarr;</a></td></tr>
+    <tr><td>A PMIC, smart power stage, IPD or battery-management device</td><td>STS8300</td><td>All-in-one test head with 300–500+ analog channels and up to 32 parallel sites with hard docking</td><td><a href="../contact.html?product=STS8300" class="font-semibold text-nxtrev hover:underline">Inquire STS8300 &rarr;</a></td></tr>
+    <tr><td>A MOSFET, IGBT, SiC or GaN device, a power module or known good die</td><td>STS8200 CROSS</td><td>Up to 26 slots; the AXE-PLUS reaches 2000V / 2000A DC and 1200V / 18,000A short-circuit</td><td><a href="../contact.html?product=STS8200" class="font-semibold text-nxtrev hover:underline">Inquire STS8200 &rarr;</a></td></tr>
   </tbody>
 </table></div>
 
 <h2 id="sts8600">STS8600: SoC and high-speed digital</h2>
 <p>The STS8600 uses a liquid-cooled test head for complex analog and high-speed digital pins, aimed at data centre, automotive and IoT devices. AccoTEST describes it as "One Platform for All" for high-pin-count processors, automotive microcontrollers and high-speed digital devices.</p>
 <p>If most of your test time goes into digital patterns and you are running out of pins or speed on your current platform, start here.</p>
+<p><strong>Prober and Handler Docking:</strong> Direct hard-dock and cable interface kits support standard industry wafer probers (Tokyo Seimitsu / ACCRETECH UF200 and UF3000, Tokyo Electron / TEL Precio and P12XL) as well as high-speed package handlers (Chroma, Hontech, Multitest). We assist with docking alignment, manipulator counterbalance, and custom load board (DIB) layout.</p>
+<div class="mt-4"><a href="../contact.html?product=STS8600" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8600 Specs &amp; Docking Details &rarr;</a></div>
 
 <h2 id="sts8300">STS8300: PMIC and mixed-signal</h2>
 <p>The STS8300 is built for parallel test. Its all-in-one test head runs up to 32 sites for PMICs, smart power stages, integrated passive devices and battery management devices.</p>
 <p>The site count you actually run is usually set by the handler and the load board, not the tester. Before you plan around 32 sites, check how many sites your handler can present and whether your load board layout keeps every site within spec.</p>
+<p><strong>Docking &amp; Parallel Production Cells:</strong> Rigid mechanical docking integrates cleanly with standard pick-and-place and turret test handlers (Chroma, Hontech, Multitest) and wafer probers (ACCRETECH, TEL). For up to 32 parallel sites, rigid docking mechanics maintain planarity and signal integrity across high-pin-count Kelvin contactors.</p>
+<div class="mt-4"><a href="../contact.html?product=STS8300" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8300 PMIC Specs &amp; Evaluation &rarr;</a></div>
 
 <h2 id="sts8200">STS8200 CROSS: power discretes and modules</h2>
 <p>The STS8200 CROSS is a universal power discrete and module tester for wide-bandgap SiC and GaN, MOSFETs, IGBTs, known good die and automotive power bricks. It comes in three configurations:</p>
@@ -134,6 +138,8 @@ section: guides
 </ul>
 <p>Test programs are developed in open C++.</p>
 <p>A recent example: a customer sent us the test plan for a new power package and asked whether the STS8200 already on their floor could handle it. AccoTEST's applications engineers reviewed it and confirmed the avalanche (UIS), DC and gate resistance tests were all within the machine's rated specs. The hardware answer was yes. The real lead time was the test program, because none existed yet for that device.</p>
+<p><strong>Docking for Power &amp; Wafer Sort:</strong> Optimized for high-voltage and high-current docking to wafer probers (ACCRETECH UF-series, TEL) for discrete wafer sort (AXE-FET), as well as gravity-feed and strip-test handlers (Multitest, Hontech) for packaged power modules (AXE-PM). Heavy-duty Kelvin docking interfaces eliminate contact resistance and thermal drift during 2000A DC pulses.</p>
+<div class="mt-4"><a href="../contact.html?product=STS8200" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8200 Series Specs &amp; Evaluation &rarr;</a></div>
 
 <h2 id="evaluation">How an evaluation works</h2>
 <p>We have placed an AccoTEST evaluation tester at a Philippine OSAT, handling principal coordination, the free-zone shipment and on-site setup. From that experience, this is what to expect:</p>
@@ -151,7 +157,7 @@ section: guides
 <p>Correlation is what decides whether the conversion is done: the same units, tested on both platforms, must agree within the limits you set up front.</p>
 
 <h2 id="support">Local support after installation</h2>
-<p>We provide factory-certified applications support for all three platforms, including test program conversion, pin-count feasibility and prober or handler docking integration. AccoTEST's own engineers in the region work with us on setup and training, so you have one local contact and a factory team behind it.</p>
+<p>We provide factory-certified applications support for all three platforms, including test program conversion, pin-count feasibility and prober or handler docking integration with standard industry platforms (Tokyo Seimitsu / ACCRETECH and TEL probers; Chroma, Hontech, and Multitest pick-and-place/turret handlers). AccoTEST's own engineers in the region work with us on setup and training, so you have one local contact and a factory team behind it.</p>
 
       </div>
       <aside class="lg:col-span-4" aria-label="About this guide">
@@ -177,8 +183,10 @@ section: guides
           <h2 id="next-step" class="h-sub">Next step</h2>
           <p class="mt-3 text-sm text-slate-600">Send your device type, pin count, voltage and current range, and target site count, and we will recommend a platform and configuration. Email <a href="mailto:sales@nxtrev.org" class="link-more">sales@nxtrev.org</a> or use the form.</p>
         </div>
-        <div class="flex shrink-0 flex-wrap gap-3">
-          <a href="../contact.html" class="btn-primary">Ask for a platform recommendation</a>
+        <div class="flex shrink-0 flex-wrap gap-2.5">
+          <a href="../contact.html?product=STS8600" class="btn-primary text-xs">Inquire STS8600</a>
+          <a href="../contact.html?product=STS8300" class="btn-secondary text-xs">Inquire STS8300</a>
+          <a href="../contact.html?product=STS8200" class="btn-secondary text-xs">Inquire STS8200</a>
         </div>
       </div>
       <nav class="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200 pt-8 text-sm" aria-label="More guides">
