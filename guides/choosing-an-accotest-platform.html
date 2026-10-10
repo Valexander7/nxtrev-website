@@ -51,16 +51,33 @@ section: guides
       ]
     },
     {
-      "@type": "Article",
+      "@type": "TechArticle",
       "@id": "https://nxtrev.org/guides/choosing-an-accotest-platform.html#article",
       "headline": "STS8600, STS8300 or STS8200 CROSS? Matching AccoTEST Platforms to Your Device",
       "description": "Which AccoTEST platform fits your device: STS8600 for SoC, STS8300 for PMIC and mixed-signal, STS8200 CROSS for power discretes and modules. With evaluation steps from NXTREV, the authorized representative in the Philippines.",
       "url": "https://nxtrev.org/guides/choosing-an-accotest-platform.html",
       "mainEntityOfPage": "https://nxtrev.org/guides/choosing-an-accotest-platform.html",
       "datePublished": "2026-09-25",
-      "dateModified": "2026-09-25",
+      "dateModified": "2026-10-10",
       "inLanguage": "en",
-      "wordCount": 851,
+      "wordCount": 950,
+      "about": [
+        {
+          "@type": "Product",
+          "name": "AccoTEST STS8600 System-on-Chip (SoC) Test Platform",
+          "url": "https://nxtrev.org/products/accotest.html#sts8600"
+        },
+        {
+          "@type": "Product",
+          "name": "AccoTEST STS8300 PMIC Platform",
+          "url": "https://nxtrev.org/products/accotest.html#sts8300"
+        },
+        {
+          "@type": "Product",
+          "name": "AccoTEST STS8200 CROSS Series",
+          "url": "https://nxtrev.org/products/accotest.html#sts8200"
+        }
+      ],
       "author": {
         "@type": "Person",
         "name": "John Eliel C. Baladjay",
@@ -117,6 +134,82 @@ section: guides
   </tbody>
 </table></div>
 
+<h2 id="comparison-matrix">Platform Comparison Matrix</h2>
+<p>For engineering evaluations and equipment matching, here is how the three platform architectures compare across core hardware capabilities, cooling, and docking interfaces:</p>
+<div class="table-scroll"><table class="spec-table">
+  <caption class="sr-only">Detailed platform comparison matrix across STS8600, STS8300, and STS8200 CROSS</caption>
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">STS8600</th>
+      <th scope="col">STS8300</th>
+      <th scope="col">STS8200 CROSS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Target Application</th>
+      <td>SoC, MCU, FPGA, High-Speed Wireless &amp; Connectivity</td>
+      <td>PMIC, Smart Power Stages (SPS), IPD, BMS</td>
+      <td>MOSFET, IGBT, SiC/GaN, Power Modules, KGD</td>
+    </tr>
+    <tr>
+      <th scope="row">Analog Channels</th>
+      <td>&gt; 2,000 Channels</td>
+      <td>300–500+ Channels</td>
+      <td>Up to 26 Slots Configurable</td>
+    </tr>
+    <tr>
+      <th scope="row">Digital Speed &amp; Channels</th>
+      <td>&gt; 4,000 Channels @ 1.6 Gbps</td>
+      <td>Configurable Mixed-Signal Digital</td>
+      <td>Open C++ Pattern Sequencer</td>
+    </tr>
+    <tr>
+      <th scope="row">Max Power Delivery</th>
+      <td>&gt; 2,000A DC Delivery</td>
+      <td>Multi-rail High Current PMIC Supplies</td>
+      <td>2000V / 2000A DC (18,000A Peak on AXE-PLUS)</td>
+    </tr>
+    <tr>
+      <th scope="row">Cooling Architecture</th>
+      <td>Liquid-Cooled Test Head</td>
+      <td>Forced Air Cooling</td>
+      <td>Forced Air / High-Power Module Cooling</td>
+    </tr>
+    <tr>
+      <th scope="row">Parallel Test Sites</th>
+      <td>High-Density Multi-Site</td>
+      <td>Up to 32 Parallel Sites (Hard Docking)</td>
+      <td>Single to Quad-Site High Power</td>
+    </tr>
+    <tr>
+      <th scope="row">Wafer Prober Docking</th>
+      <td>ACCRETECH UF200 / UF3000, TEL Precio</td>
+      <td>ACCRETECH UF-series, TEL Precio / P12XL</td>
+      <td>ACCRETECH (Wafer Sort AXE-FET), TEL</td>
+    </tr>
+    <tr>
+      <th scope="row">Package Handler Docking</th>
+      <td>Chroma, Hontech, Multitest (High-Speed)</td>
+      <td>Chroma, Hontech, Multitest (Turret &amp; P&amp;P)</td>
+      <td>Multitest, Hontech (Strip &amp; Gravity-Feed)</td>
+    </tr>
+    <tr>
+      <th scope="row">Programming Environment</th>
+      <td>Open C++ / AccoTEST Studio</td>
+      <td>Open C++ / AccoTEST Studio</td>
+      <td>Open C++ / AccoTEST Studio</td>
+    </tr>
+    <tr>
+      <th scope="row">Direct Inquiry</th>
+      <td><a href="../contact.html?product=STS8600" class="btn-primary inline-flex text-xs">Inquire STS8600 &rarr;</a></td>
+      <td><a href="../contact.html?product=STS8300" class="btn-primary inline-flex text-xs">Inquire STS8300 &rarr;</a></td>
+      <td><a href="../contact.html?product=STS8200" class="btn-primary inline-flex text-xs">Inquire STS8200 &rarr;</a></td>
+    </tr>
+  </tbody>
+</table></div>
+
 <h2 id="sts8600">STS8600: SoC and high-speed digital</h2>
 <p>The STS8600 uses a liquid-cooled test head for complex analog and high-speed digital pins, aimed at data centre, automotive and IoT devices. AccoTEST describes it as "One Platform for All" for high-pin-count processors, automotive microcontrollers and high-speed digital devices.</p>
 <p>If most of your test time goes into digital patterns and you are running out of pins or speed on your current platform, start here.</p>
@@ -164,7 +257,7 @@ section: guides
         <div class="space-y-8 lg:sticky lg:top-24">
           <nav aria-label="In this guide" class="hidden lg:block">
             <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">In this guide</p>
-            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#short-version" class="text-slate-600 hover:text-slate-900">The short version</a></li><li><a href="#sts8600" class="text-slate-600 hover:text-slate-900">STS8600: SoC and high-speed digital</a></li><li><a href="#sts8300" class="text-slate-600 hover:text-slate-900">STS8300: PMIC and mixed-signal</a></li><li><a href="#sts8200" class="text-slate-600 hover:text-slate-900">STS8200 CROSS: power discretes and modules</a></li><li><a href="#evaluation" class="text-slate-600 hover:text-slate-900">How an evaluation works</a></li><li><a href="#conversion" class="text-slate-600 hover:text-slate-900">Moving a device from another tester</a></li><li><a href="#support" class="text-slate-600 hover:text-slate-900">Local support after installation</a></li></ul>
+            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#short-version" class="text-slate-600 hover:text-slate-900">The short version</a></li><li><a href="#comparison-matrix" class="text-slate-600 hover:text-slate-900">Platform Comparison Matrix</a></li><li><a href="#sts8600" class="text-slate-600 hover:text-slate-900">STS8600: SoC and high-speed digital</a></li><li><a href="#sts8300" class="text-slate-600 hover:text-slate-900">STS8300: PMIC and mixed-signal</a></li><li><a href="#sts8200" class="text-slate-600 hover:text-slate-900">STS8200 CROSS: power discretes and modules</a></li><li><a href="#evaluation" class="text-slate-600 hover:text-slate-900">How an evaluation works</a></li><li><a href="#conversion" class="text-slate-600 hover:text-slate-900">Moving a device from another tester</a></li><li><a href="#support" class="text-slate-600 hover:text-slate-900">Local support after installation</a></li></ul>
           </nav>
           <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Related products</p>
