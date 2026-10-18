@@ -46,6 +46,14 @@ section: home
 </head>
 <body class="flex min-h-screen flex-col bg-white">
 
+  <!-- PSECE 2026 event banner: hides itself after Oct 28, 2026. Remove after the show. -->
+  <div id="eventBanner" class="bg-slate-900 py-2 text-center text-sm text-white">
+    <div class="wrap">
+      See NXTREV and AccoTEST at <span class="font-semibold">PSECE 2026</span>, Oct 26&ndash;28, Hall 4, Booths 224 &amp; 225, SMX Convention Center Manila.
+      <a href="https://psece2026.event-reg.link" class="font-semibold underline" target="_blank" rel="noopener">Register free as a visitor</a>
+    </div>
+  </div>
+  <script>if (new Date() > new Date("2026-10-29T00:00:00+08:00")) document.getElementById("eventBanner").remove();</script>
   {% include header.html %}
 
   <main id="main">
