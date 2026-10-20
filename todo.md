@@ -86,6 +86,9 @@
 - [x] Applied strategic positioning charter: *"Global technology. Local follow-through."*, purpose, mission, vision, and 5 core operating values.
 - [x] Applied commercial protection guardrail: Exclusively branded AccoTEST while categorizing all other non-exclusive equipment by technical capability without displaying third-party brand names.
   - 2026-10-20 exception (John: "do what's best for traffic"): third-party prober and handler brands may be named only as examples of equipment a customer tells us about for docking checks (e.g. "tell us your TEL or ACCRETECH prober"). Never as a compatibility claim, a product we sell, or in structured data.
+  - 2026-10-20 (John): no NexusTest page, and never name NexusTest on the site. Its old address `/products/nexustest` redirects to `/products/handling.html#kgd`.
+  - Customer-name check before every push: `grep -rniE "amertron|inari|cirtek|infineon|littelfuse|vishay|nexperia" --include='*.html' . | grep -v _site`. Only allowed hits: Infineon in Elmer's bio (about.html, linecard.html, products/operations.html), kept by John 2026-10-20.
+  - Old Google Sites addresses still in search results redirect via small `index.html` stubs (pattern: `accotest/products/index.html`), kept out of `sitemap.xml`. Not redirected on purpose: `/products/accotest/brochures` and `/products/accotest/products`, since a `products/accotest/` folder could change how the main `/products/accotest` address loads.
 - [x] Streamlined text wordiness and added interactive Products & Solutions navigation dropdown + sticky category filter on `products.html`.
 - [x] Created `LOG.md` recording full project history, specifications, and file manifest.
 - [x] Synchronized all files to OneDrive Projects (`01_NXTREV/01_Projects/NXTREV Website/`).
