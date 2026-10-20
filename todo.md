@@ -85,6 +85,7 @@
 - [x] Extracted real employee face photos from `NXTREV_Company_Profile_202607.pdf` and added to `about.html` (Elmer, Vernie, Francis, John Eliel, John Edric).
 - [x] Applied strategic positioning charter: *"Global technology. Local follow-through."*, purpose, mission, vision, and 5 core operating values.
 - [x] Applied commercial protection guardrail: Exclusively branded AccoTEST while categorizing all other non-exclusive equipment by technical capability without displaying third-party brand names.
+  - 2026-10-20 exception (John: "do what's best for traffic"): third-party prober and handler brands may be named only as examples of equipment a customer tells us about for docking checks (e.g. "tell us your TEL or ACCRETECH prober"). Never as a compatibility claim, a product we sell, or in structured data.
 - [x] Streamlined text wordiness and added interactive Products & Solutions navigation dropdown + sticky category filter on `products.html`.
 - [x] Created `LOG.md` recording full project history, specifications, and file manifest.
 - [x] Synchronized all files to OneDrive Projects (`01_NXTREV/01_Projects/NXTREV Website/`).

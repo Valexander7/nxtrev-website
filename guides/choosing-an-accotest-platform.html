@@ -58,9 +58,9 @@ section: guides
       "url": "https://nxtrev.org/guides/choosing-an-accotest-platform.html",
       "mainEntityOfPage": "https://nxtrev.org/guides/choosing-an-accotest-platform.html",
       "datePublished": "2026-09-25",
-      "dateModified": "2026-10-10",
+      "dateModified": "2026-10-20",
       "inLanguage": "en",
-      "wordCount": 950,
+      "wordCount": 1323,
       "about": [
         {
           "@type": "Product",
@@ -134,93 +134,39 @@ section: guides
   </tbody>
 </table></div>
 
-<h2 id="comparison-matrix">Platform Comparison Matrix</h2>
-<p>For engineering evaluations and equipment matching, here is how the three platform architectures compare across core hardware capabilities, cooling, and docking interfaces:</p>
+<h2 id="comparison-matrix">Platform comparison</h2>
+<p>The same three platforms side by side. Every figure here comes from AccoTEST's published specs. Where AccoTEST does not publish a number, we leave it out rather than guess.</p>
 <div class="table-scroll"><table class="spec-table">
-  <caption class="sr-only">Detailed platform comparison matrix across STS8600, STS8300, and STS8200 CROSS</caption>
+  <caption class="sr-only">Comparison of STS8600, STS8300 and STS8200 CROSS</caption>
   <thead>
     <tr>
-      <th scope="col">Specification</th>
+      <th scope="col"></th>
       <th scope="col">STS8600</th>
       <th scope="col">STS8300</th>
       <th scope="col">STS8200 CROSS</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Target Application</th>
-      <td>SoC, MCU, FPGA, High-Speed Wireless &amp; Connectivity</td>
-      <td>PMIC, Smart Power Stages (SPS), IPD, BMS</td>
-      <td>MOSFET, IGBT, SiC/GaN, Power Modules, KGD</td>
-    </tr>
-    <tr>
-      <th scope="row">Analog Channels</th>
-      <td>&gt; 2,000 Channels</td>
-      <td>300–500+ Channels</td>
-      <td>Up to 26 Slots Configurable</td>
-    </tr>
-    <tr>
-      <th scope="row">Digital Speed &amp; Channels</th>
-      <td>&gt; 4,000 Channels @ 1.6 Gbps</td>
-      <td>Configurable Mixed-Signal Digital</td>
-      <td>Open C++ Pattern Sequencer</td>
-    </tr>
-    <tr>
-      <th scope="row">Max Power Delivery</th>
-      <td>&gt; 2,000A DC Delivery</td>
-      <td>Multi-rail High Current PMIC Supplies</td>
-      <td>2000V / 2000A DC (18,000A Peak on AXE-PLUS)</td>
-    </tr>
-    <tr>
-      <th scope="row">Cooling Architecture</th>
-      <td>Liquid-Cooled Test Head</td>
-      <td>Forced Air Cooling</td>
-      <td>Forced Air / High-Power Module Cooling</td>
-    </tr>
-    <tr>
-      <th scope="row">Parallel Test Sites</th>
-      <td>High-Density Multi-Site</td>
-      <td>Up to 32 Parallel Sites (Hard Docking)</td>
-      <td>Single to Quad-Site High Power</td>
-    </tr>
-    <tr>
-      <th scope="row">Wafer Prober Docking</th>
-      <td>ACCRETECH UF200 / UF3000, TEL Precio</td>
-      <td>ACCRETECH UF-series, TEL Precio / P12XL</td>
-      <td>ACCRETECH (Wafer Sort AXE-FET), TEL</td>
-    </tr>
-    <tr>
-      <th scope="row">Package Handler Docking</th>
-      <td>Chroma, Hontech, Multitest (High-Speed)</td>
-      <td>Chroma, Hontech, Multitest (Turret &amp; P&amp;P)</td>
-      <td>Multitest, Hontech (Strip &amp; Gravity-Feed)</td>
-    </tr>
-    <tr>
-      <th scope="row">Programming Environment</th>
-      <td>Open C++ / AccoTEST Studio</td>
-      <td>Open C++ / AccoTEST Studio</td>
-      <td>Open C++ / AccoTEST Studio</td>
-    </tr>
-    <tr>
-      <th scope="row">Direct Inquiry</th>
-      <td><a href="../contact.html?product=STS8600" class="btn-primary inline-flex text-xs">Inquire STS8600 &rarr;</a></td>
-      <td><a href="../contact.html?product=STS8300" class="btn-primary inline-flex text-xs">Inquire STS8300 &rarr;</a></td>
-      <td><a href="../contact.html?product=STS8200" class="btn-primary inline-flex text-xs">Inquire STS8200 &rarr;</a></td>
-    </tr>
+    <tr><td>Built for</td><td>SoC, MCU, FPGA, wireless</td><td>PMIC, smart power stages, IPD, BMS</td><td>MOSFET, IGBT, SiC, GaN, power modules, KGD</td></tr>
+    <tr><td>Analog</td><td>Over 2,000 channels</td><td>300–500+ channels in the test head</td><td>Configured by slot, up to 26 slots</td></tr>
+    <tr><td>Digital</td><td>Over 4,000 channels @ 1.6 Gbps</td><td>Digital resource modules</td><td>Digital I/O modules</td></tr>
+    <tr><td>Power</td><td>Over 2,000A delivery</td><td>Floating octal V/I source-measure modules</td><td>AXE-PLUS: 2000V / 2000A DC, 1200V / 18,000A short-circuit</td></tr>
+    <tr><td>Parallel test</td><td>Multi-site</td><td>Up to 32 sites, hard docking</td><td>Set by configuration</td></tr>
+    <tr><td>Test head</td><td>Liquid-cooled</td><td>All-in-one</td><td>AXE-PM, AXE-FET or AXE-PLUS configuration</td></tr>
   </tbody>
 </table></div>
+
+<h3 id="docking" class="h-card mt-10">Will it dock to our prober or handler?</h3>
+<p>This is the question I get right after "which platform". AccoTEST testers support hard or soft docking, and the docking kit is chosen for your specific equipment. So tell us exactly what is on your floor, for example a TEL or ACCRETECH wafer prober, or a Chroma, Hontech or Multitest handler, with the model number. We confirm the docking hardware and the load board layout with AccoTEST before anything ships, not after the tester arrives.</p>
+<p>Ask about a platform: <a href="../contact.html?product=STS8600">STS8600</a>, <a href="../contact.html?product=STS8300">STS8300</a> or <a href="../contact.html?product=STS8200">STS8200 CROSS</a>.</p>
 
 <h2 id="sts8600">STS8600: SoC and high-speed digital</h2>
 <p>The STS8600 uses a liquid-cooled test head for complex analog and high-speed digital pins, aimed at data centre, automotive and IoT devices. AccoTEST describes it as "One Platform for All" for high-pin-count processors, automotive microcontrollers and high-speed digital devices.</p>
 <p>If most of your test time goes into digital patterns and you are running out of pins or speed on your current platform, start here.</p>
-<p><strong>Prober and Handler Docking:</strong> Direct hard-dock and cable interface kits support standard industry wafer probers (Tokyo Seimitsu / ACCRETECH UF200 and UF3000, Tokyo Electron / TEL Precio and P12XL) as well as high-speed package handlers (Chroma, Hontech, Multitest). We assist with docking alignment, manipulator counterbalance, and custom load board (DIB) layout.</p>
-<div class="mt-4"><a href="../contact.html?product=STS8600" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8600 Specs &amp; Docking Details &rarr;</a></div>
 
 <h2 id="sts8300">STS8300: PMIC and mixed-signal</h2>
 <p>The STS8300 is built for parallel test. Its all-in-one test head runs up to 32 sites for PMICs, smart power stages, integrated passive devices and battery management devices.</p>
 <p>The site count you actually run is usually set by the handler and the load board, not the tester. Before you plan around 32 sites, check how many sites your handler can present and whether your load board layout keeps every site within spec.</p>
-<p><strong>Docking &amp; Parallel Production Cells:</strong> Rigid mechanical docking integrates cleanly with standard pick-and-place and turret test handlers (Chroma, Hontech, Multitest) and wafer probers (ACCRETECH, TEL). For up to 32 parallel sites, rigid docking mechanics maintain planarity and signal integrity across high-pin-count Kelvin contactors.</p>
-<div class="mt-4"><a href="../contact.html?product=STS8300" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8300 PMIC Specs &amp; Evaluation &rarr;</a></div>
 
 <h2 id="sts8200">STS8200 CROSS: power discretes and modules</h2>
 <p>The STS8200 CROSS is a universal power discrete and module tester for wide-bandgap SiC and GaN, MOSFETs, IGBTs, known good die and automotive power bricks. It comes in three configurations:</p>
@@ -231,8 +177,6 @@ section: guides
 </ul>
 <p>Test programs are developed in open C++.</p>
 <p>A recent example: a customer sent us the test plan for a new power package and asked whether the STS8200 already on their floor could handle it. AccoTEST's applications engineers reviewed it and confirmed the avalanche (UIS), DC and gate resistance tests were all within the machine's rated specs. The hardware answer was yes. The real lead time was the test program, because none existed yet for that device.</p>
-<p><strong>Docking for Power &amp; Wafer Sort:</strong> Optimized for high-voltage and high-current docking to wafer probers (ACCRETECH UF-series, TEL) for discrete wafer sort (AXE-FET), as well as gravity-feed and strip-test handlers (Multitest, Hontech) for packaged power modules (AXE-PM). Heavy-duty Kelvin docking interfaces eliminate contact resistance and thermal drift during 2000A DC pulses.</p>
-<div class="mt-4"><a href="../contact.html?product=STS8200" class="btn-primary inline-flex items-center gap-1.5 text-xs">Request STS8200 Series Specs &amp; Evaluation &rarr;</a></div>
 
 <h2 id="evaluation">How an evaluation works</h2>
 <p>We have placed an AccoTEST evaluation tester at a Philippine OSAT, handling principal coordination, the free-zone shipment and on-site setup. From that experience, this is what to expect:</p>
@@ -250,37 +194,28 @@ section: guides
 <p>Correlation is what decides whether the conversion is done: the same units, tested on both platforms, must agree within the limits you set up front.</p>
 
 <h2 id="support">Local support after installation</h2>
-<p>We provide factory-certified applications support for all three platforms, including test program conversion, pin-count feasibility and prober or handler docking integration with standard industry platforms (Tokyo Seimitsu / ACCRETECH and TEL probers; Chroma, Hontech, and Multitest pick-and-place/turret handlers). AccoTEST's own engineers in the region work with us on setup and training, so you have one local contact and a factory team behind it.</p>
+<p>We provide factory-certified applications support for all three platforms, including test program conversion, pin-count feasibility and prober or handler docking integration. AccoTEST's own engineers in the region work with us on setup and training, so you have one local contact and a factory team behind it.</p>
 
-<h2 id="faq">Frequently asked questions for Philippine engineering teams</h2>
-<div class="space-y-6 mt-6">
-  <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-    <h3 class="font-bold text-slate-900 text-base">Can we evaluate an AccoTEST system inside our PEZA or freeport facility?</h3>
-    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Yes. We arrange consignment evaluation testers under formal loan agreements. For plants in PEZA or ecozones (such as Laguna Technopark, Clark, or Subic), we provide documentation assistance for admission permits, gate passes, and customs clearance so the unit docks directly on your floor.</p>
-  </div>
+<h2 id="faq">Questions engineers ask us</h2>
 
-  <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-    <h3 class="font-bold text-slate-900 text-base">What is the typical delivery and commissioning timeline?</h3>
-    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Evaluation loan units typically ship within 2 to 4 weeks once the loan agreement and ecozone admission permits are confirmed. Standard production capital equipment orders follow factory build lead times of 8 to 12 weeks, supported by regional dispatch from Southeast Asia hub facilities.</p>
-  </div>
+<h3 class="h-card mt-8">Can we evaluate an AccoTEST tester inside our PEZA or freeport plant?</h3>
+<p>Yes, and we have done it. The tester comes on loan under a short loan agreement, your side files the zone permit to bring it in, and an AccoTEST engineer sets it up on delivery. The <a href="peza-equipment-import.html">PEZA and freeport guide</a> lists the documents.</p>
 
-  <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-    <h3 class="font-bold text-slate-900 text-base">Who handles calibration, diagnostics, and board-level repairs in the Philippines?</h3>
-    <p class="mt-2 text-sm text-slate-600 leading-relaxed">NXTREV provides front-line factory-certified applications support, preventive maintenance, and on-site calibration in Philippine manufacturing corridors. Standard diagnostic routines (CAL/DIAG) run directly on-tester, with local spare boards and regional factory engineering backing rapid turnaround.</p>
-  </div>
+<h3 class="h-card mt-8">How long until the tester is on our floor?</h3>
+<p>For an evaluation, the paperwork usually takes longer than the delivery. On our last one, the loan agreement went through the customer's local counsel and then corporate legal, while the zone permit was filed in parallel. Start both early. For a production order, lead time depends on the configuration, and we confirm it in the quotation rather than promise a number here.</p>
 
-  <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-    <h3 class="font-bold text-slate-900 text-base">How does test program conversion work if we are migrating from another ATE platform?</h3>
-    <p class="mt-2 text-sm text-slate-600 leading-relaxed">AccoTEST platforms program in open C++ without restrictive proprietary languages. We work with your test engineering team to translate test plans, timing sets, and pin maps from legacy platforms (such as ASL1000, Eagle, or older analog testers), followed by correlation testing against golden devices.</p>
-  </div>
-</div>
+<h3 class="h-card mt-8">Who supports the tester after installation?</h3>
+<p>We are your local contact for applications support, test program conversion and docking. AccoTEST's engineers in the region work with us on setup and training, so there is a factory team behind every answer.</p>
+
+<h3 class="h-card mt-8">We run our devices on another tester today. How hard is moving them?</h3>
+<p>It depends mostly on how well your current program is documented. We rebuild the test plan, limits and pin map on the AccoTEST platform, then correlate the same units on both testers. STS8200 CROSS programs are written in open C++. Many plants start with devices from an older platform such as the ASL1000.</p>
 
       </div>
       <aside class="lg:col-span-4" aria-label="About this guide">
         <div class="space-y-8 lg:sticky lg:top-24">
           <nav aria-label="In this guide" class="hidden lg:block">
             <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">In this guide</p>
-            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#short-version" class="text-slate-600 hover:text-slate-900">The short version</a></li><li><a href="#comparison-matrix" class="text-slate-600 hover:text-slate-900">Platform Comparison Matrix</a></li><li><a href="#sts8600" class="text-slate-600 hover:text-slate-900">STS8600: SoC and high-speed digital</a></li><li><a href="#sts8300" class="text-slate-600 hover:text-slate-900">STS8300: PMIC and mixed-signal</a></li><li><a href="#sts8200" class="text-slate-600 hover:text-slate-900">STS8200 CROSS: power discretes and modules</a></li><li><a href="#evaluation" class="text-slate-600 hover:text-slate-900">How an evaluation works</a></li><li><a href="#conversion" class="text-slate-600 hover:text-slate-900">Moving a device from another tester</a></li><li><a href="#support" class="text-slate-600 hover:text-slate-900">Local support after installation</a></li><li><a href="#faq" class="text-slate-600 hover:text-slate-900">Frequently asked questions</a></li></ul>
+            <ul class="mt-4 space-y-2.5 text-sm"><li><a href="#short-version" class="text-slate-600 hover:text-slate-900">The short version</a></li><li><a href="#comparison-matrix" class="text-slate-600 hover:text-slate-900">Platform comparison</a></li><li><a href="#sts8600" class="text-slate-600 hover:text-slate-900">STS8600: SoC and high-speed digital</a></li><li><a href="#sts8300" class="text-slate-600 hover:text-slate-900">STS8300: PMIC and mixed-signal</a></li><li><a href="#sts8200" class="text-slate-600 hover:text-slate-900">STS8200 CROSS: power discretes and modules</a></li><li><a href="#evaluation" class="text-slate-600 hover:text-slate-900">How an evaluation works</a></li><li><a href="#conversion" class="text-slate-600 hover:text-slate-900">Moving a device from another tester</a></li><li><a href="#support" class="text-slate-600 hover:text-slate-900">Local support after installation</a></li><li><a href="#faq" class="text-slate-600 hover:text-slate-900">Questions engineers ask us</a></li></ul>
           </nav>
           <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Related products</p>
