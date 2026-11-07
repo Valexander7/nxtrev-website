@@ -101,7 +101,7 @@
       if (!num || reduce.matches) return;
       var target = parseFloat(num.getAttribute('data-count'));
       var suffix = num.getAttribute('data-suffix') || '';
-      var t0 = null, dur = 1800;
+      var t0 = null, dur = 240;
       function step(t) {
         if (t0 === null) t0 = t;
         var k = clamp((t - t0) / dur);

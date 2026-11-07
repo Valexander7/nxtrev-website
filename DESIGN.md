@@ -39,7 +39,7 @@ Density lives inside components; air lives between them. Whitespace comes from s
 * **Imagery:** named products appear only as renders from `assets/products/` or supplied by the principal. Environment photos live in `assets/imagery/env-*.webp`, sit in fixed-ratio `.frame` boxes (3:2, 4:5, 16:9, 21:9) and never show a recognizable product or brand.
 * **Icons:** SVG only, never emoji.
 * **Diagrams are built in HTML**, not exported as images: live text on the type scale, simple line drawings without lettering, numbered markers matched to an HTML list, and layouts that stack on phones. Each sits on a light panel (`rounded-3xl bg-slate-50`, or white on a grey section) with a one-line concept caption.
-* **Motion:** one easing, `cubic-bezier(0.16, 1, 0.3, 1)`; fade and rise of 16px or less, 500ms or less, once per element; one hero entrance per page; at most one pinned scroll sequence per page (the AccoTEST stage). Everything is off under `prefers-reduced-motion`.
+* **Motion:** one easing, `cubic-bezier(0.16, 1, 0.3, 1)`; fade and rise of 16px or less, 240ms or less (including short stagger delays), once per element; one hero entrance per page; at most one pinned scroll sequence per page (the AccoTEST stage). Everything is off under `prefers-reduced-motion`.
 * **Buttons:** pill-shaped `.btn-primary` for the single main action, `.btn-secondary` or a text link for the rest.
 * **Shared header and footer** are Jekyll includes in `_includes/` (GitHub Pages builds them). Each page sets `root` and `section` in its front matter. Preview with `./tools/preview.sh`.
 * **Dial:** ENERGY 2 / RHYTHM 2 / MOTION 2. Confident but calm; sections vary in composition around a steady grid; motion is a hero entrance, scroll reveals and the one pinned AccoTEST stage.
