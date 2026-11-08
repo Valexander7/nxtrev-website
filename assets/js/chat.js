@@ -84,6 +84,16 @@
     answer(input.value.trim());
   });
 
+  // The page was left while a send was in flight, so we cannot know whether it
+  // reached us. Offering Send again could email sales twice; offer email instead.
+  if (state.sending) {
+    if (state.log.length && state.log[state.log.length - 1].text === 'Sending…') state.log.pop();
+    state.sending = false;
+    state.unconfirmed = true;
+    state.log.push({ who: 'bot', text: 'We could not confirm your message went through. If you do not hear from us, you can email it instead:', link: mailtoHref(state.answers) });
+    save();
+  }
+
   render();
   if (state.open) setOpen(true, true);
 
@@ -152,8 +162,9 @@
 
   function send() {
     var a = state.answers;
-    if (honeypot.checked) return;
+    if (honeypot.checked || state.sending || state.sent) return;
     renderChips([]);
+    state.sending = true;
     push('bot', 'Sending…');
     var text = summary(a) + '\n\nPage: ' + location.href;
     fetch('https://api.web3forms.com/submit', {
@@ -178,6 +189,7 @@
   function done(a) {
     state.log.pop();
     logEl.removeChild(logEl.lastChild);
+    state.sending = false;
     state.sent = true;
     push('bot', 'Sent. Thank you, ' + a.name.split(' ')[0] + '. We will reply to ' + a.email + '.');
     renderChips(['Start over']);
@@ -186,9 +198,14 @@
   function fallback(text, a) {
     state.log.pop();
     logEl.removeChild(logEl.lastChild);
-    var href = 'mailto:' + SALES + '?subject=' + encodeURIComponent('Website chat - ' + a.topic) + '&body=' + encodeURIComponent(text);
-    push('bot', 'Sorry, that did not go through. You can send the same message by email instead:', href);
+    state.sending = false;
+    push('bot', 'Sorry, that did not go through. You can send the same message by email instead:', mailtoHref(a));
     renderChips(['Send', 'Start over']);
+  }
+
+  function mailtoHref(a) {
+    var text = summary(a) + '\n\nPage: ' + location.href;
+    return 'mailto:' + SALES + '?subject=' + encodeURIComponent('Website chat - ' + a.topic) + '&body=' + encodeURIComponent(text);
   }
 
   // ---- Rendering ----
@@ -214,7 +231,7 @@
   function render() {
     logEl.innerHTML = '';
     state.log.forEach(renderMsg);
-    if (state.sent) renderChips(['Start over']);
+    if (state.sent || state.unconfirmed) renderChips(['Start over']);
     else if (state.step >= STEPS.length) renderChips(['Send', 'Start over']);
     else renderChips();
   }
@@ -236,7 +253,7 @@
       });
       chipsEl.appendChild(btn);
     });
-    var waiting = state.sent || state.step >= STEPS.length;
+    var waiting = state.sent || state.unconfirmed || state.step >= STEPS.length;
     input.disabled = waiting;
     input.type = s && s.type === 'email' ? 'email' : 'text';
     input.placeholder = waiting ? '' : 'Type your reply';
