@@ -44,3 +44,4 @@ Design skill for redesigns, in `.claude/skills/hallmark` and `.codex/skills/hall
 - `DESIGN.md` stays the locked system; Hallmark's own pre-flight treats it that way. Changing it needs John's OK.
 - A redesign keeps all content and wiring: spec text, JSON-LD, links, forms, chat. The change cascade and `./tools/build-css.sh` still apply.
 - Never run `install-hook.mjs`, and no generated images (`TOGETHER_API_KEY`) unless John asks.
+- Keep the polish (John, 2026-11-11): every new page or edit follows the Hallmark rules in `DESIGN.md` (no labels above headings, no uppercase letter-spaced labels, no link arrows, commas not middle dots, "to" for ranges). Before pushing a design change, run the Hallmark check in `DESIGN.md` and add no new flags.

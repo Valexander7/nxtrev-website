@@ -48,6 +48,7 @@ Density lives inside components; air lives between them. Whitespace comes from s
 ### Why these choices (one line each)
 * **No labels above headings, no uppercase letter-spaced labels** (John, 2026-11-11, Hallmark polish). The heading opens the section. A fact the heading does not carry (for example "Authorized Sales Representative") sits under the heading as a plain `.subline`, sentence case.
 * **No arrows on links or buttons** (John, 2026-11-11). Links read as links by colour and weight (`.link-more`). Lists of short specs are joined with commas or semicolons, not middle dots; ranges use "to", not a dash.
+* **Readable and reachable** (John, 2026-11-11). Guide body text stays at about 75 characters a line (`.guide > p` max 40rem). Keyboard focus shows a light blue outline (`#93c5fd`) on dark sections, so it stays visible. Footer columns go 1, then 2 at tablet, then 4 on desktop. Nothing on a phone sticks out past its card or the screen edge.
 * **Pill shape** is reserved for buttons and status tags; tabs, jump links and cards use 8–16px radii.
 * **How we work has three steps** because the method really has three stages (fit, integrate, support), not because of a template.
 * **Product tiles are identical** because the families are parallel choices for the buyer; the flagship is marked by position (first) and on the products index.
