@@ -11,6 +11,7 @@
   h1, h2, h3, h4 { @apply font-heading; text-wrap: balance; }
   p, li { text-wrap: pretty; }
   :focus-visible { outline: 2px solid #3058a6; outline-offset: 3px; border-radius: 4px; }
+  .bg-slate-950 :focus-visible, .bg-nxtrev-dark :focus-visible, .bg-\[\#0b132b\] :focus-visible { outline-color: #93c5fd; }
   ::selection { background: #dbe4f5; }
 }
 
@@ -69,6 +70,7 @@
   .guide > * + * { @apply mt-5; }
   .guide h2 { @apply h-sub mt-14 scroll-mt-24; }
   .guide p, .guide li { @apply text-base text-slate-700; }
+  .guide > p, .guide > ul, .guide > ol { max-width: 40rem; }
   .guide ul { @apply list-disc space-y-2 pl-6; }
   .guide ol { @apply list-decimal space-y-3 pl-6; }
   .guide li::marker { @apply text-slate-400; }
