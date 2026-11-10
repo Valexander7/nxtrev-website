@@ -25,12 +25,12 @@ section: linecard
     }
 
     @media print {
-      body { background: white !important; color: black !important; font-size: 11pt; }
+      body { background: white !important; color: #0f172a !important; font-size: 11pt; }
       .no-print { display: none !important; }
       .print-shadow-none { box-shadow: none !important; }
       .print-border { border: 1px solid #cbd5e1 !important; }
       .page-break { page-break-before: always; }
-      a { text-decoration: none !important; color: black !important; }
+      a { text-decoration: none !important; color: #0f172a !important; }
     }
   </style>
   <link rel="canonical" href="https://nxtrev.org/linecard.html">
@@ -59,11 +59,11 @@ section: linecard
     </a>
     <div class="flex items-center space-x-3">
       <button onclick="window.print()" class="inline-flex items-center space-x-2 bg-white border border-slate-300 hover:border-nxtrev hover:text-nxtrev text-slate-800 font-bold px-4 py-2 rounded-lg text-sm transition shadow-xs">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
         <span>Print / Save as PDF</span>
       </button>
       <a href="contact.html" class="bg-nxtrev hover:bg-nxtrev-dark text-white font-bold px-5 py-2 rounded-lg text-sm transition shadow-sm">
-        Request a Quote / RFQ →
+        Request a Quote / RFQ
       </a>
     </div>
   </div>
@@ -78,7 +78,7 @@ section: linecard
           <div class="flex items-center space-x-3">
             <img src="assets/logos/nxtrev_icon_white.svg" width="42" height="68" alt="NXTREV" class="h-10 w-auto">
             <img src="assets/logos/nxtrev_wordmark_white.svg" width="76" height="20" alt="NXTREV" class="h-6 w-auto">
-            <span class="text-xs tracking-widest text-blue-400 font-bold uppercase border-l border-slate-700 pl-3">Line Card 2026</span>
+            <span class="text-xs text-blue-400 font-bold border-l border-slate-700 pl-3">Line Card 2026</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Semiconductor Equipment & Production Solutions</h1>
           <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -102,7 +102,7 @@ section: linecard
       <section class="border border-blue-200 bg-blue-50/40 rounded-xl p-6 sm:p-8 space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-blue-200 pb-3">
           <div>
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 01 • Flagship Integration</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 1: Flagship Integration</span>
             <h2 class="text-xl font-bold text-slate-900">Turnkey Integrated Test Cells</h2>
           </div>
           <span class="text-xs font-semibold px-3 py-1 bg-nxtrev text-white rounded-full self-start sm:self-auto">Single-Vendor Accountability</span>
@@ -137,7 +137,7 @@ section: linecard
         <section class="border border-slate-200 rounded-xl p-6 space-y-4">
           <div class="flex items-center justify-between border-b border-slate-200 pb-3">
             <div>
-              <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 02 • Authorized Sales Representative</span>
+              <span class="text-xs font-bold text-nxtrev">Pillar 2: Authorized Sales Representative</span>
               <h2 class="text-lg font-bold text-slate-900">AccoTEST Semiconductor ATE</h2>
             </div>
             <img src="assets/logos/accotest.webp" width="655" height="96" alt="AccoTEST" class="h-6 w-auto object-contain">
@@ -164,7 +164,7 @@ section: linecard
         <!-- PILLAR 3: HANDLING & PACKAGING AUTOMATION -->
         <section class="border border-slate-200 rounded-xl p-6 space-y-4">
           <div class="border-b border-slate-200 pb-3">
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 03 • Packaging Automation</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 3: Packaging Automation</span>
             <h2 class="text-lg font-bold text-slate-900">Device Handlers & Packaging Systems</h2>
           </div>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -193,7 +193,7 @@ section: linecard
         <!-- PILLAR 4: OPTICAL INSPECTION & RELIABILITY HARDWARE -->
         <section class="border border-slate-200 rounded-xl p-6 space-y-4">
           <div class="border-b border-slate-200 pb-3">
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 04 • Metrology & Reliability</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 04, Metrology & Reliability</span>
             <h2 class="text-lg font-bold text-slate-900">AOI, Metrology & Reliability Hardware</h2>
           </div>
           <div class="space-y-3 text-sm">
@@ -215,7 +215,7 @@ section: linecard
         <!-- PILLAR 5: FIELD SERVICE & ASL1000 BOARD SUPPORT -->
         <section class="border border-slate-200 rounded-xl p-6 space-y-4">
           <div class="border-b border-slate-200 pb-3">
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 05 • Sustaining Engineering</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 05, Sustaining Engineering</span>
             <h2 class="text-lg font-bold text-slate-900">Field Service & ASL1000 Board Support</h2>
           </div>
           <div class="space-y-3 text-sm">
@@ -242,7 +242,7 @@ section: linecard
         <!-- PILLAR 6: SUBCONTRACTOR MANAGEMENT & OPERATIONS (FROM SLIDE 1) -->
         <section class="border border-slate-200 rounded-xl p-6 space-y-4 bg-slate-50/50">
           <div class="border-b border-slate-200 pb-3">
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 06 • Factory Operations Leadership</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 06, Factory Operations Leadership</span>
             <h2 class="text-lg font-bold text-slate-900">Subcontractor Management & Operations</h2>
           </div>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -279,7 +279,7 @@ section: linecard
         <!-- PILLAR 7: DIVERSIFIED SOURCING SOLUTIONS (FROM SLIDE 2) -->
         <section class="border border-slate-200 rounded-xl p-6 space-y-4 bg-slate-50/50">
           <div class="border-b border-slate-200 pb-3">
-            <span class="text-xs font-bold text-nxtrev uppercase tracking-wider">Pillar 07 • Supply Chain Partner</span>
+            <span class="text-xs font-bold text-nxtrev">Pillar 07, Supply Chain Partner</span>
             <h2 class="text-lg font-bold text-slate-900">Diversified Sourcing & Supply Chain</h2>
           </div>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -311,7 +311,7 @@ section: linecard
         <div class="space-y-1">
           <div class="text-white font-bold text-sm">NXTREV Technology Inc.</div>
           <div>Posadas Village, 107 Mayor J. Posadas Ave., Brgy. Sucat, Muntinlupa City, 1770 Metro Manila, Philippines</div>
-          <div class="text-slate-400">Official AccoTEST Representative in the Philippines • Semiconductor & Electronics Production Solutions</div>
+          <div class="text-slate-400">Official AccoTEST Representative in the Philippines, Semiconductor & Electronics Production Solutions</div>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
           <a href="mailto:sales@nxtrev.org" class="bg-nxtrev hover:bg-nxtrev-dark text-white font-bold px-6 py-2.5 rounded-lg text-xs transition">
@@ -327,7 +327,7 @@ section: linecard
   </main>
 
   <div class="text-center text-xs text-slate-600 mt-6 no-print">
-    © 2026 NXTREV Technology Inc. All rights reserved. • <a href="index.html" class="hover:underline">Home</a> • <a href="products.html" class="hover:underline">Products</a> • <a href="about.html" class="hover:underline">About</a> • <a href="contact.html" class="hover:underline">Contact</a>
+    © 2026 NXTREV Technology Inc. All rights reserved., <a href="index.html" class="hover:underline">Home</a>, <a href="products.html" class="hover:underline">Products</a>, <a href="about.html" class="hover:underline">About</a>, <a href="contact.html" class="hover:underline">Contact</a>
     <p class="mt-2 text-xs text-slate-600">AccoTEST&reg; and associated product names and imagery are trademarks of Beijing Huafeng Test &amp; Control Technology Co., Ltd. NXTREV Technology Inc. is their authorized sales representative in the Philippines.</p>
   </div>
 

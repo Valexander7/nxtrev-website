@@ -42,11 +42,12 @@ Density lives inside components; air lives between them. Whitespace comes from s
 * **Motion:** one easing, `cubic-bezier(0.16, 1, 0.3, 1)`; fade and rise of 16px or less, 240ms or less (including short stagger delays), once per element; one hero entrance per page; at most one pinned scroll sequence per page (the AccoTEST stage). Everything is off under `prefers-reduced-motion`.
 * **Buttons:** pill-shaped `.btn-primary` for the single main action, `.btn-secondary` or a text link for the rest.
 * **Shared header and footer** are Jekyll includes in `_includes/` (GitHub Pages builds them). Each page sets `root` and `section` in its front matter. Preview with `./tools/preview.sh`.
+* **Hallmark check:** `node .claude/skills/hallmark/scripts/sloplint.mjs _site --genre modern-minimal --render` after a Jekyll build. Open item: colours are Tailwind palette values, not `:root` tokens (Hallmark rule 48); the instant-redirect stub pages are not polished.
 * **Dial:** ENERGY 2 / RHYTHM 2 / MOTION 2. Confident but calm; sections vary in composition around a steady grid; motion is a hero entrance, scroll reveals and the one pinned AccoTEST stage.
 
 ### Why these choices (one line each)
-* **Eyebrow labels** (small uppercase, 0.14em tracking) are the site's one typographic motif: they name the section in the buyer's vocabulary before the heading makes the claim. Use one per section, never two.
-* **Arrows** appear only on text links that lead to another page or site, so a reader can tell "goes somewhere" from "does something". Buttons carry no arrows.
+* **No labels above headings, no uppercase letter-spaced labels** (John, 2026-11-11, Hallmark polish). The heading opens the section. A fact the heading does not carry (for example "Authorized Sales Representative") sits under the heading as a plain `.subline`, sentence case.
+* **No arrows on links or buttons** (John, 2026-11-11). Links read as links by colour and weight (`.link-more`). Lists of short specs are joined with commas or semicolons, not middle dots; ranges use "to", not a dash.
 * **Pill shape** is reserved for buttons and status tags; tabs, jump links and cards use 8–16px radii.
 * **How we work has three steps** because the method really has three stages (fit, integrate, support), not because of a template.
 * **Product tiles are identical** because the families are parallel choices for the buyer; the flagship is marked by position (first) and on the products index.

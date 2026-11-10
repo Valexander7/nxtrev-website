@@ -6,9 +6,10 @@
    limits come from DESIGN.md (Craft Layer); change them there first. */
 
 @layer base {
-  html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
-  body { @apply font-sans text-slate-800 antialiased; line-height: 1.6; }
-  h1, h2, h3, h4 { @apply font-heading; }
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; overflow-x: clip; }
+  body { @apply font-sans text-slate-800 antialiased; line-height: 1.6; overflow-x: clip; }
+  h1, h2, h3, h4 { @apply font-heading; text-wrap: balance; }
+  p, li { text-wrap: pretty; }
   :focus-visible { outline: 2px solid #3058a6; outline-offset: 3px; border-radius: 4px; }
   ::selection { background: #dbe4f5; }
 }
@@ -21,7 +22,7 @@
   .prose-w { max-width: 68ch; }
 
   /* Type scale */
-  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.14em] text-nxtrev; }
+  .subline { @apply text-sm font-semibold text-slate-600; }
   .h-display { @apply font-heading font-extrabold text-display-sm md:text-display; }
   .h-section { @apply font-heading font-extrabold text-h2-sm md:text-h2 text-slate-900; }
   .h-sub { @apply font-heading font-bold text-xl md:text-h3 text-slate-900; }
@@ -42,7 +43,7 @@
   .frame > img { @apply absolute inset-0 h-full w-full object-cover; }
 
   /* Spec tables */
-  .spec-table { @apply w-full text-left text-sm; border-collapse: collapse; }
+  .spec-table { @apply w-full text-left text-sm; border-collapse: collapse; font-variant-numeric: tabular-nums; }
   .spec-table tr { @apply border-t border-slate-200; }
   .spec-table tr:last-child { @apply border-b; }
   .spec-table th { @apply py-3 pr-6 align-top font-semibold text-slate-900; width: 38%; }
@@ -73,7 +74,7 @@
   .guide li::marker { @apply text-slate-400; }
   .guide strong { @apply font-semibold text-slate-900; }
   .guide p a, .guide li a { @apply font-semibold text-nxtrev underline underline-offset-4; }
-  .guide .spec-table thead th { @apply w-auto pb-3 pt-0 text-xs uppercase tracking-[0.1em] text-slate-500; }
+  .guide .spec-table thead th { @apply w-auto pb-3 pt-0 text-xs font-semibold text-slate-500; }
   .guide .spec-table thead tr { @apply border-t-0; }
   .guide .spec-table td { @apply pr-6; }
   .guide .spec-table td:first-child { @apply font-semibold text-slate-900; }

@@ -1,3 +1,5 @@
+/* Hallmark · checked: 2026-11-11 · genre: modern-minimal (inferred)
+ * built: the project · redesign: polish · v2.0.0 */
 /* Website chat (assets/js/chat.js). Brand: #3058a6 blue, #0b132b navy. */
 .nxc-launch {
   position: fixed; right: 16px; bottom: 16px; z-index: 60;
@@ -13,7 +15,7 @@
 
 .nxc-panel {
   position: fixed; right: 16px; bottom: 16px; z-index: 61;
-  width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 32px));
+  width: min(380px, calc(100% - 32px)); height: min(560px, calc(100vh - 32px));
   display: flex; flex-direction: column; overflow: hidden;
   background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
   box-shadow: 0 18px 50px rgba(11, 19, 43, .25);
