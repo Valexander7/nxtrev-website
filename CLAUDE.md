@@ -37,3 +37,10 @@ A product family appears in many places. When you add, rename or remove one, upd
 11. `IMAGERY.md` slot, if the image is new. Each family image is used on its family page, its Home tile and its `products.html` row.
 
 Changing a spec or claim: `grep -rn` the phrase across the repo. Specs repeat on the family page, the `products.html` spec strip, JSON-LD and sometimes the line card. Never delete spec text in a redesign.
+
+## Hallmark (John, 2026-11-10)
+Design skill for redesigns, in `.claude/skills/hallmark` and `.codex/skills/hallmark` (source and version: `.claude/skills/SOURCES.md`). John chose it for redesigning existing pages.
+- Run it only when John names it and the page: `/hallmark redesign <path>` or `/hallmark audit <path>`. Any other edit stays in the site's own system.
+- `DESIGN.md` stays the locked system; Hallmark's own pre-flight treats it that way. Changing it needs John's OK.
+- A redesign keeps all content and wiring: spec text, JSON-LD, links, forms, chat. The change cascade and `./tools/build-css.sh` still apply.
+- Never run `install-hook.mjs`, and no generated images (`TOGETHER_API_KEY`) unless John asks.
