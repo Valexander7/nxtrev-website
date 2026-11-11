@@ -22,7 +22,7 @@ header.sticky { view-transition-name: site-header; }
 
 /* ---------- Statement: words light up as you read down ---------- */
 .stmt .w { transition: color 180ms cubic-bezier(.16, 1, .3, 1); }
-.js-motion .stmt .w { color: #94a3b8; }
+.js-motion .stmt .w { color: #64748b; } /* 4.76:1 on white, readable before it lights up */
 .js-motion .stmt .w.lit { color: #0f172a; }
 .js-motion .stmt .w.lit.accent { color: #3058a6; }
 
